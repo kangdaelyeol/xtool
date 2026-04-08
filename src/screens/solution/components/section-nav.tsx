@@ -55,7 +55,7 @@ export const SectionNav = () => {
     return (
         <div
             ref={scrollBarRef}
-            className="sticky top-[70.5px] bg-font-gray-deep w-full"
+            className="sticky top-[70.5px] bg-black/50 w-full backdrop-blur-sm"
         >
             <div className="flex mx-auto justify-center gap-10">
                 {navConfig.map((label, idx) => (
