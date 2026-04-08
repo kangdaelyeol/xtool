@@ -19,14 +19,14 @@ export const Header = () => {
     return (
         <div
             className={cn(
-                'w-full sticky top-0 transition-all duration-250',
-                scrolled && 'shadow-sm backdrop-blur-sm',
+                'w-full sticky top-0 transition-all duration-250 z-50 bg-[#ffffff]',
+                scrolled && 'shadow-sm backdrop-blur-sm bg-[#ffffffc3]',
             )}
         >
             <div
                 className={cn(
-                    'max-w-300 m-auto w-full flex justify-between items-center py-1.5 px-10 transition-all duration-250 bg-[#ffffff]',
-                    scrolled && 'py-1 px-8 bg-[#ffffffc3]',
+                    'max-w-300 m-auto w-full flex justify-between items-center py-1.5 px-10 transition-all duration-250',
+                    scrolled && 'py-1 px-8',
                 )}
             >
                 <div className="flex flex-col">

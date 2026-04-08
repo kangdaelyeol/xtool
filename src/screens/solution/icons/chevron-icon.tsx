@@ -11,9 +11,9 @@ export const ChevronIcon = ({ size, color }: Props) => {
             height={size}
             fill="none"
             stroke={color}
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
         >
             <path d="M6 9l6 6 6-6" />
         </svg>
