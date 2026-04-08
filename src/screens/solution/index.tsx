@@ -1,9 +1,10 @@
+import { Header, Hero } from './components'
 
-export default function SolutionScreen()  {
-  return (
-    <div>
-      
-    </div>
-  );
+export default function SolutionScreen() {
+    return (
+        <>
+            <Header />
+            <Hero />
+        </>
+    )
 }
-
