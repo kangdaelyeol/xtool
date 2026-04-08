@@ -1,9 +1,6 @@
-interface Props {
-    size: number
-    color: React.SVGAttributes<SVGSVGElement>['color']
-}
+import type { SvgProps } from './types'
 
-export const ChevronIcon = ({ size, color }: Props) => {
+export const ChevronDownIcon = ({ size, color }: SvgProps) => {
     return (
         <svg
             viewBox="0 0 24 24"
@@ -11,7 +8,7 @@ export const ChevronIcon = ({ size, color }: Props) => {
             height={size}
             fill="none"
             stroke={color}
-            strokeWidth="2.5"
+            strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
         >

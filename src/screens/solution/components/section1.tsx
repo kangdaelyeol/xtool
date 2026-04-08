@@ -27,13 +27,13 @@ interface CardProps {
 
 const Card = ({ title, description, image }: CardProps) => {
     return (
-        <div className="w-md h-122 bg-education-white rounded-[20px] flex flex-col overflow-hidden">
+        <div className="w-sm h-122 bg-education-white rounded-[20px] flex flex-col overflow-hidden">
             <div className="h-70 flex justify-center items-center">
                 <img src={image} className="object-cover h-full w-full" />
             </div>
             <div className="flex flex-col gap-2.5 pl-7 pr-15 mt-8">
                 <div className="font-semibold text-[20px]">{title}</div>
-                <div className="text-font-gray text-[13.5px] leading-6 font-medium break-keep">
+                <div className="text-font-gray text-[13.5px] leading-6 font-medium break-keep tracking-wider">
                     {description}
                 </div>
             </div>
@@ -43,7 +43,7 @@ const Card = ({ title, description, image }: CardProps) => {
 
 export const Section1 = () => {
     return (
-        <div className="w-full">
+        <div className="w-full pb-25 pt-10">
             <div className="w-full max-w-350 mx-auto *:font-notokr">
                 <div className="text-center mt-10 text-[40px] font-semibold tracking-wider">
                     비즈니스와 교육의 경계를 허무는 기술
@@ -52,7 +52,7 @@ export const Section1 = () => {
                     xTool은 기업의 생산성 향상과 교육 현장의 창의적 변화를 위해
                     최첨단 디지털 제조 솔루션을 제공합니다.
                 </div>
-                <div className="flex justify-between mt-10">
+                <div className="flex justify-between mt-10 mx-auto max-w-7xl">
                     {cardConfig.map(({ title, description, image }) => (
                         <Card
                             title={title}

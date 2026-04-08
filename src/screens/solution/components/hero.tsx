@@ -1,4 +1,4 @@
-import { ChevronIcon } from '@/screens/solution/icons'
+import { ChevronDownIcon } from '@/screens/solution/icons'
 
 export const Hero = () => {
     return (
@@ -22,7 +22,7 @@ export const Hero = () => {
                     <div className="flex font-notokr *:cursor-pointer gap-5 mt-[20px]">
                         <div className="flex gap-3 items-center bg-btn-dark text-[#ffffff] text-[15px] px-8 py-3.5 rounded-full hover:bg-btn-dark/85">
                             비즈니스 견적 상담
-                            <ChevronIcon size={17} color="#ffffff" />
+                            <ChevronDownIcon size={17} color="#ffffff" />
                         </div>
                         <div className="text-[15px] text-font-gray px-8 py-3.5 rounded-full border border-font-gray] hover:bg-font-gray hover:text-[#ffffff] transition">
                             카탈로그 받기

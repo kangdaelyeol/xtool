@@ -3,6 +3,7 @@ import {
     Header,
     Hero,
     Section1,
+    Section2,
     SectionNav,
     TrustBar,
 } from './components'
@@ -16,6 +17,7 @@ export default function SolutionScreen() {
             <Education />
             <TrustBar />
             <Section1 />
+            <Section2 />
         </>
     )
 }

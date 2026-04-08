@@ -1,9 +1,7 @@
-interface Props {
-    size: number
-    color: React.SVGAttributes<SVGSVGElement>['color']
-}
+import type { SvgProps } from "./types"
 
-export const DownloadIcon = ({ size, color }: Props) => {
+
+export const DownloadIcon = ({ size, color }: SvgProps) => {
     return (
         <svg
             stroke={color}
