@@ -40,7 +40,7 @@ export const Header = () => {
                             Korea
                         </span>
                     </div>
-                    <div className="text-[12px] -mt-0.75 font-intertight tracking-widest text-[#545f68] whitespace-nowrap">
+                    <div className="text-[12px] -mt-0.75 ml-px font-medium tracking-widest text-[#545f68] whitespace-nowrap">
                         B2B SOLUTIONS
                     </div>
                 </div>

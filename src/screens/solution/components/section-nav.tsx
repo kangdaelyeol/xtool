@@ -21,7 +21,7 @@ const Item = ({ label, selectedIdx, idx, onClick }: ItemProps) => {
         >
             <div
                 className={cn(
-                    'px-5 py-2',
+                    'px-5 py-2.5',
                     selected && 'text-[#ffffff] font-semibold',
                 )}
             >

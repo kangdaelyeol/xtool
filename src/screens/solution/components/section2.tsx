@@ -75,7 +75,7 @@ export const Section2 = () => {
     const [selectedIdx, setSelectedIdx] = useState(0)
 
     return (
-        <div className="w-full bg-bg-ivory pt-19">
+        <div className="w-full bg-bg-ivory pt-19 pb-25">
             <div className="w-full max-w-350 mx-auto *:font-notokr">
                 <div className="text-center text-[40px] font-semibold tracking-wider">
                     최적화된 산업 및 교육 솔루션

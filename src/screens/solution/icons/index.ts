@@ -1,3 +1,7 @@
 export * from './chevron-down-icon'
 export * from './chevron-up-icon'
 export * from './download-icon'
+export * from './business-icon'
+export * from './presentation-icon'
+export * from './truck-icon'
+export * from './wrench-icon'

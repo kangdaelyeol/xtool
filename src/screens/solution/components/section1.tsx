@@ -9,13 +9,13 @@ const cardConfig = [
         title: '직관적인 인터페이스',
         description:
             '직관적인 인터페이스로 설계되어 별도의 복잡한 설정 없이 누구나 쉽게 사용할 수 있습니다. 처음 사용하는 환경에서도 빠르게 적응하고 바로 작업이 가능합니다.',
-        image: '/sample.webp',
+        image: '/so1.webp',
     },
     {
         title: '산업·교육용 인증 소재',
         description:
             '국가 표준 및 산업 안전 기준을 충족하는 고품질 소재로 기업 생산 라인과 교실에서 안심하고 사용 가능합니다.',
-        image: '/sample.webp',
+        image: '/so2.webp',
     },
 ]
 

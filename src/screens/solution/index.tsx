@@ -4,6 +4,7 @@ import {
     Hero,
     Section1,
     Section2,
+    Section3,
     SectionNav,
     TrustBar,
 } from './components'
@@ -18,6 +19,7 @@ export default function SolutionScreen() {
             <TrustBar />
             <Section1 />
             <Section2 />
+            <Section3 />
         </>
     )
 }
