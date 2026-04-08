@@ -1,4 +1,4 @@
-import { Education, Header, Hero } from './components'
+import { Education, Header, Hero, TrustBar } from './components'
 
 export default function SolutionScreen() {
     return (
@@ -6,6 +6,7 @@ export default function SolutionScreen() {
             <Header />
             <Hero />
             <Education />
+            <TrustBar />
         </>
     )
 }

@@ -1,3 +1,4 @@
 export * from './header'
 export * from './hero'
 export * from './education'
+export * from './trust-bar'

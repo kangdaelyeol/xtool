@@ -9,5 +9,8 @@
     --color-navy: oklch(28% 0.12 240);
     --color-btn-dark: #1d1e1f;
     --color-font-gray: #494949;
+    --color-font-gray-deep: #777777;
     --color-education-white: #f8f9fd;
+    --color-trust-navy: #152158;
+    --color-border-gray: #cccccc;
 }
