@@ -1,6 +1,6 @@
-import { cn } from '@/utils'
 import { useEffect, useState } from 'react'
-import { DownloadIcon } from '../icons/download-icon'
+import { cn } from '@/utils'
+import { DownloadIcon } from '@/screens/solution/icons'
 
 export const Header = () => {
     const [scrolled, setScrolled] = useState(false)
@@ -25,7 +25,7 @@ export const Header = () => {
         >
             <div
                 className={cn(
-                    'max-w-300 m-auto w-full flex justify-between items-center py-2 px-10 transition-all duration-250 bg-[#ffffff]',
+                    'max-w-300 m-auto w-full flex justify-between items-center py-1.5 px-10 transition-all duration-250 bg-[#ffffff]',
                     scrolled && 'py-1 px-8 bg-[#ffffffc3]',
                 )}
             >
@@ -63,11 +63,11 @@ export const Header = () => {
                     </div>
                 </div>
                 <div className="flex gap-4 items-center *:cursor-pointer *:font-notokr *:font-[400] *:whitespace-nowrap">
-                    <div className="flex gap-1 hover:bg-black/6 rounded-[5px] text-[15px] p-2.5">
+                    <div className="flex gap-1 hover:bg-black/6 rounded-[5px] text-[15px] px-2.5 py-2">
                         <DownloadIcon size={20} color="#000000" />
                         카탈로그
                     </div>
-                    <div className="bg-navy hover:bg-navy/90 text-white text-[13px] rounded-[8px] p-3">
+                    <div className="bg-navy hover:bg-navy/90 text-white text-[13px] rounded-[8px] px-3 py-2.5">
                         견적 문의하기
                     </div>
                 </div>

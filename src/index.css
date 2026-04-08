@@ -7,4 +7,6 @@
     --font-notokr: 'Noto Sans KR', sans-serif;
 
     --color-navy: oklch(28% 0.12 240);
+    --color-btn-dark: #1d1e1f;
+    --color-font-gray: #494949;
 }
