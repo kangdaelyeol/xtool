@@ -1,3 +1,95 @@
+import { cn } from '@/utils'
+
 export default function Footer() {
-    return <div>footer</div>
+    return (
+        <div className="pb-20 w-full">
+            <div className="w-300 mx-auto flex justify-center *:break-keep">
+                <div className="flex flex-col items-center border-r border-r-[#eeeeee] pt-10 pr-30 pb-15">
+                    <div className="text-[17px] font-medium tracking-wider">
+                        CS CENTER
+                    </div>
+                    <div className="text-[30px] font-semibold mt-1.5 tracking-wide">
+                        1877-7971
+                    </div>
+                    <div className="text-font-gray-deep text-[14px] tracking-wider mt-2">
+                        평일 10:00 - 16:00
+                    </div>
+                    <div className="text-font-gray-deep text-[14px] tracking-wider">
+                        점심 12:00 - 13:00
+                    </div>
+                    <div className="text-font-gray-deep text-[14px] tracking-wider mt-2">
+                        주말 및 공휴일 휴무입니다.
+                    </div>
+                    <div
+                        className={cn(
+                            'border bg-black cursor-pointer text-white w-48 text-center py-3 text-[15px] font-medium font-notokr tracking-wider mt-4 transition',
+                            'hover:bg-white hover:text-black ',
+                        )}
+                    >
+                        상품 Q&A 바로가기
+                    </div>
+                    <div
+                        className={cn(
+                            'border bg-black cursor-pointer text-white w-48 text-center py-3 text-[15px] font-medium font-notokr tracking-wider mt-2 transition',
+                            'hover:bg-white hover:text-black ',
+                        )}
+                    >
+                        A/S·환불·교환 정책
+                    </div>
+                </div>
+                <div className="flex flex-col pl-13 pt-10 min-w-110">
+                    <div
+                        className={cn(
+                            'flex gap-3 *:text-[15px] *:transition *:cursor-pointer *:select-none',
+                            '*:hover:text-font-gray-deep',
+                        )}
+                    >
+                        <div>AGREEMENT</div>
+                        <div>PRIVACY</div>
+                        <div>GUIDE</div>
+                    </div>
+                    <div className="mt-5 text-font-gray-deep leading-7 text-[13px]">
+                        Company : 주식회사 시안인터내셔널 CEO : 오예은, 황정현
+                        <br />
+                        Business Registration : [2338112139],[530-36-00723]
+                        <br /> Call : 1877-7971
+                        <br />
+                        Address : 10896 경기 파주시 가람로116번길 107
+                        운정한강듀클래스 319호, 제주특별자치도 제주시 신대로
+                        145, 6층 1-22호(연동) <br />
+                        Personal Information Manager : 오예은(info@cyankorea.kr)
+                        <br />
+                    </div>
+
+                    <div className="text-font-gray-deep leading-7 text-[13px] mt-10">
+                        Copyright © 2021 엑스툴코리아. All rights reserved.{' '}
+                        <br />
+                        Hosting by CAFE24 디자인저작권자:굿디몰디자인
+                    </div>
+                </div>
+                <div className="flex flex-col pt-10 pl-13 pr-10">
+                    <div className="font-semibold">BANK INFO</div>
+                    <div className="mt-2 text-[14px] tracking-wide text-font-gray-deep">
+                        기업 688-044727-04-014
+                        <br />
+                        예금주 : 주식회사 시안인터내셔널
+                    </div>
+                    <div className="font-semibold mt-4">
+                        PURCHASE SAFETY SERVICE
+                    </div>
+                    <div className="mt-2 text-[14px] tracking-wide text-font-gray-deep">
+                        고객님은 안전거래를 위해 현금 등으로 결제시 저희
+                        쇼핑몰이 가입한 PG에스크로 구매안전서비스를 이용하실 수
+                        있습니다.
+                    </div>
+                    <div className="mt-4 flex gap-3 *:cursor-pointer">
+                        <img src="/purchase1.png" />
+                        <img src="/purchase2.png" />
+                        <img src="/purchase3.png" />
+                        <img src="/purchase4.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
 }
