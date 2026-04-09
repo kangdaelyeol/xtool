@@ -62,9 +62,7 @@ export default function Footer() {
                     </div>
 
                     <div className="text-font-gray-deep leading-7 text-[13px] mt-10">
-                        Copyright © 2021 엑스툴코리아. All rights reserved.{' '}
-                        <br />
-                        Hosting by CAFE24 디자인저작권자:굿디몰디자인
+                        Copyright © 2021 엑스툴코리아. All rights reserved.
                     </div>
                 </div>
                 <div className="flex flex-col pt-10 pl-13 pr-10">
