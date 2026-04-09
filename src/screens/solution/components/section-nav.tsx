@@ -1,5 +1,5 @@
 import { cn } from '@/utils'
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 
 interface ItemProps {
     label: string
@@ -39,24 +39,10 @@ const Item = ({ label, selectedIdx, idx, onClick }: ItemProps) => {
 }
 
 export const SectionNav = () => {
-    const scrollBarRef = useRef<HTMLDivElement | null>(null)
     const [selectedIdx, setSelectedIdx] = useState(-1)
 
-    useEffect(() => {
-        const onScroll = () => {
-            console.log(scrollBarRef.current)
-        }
-        window.addEventListener('scroll', onScroll)
-
-        return () => {
-            window.removeEventListener('scroll', onScroll)
-        }
-    }, [])
     return (
-        <div
-            ref={scrollBarRef}
-            className="sticky top-[70.5px] bg-black/50 w-full backdrop-blur-sm"
-        >
+        <div className="sticky top-[70.5px] bg-black/50 w-full backdrop-blur-sm z-10">
             <div className="flex mx-auto justify-center gap-10">
                 {navConfig.map((label, idx) => (
                     <Item

@@ -113,13 +113,14 @@ export const Section3 = () => {
                         극대화를 위해 <br /> xTool 전담 팀이 함께합니다.
                     </div>
                     <div className="flex flex-col gap-5 mt-5 *:font-notokr">
-                        {gridItemConfig.map((list) => (
-                            <div className="flex gap-5">
+                        {gridItemConfig.map((list, idx) => (
+                            <div className="flex gap-5" key={idx}>
                                 {list.map(({ title, description, icon }) => (
                                     <Item
                                         title={title}
                                         description={description}
                                         icon={icon}
+                                        key={title}
                                     />
                                 ))}
                             </div>
