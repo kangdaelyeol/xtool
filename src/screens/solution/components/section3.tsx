@@ -76,7 +76,7 @@ const Item = ({ icon, title, description }: Props) => {
 
 export const Section3 = () => {
     return (
-        <div className="w-full pt-20">
+        <div className="w-full pt-20 pb-25">
             <div className="w-full max-w-350 mx-auto flex">
                 <div className="w-170 relative">
                     <div className="w-115 h-80 flex justify-center items-center overflow-hidden rounded-[30px] absolute top-40 left-35 shadow-2xl">

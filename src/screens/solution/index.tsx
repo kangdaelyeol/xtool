@@ -1,4 +1,5 @@
 import {
+    Contact,
     Education,
     Header,
     Hero,
@@ -20,6 +21,7 @@ export default function SolutionScreen() {
             <Section1 />
             <Section2 />
             <Section3 />
+            <Contact />
         </>
     )
 }
