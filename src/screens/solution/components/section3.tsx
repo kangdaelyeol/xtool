@@ -78,8 +78,27 @@ export const Section3 = () => {
     return (
         <div className="w-full pt-20">
             <div className="w-full max-w-350 mx-auto flex">
-                <div className="w-180 relative">
-                    <div className=""></div>
+                <div className="w-170 relative">
+                    <div className="w-115 h-80 flex justify-center items-center overflow-hidden rounded-[30px] absolute top-40 left-35 shadow-2xl">
+                        <img
+                            src="/so1.webp"
+                            alt="support-img"
+                            className="object-cover"
+                        />
+                    </div>
+                    <div className="w-60 h-40 rounded-[20px] bg-[#03d36c] flex flex-col pl-8 pt-8 absolute top-85 left-100 shadow-2xl">
+                        <img
+                            src="/x-logo.png"
+                            alt="xtool-logo"
+                            className="w-9"
+                        />
+                        <div className="text-white font-semibold text-[30px] italic mt-2">
+                            PRO
+                        </div>
+                        <div className="text-white tracking-wider text-[13px]">
+                            PROFESSIONAL SUPPORT
+                        </div>
+                    </div>
                 </div>
                 <div className="flex-1 flex flex-col gap-3">
                     <div className="mr-auto px-4 py-1 bg-[#e4e9ee] text-[#002b5b] text-[13px] tracking-wider font-semibold rounded-lg border border-[#002a5b56]">
