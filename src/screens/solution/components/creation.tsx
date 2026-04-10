@@ -58,6 +58,28 @@ const CreationNav = ({ videoIdx, setVideoIdx }: CreationProps) => {
     )
 }
 
+const CreationVideo = ({ videoIdx }: { videoIdx: number }) => {
+    return (
+        <div className="*:w-full *:absolute *:justify-center *:top-2 *:flex">
+            {creationConfig.map((item, idx) => (
+                <div
+                    key={item.label}
+                    className={cn(videoIdx === idx ? 'z-10' : 'z-0')}
+                >
+                    <video
+                        src={item.src}
+                        autoPlay
+                        playsInline
+                        loop
+                        muted
+                        className="w-[42%]"
+                    />
+                </div>
+            ))}
+        </div>
+    )
+}
+
 export const Creation = () => {
     const [videoIdx, setVideoIdx] = useState(0)
     useEffect(() => {
@@ -91,16 +113,7 @@ export const Creation = () => {
                 </div>
             </div>
             <div className="w-full h-130 relative mt-10">
-                <div className="w-full absolute flex justify-center top-2">
-                    <video
-                        src={creationConfig[videoIdx].src}
-                        autoPlay
-                        playsInline
-                        loop
-                        muted
-                        className="w-[42%]"
-                    ></video>
-                </div>
+                <CreationVideo videoIdx={videoIdx} />
                 <div className="absolute top-0 left-0 w-full">
                     <img
                         src="/creation/creation-1920.png"
