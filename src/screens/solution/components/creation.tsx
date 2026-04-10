@@ -1,5 +1,5 @@
 import { cn } from '@/utils'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 interface creationState {
     label: string
@@ -60,6 +60,24 @@ const CreationNav = ({ videoIdx, setVideoIdx }: CreationProps) => {
 
 export const Creation = () => {
     const [videoIdx, setVideoIdx] = useState(0)
+    useEffect(() => {
+        ;[
+            '/creation/creation-768.webp',
+            '/creation/creation-1024.webp',
+            '/creation/creation-1920.png',
+            '/creation/creation-2560.webp',
+        ].forEach((src) => {
+            const img = new Image()
+            img.src = src
+        })
+
+        creationConfig.forEach((item) => {
+            const video = document.createElement('video')
+            video.preload = 'auto'
+            video.src = item.src
+            video.load()
+        })
+    }, [])
     return (
         <div className="w-full py-20">
             <div className="w-full max-w-350 mx-auto">
