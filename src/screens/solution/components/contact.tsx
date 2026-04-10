@@ -180,8 +180,7 @@ export const Contact = () => {
                         {/* Detail - 상세 내용 */}
                         <div className="mt-8">
                             <div className="font-semibold text-[15px]">
-                                문의 유형{' '}
-                                <span className="text-red-600">*</span>
+                                상세 내용
                             </div>
                             <textarea
                                 className="border border-border-gray rounded-[10px] placeholder:text-[15px] max-h-30 min-h-30 text-[15px] resize-none mt-2 p-2 w-full"

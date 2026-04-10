@@ -2,7 +2,7 @@ import { cn } from '@/utils'
 
 export default function Footer() {
     return (
-        <div className="pb-20 w-full">
+        <div className="pb-20 w-full overflow-hidden">
             <div className="w-300 mx-auto flex justify-center *:break-keep">
                 <div className="flex flex-col items-center border-r border-r-[#eeeeee] pt-10 pr-30 pb-15">
                     <div className="text-[17px] font-medium tracking-wider">

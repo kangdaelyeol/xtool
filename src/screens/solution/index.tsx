@@ -7,6 +7,7 @@ import {
     Section2,
     Section3,
     SectionNav,
+    TransformEducation,
     TrustBar,
 } from './components'
 
@@ -20,6 +21,7 @@ export default function SolutionScreen() {
             <TrustBar />
             <Section1 />
             <Section2 />
+            <TransformEducation />
             <Section3 />
             <Contact />
         </>
