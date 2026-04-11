@@ -12,8 +12,8 @@ export const Hero = () => {
             className={cn(
                 'relative w-full *:select-none bg-[#edf3fc]',
                 'lg:h-125',
-                'md:h-80',
-                'max-md:h-150',
+                'md:h-80 md:overflow-hidden',
+                'max-md:h-150 max-md:overflow-hidden',
             )}
         >
             <div

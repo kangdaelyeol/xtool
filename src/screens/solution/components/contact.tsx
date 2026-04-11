@@ -33,7 +33,7 @@ const Input = ({
                 required={required}
                 placeholder={placeholder}
                 className={cn(
-                    'border border-border-gray rounded-[5px] py-2 px-2 tracking-wider placeholder:text-[14px] text-[14px]',
+                    'border border-border-gray rounded-[5px] py-2 px-2 tracking-wider md:placeholder:text-[14px] text-[14px] max-md:placeholder:text-[12px]',
                     'hover:placeholder:text-font-gray hover:border-black',
                     'focus:placeholder:text-font-gray focus:border-black',
                 )}
@@ -65,7 +65,7 @@ const SelectItem = ({ label, onClick, selected }: SelectItemProps) => {
             )}
             <div
                 className={cn(
-                    'text-font-gray-deep ml-2 text-[14px] select-none',
+                    'text-font-gray-deep ml-2 lg:text-[12px] select-none max-md:text-[12px]',
                     selected && 'text-black border-black',
                 )}
             >
@@ -89,19 +89,45 @@ export const Contact = () => {
             className="w-full bg-black scroll-mt-18 *:select-none"
             id="contact"
         >
-            <div className="w-full max-w-350 mx-auto pt-20 pb-25">
-                <div className="text-center text-white text-[40px] font-semibold tracking-wider">
+            <div
+                className={cn(
+                    'w-full mx-auto pt-20 pb-25',
+                    'lg:max-w-280 lg:px-5',
+                )}
+            >
+                <div className="text-center text-white text-[40px] font-semibold tracking-wider max-md:text-[20px]">
                     귀사의 비즈니스에 xTool을 더하세요
                 </div>
-                <div className="text-center mt-5 tracking-wide text-[15px] text-gray-400">
+                <div className="text-center mt-5 tracking-wide text-[15px] text-gray-400 max-md:text-[15px] max-md:px-4 break-keep">
                     기관의 예산과 운영 목적, 기업의 생산 공정에 가장 적합한
                     모델을 제안해 드립니다.
                 </div>
 
-                <div className="mt-20 w-280 rounded-[25px] mx-auto bg-[url('/contact.webp')] bg-size-[120%] bg-position-[10%_20%] p-4">
-                    <div className="h-170 w-[50%] bg-white rounded-[15px] pt-8 px-8">
+                <div
+                    className={cn(
+                        "w-full rounded-[25px] mx-auto bg-[url('/contact.webp')] bg-no-repeat p-4",
+                        'lg:bg-size-[120%] lg:bg-position-[10%_20%]',
+                        'md:mt-20 md:bg-center md:bg-cover',
+                        'max-md:bg-center max-md:bg-cover max-md:mt-10',
+                    )}
+                >
+                    <div
+                        className={cn(
+                            'bg-white rounded-[15px]',
+                            'lg:h-170',
+                            'md:w-[50%] md:py-8 md:px-8',
+                            'max-md:py-4 max-md:px-3',
+                        )}
+                    >
                         {/* Row 1 - 기관명, 성함*/}
-                        <div className="flex gap-7">
+                        <div
+                            className={cn(
+                                'flex',
+                                'lg:gap-7 lg:flex-row',
+                                'md:flex-col md:gap-3',
+                                'max-md:flex-col max-md:gap-2',
+                            )}
+                        >
                             <Input
                                 ref={companyNameRef}
                                 type="text"
@@ -120,7 +146,14 @@ export const Contact = () => {
                             />
                         </div>
                         {/* Row 2 - 연락처, 이메일*/}
-                        <div className="flex gap-7 mt-8">
+                        <div
+                            className={cn(
+                                'flex',
+                                'lg:gap-7 lg:mt-8 lg:flex-row',
+                                'md:flex-col md:gap-3 md:mt-3',
+                                'max-md:flex-col max-md:mt-2 max-md:gap-2',
+                            )}
+                        >
                             <Input
                                 ref={phoneRef}
                                 type="tel"
@@ -144,7 +177,7 @@ export const Contact = () => {
                             />
                         </div>
                         {/* Inquiry type - 문의 유형*/}
-                        <div className="mt-8">
+                        <div className="md:mt-8 max-md:mt-3">
                             <div className="font-semibold text-[15px]">
                                 문의 유형{' '}
                                 <span className="text-red-600">*</span>
@@ -152,7 +185,7 @@ export const Contact = () => {
                             <div className="text-font-gray-deep text-[13px]">
                                 다중선택 가능
                             </div>
-                            <div className="flex gap-2 mt-3">
+                            <div className="flex lg:flex-row md:flex-col max-md:flex-col gap-2 mt-2">
                                 <SelectItem
                                     label="기업 도입 (R&D, 브랜딩, 생산)"
                                     selected={enterprise}
@@ -165,7 +198,7 @@ export const Contact = () => {
                                     onClick={() => setEducation((v) => !v)}
                                 />
                             </div>
-                            <div className="flex gap-2 mt-3">
+                            <div className="flex lg:flex-row md:flex-col max-md:flex-col gap-2 mt-2">
                                 <SelectItem
                                     label="공공기관 / 메이커스페이스 구축"
                                     selected={publicInstitution}
@@ -181,12 +214,12 @@ export const Contact = () => {
                             </div>
                         </div>
                         {/* Detail - 상세 내용 */}
-                        <div className="mt-8">
+                        <div className="md:mt-8 max-md:mt-3">
                             <div className="font-semibold text-[15px]">
                                 상세 내용
                             </div>
                             <textarea
-                                className="border border-border-gray rounded-[10px] placeholder:text-[15px] max-h-30 min-h-30 text-[15px] resize-none mt-2 p-2 w-full"
+                                className="border border-border-gray rounded-[10px] md:placeholder:text-[15px] max-md:placeholder:text-[12px] max-h-30 min-h-30 text-[15px] resize-none mt-2 p-2 w-full"
                                 placeholder="도입 목적, 예상 수량, 필요한 지원 서비스 등을 적어주세요"
                             ></textarea>
                         </div>
