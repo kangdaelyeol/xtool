@@ -1,5 +1,5 @@
 import { cn } from '@/utils'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ChevronDownIcon, ChevronUpIcon } from '../icons'
 
 const listItemConfig = [
@@ -74,6 +74,14 @@ const ListItem = ({
 export const Section2 = () => {
     const [selectedIdx, setSelectedIdx] = useState(0)
 
+    useEffect(() => {
+        // Image preload
+        listItemConfig.forEach((item) => {
+            const image = new Image()
+            image.src = item.image
+        })
+    }, [])
+
     return (
         <div
             className="w-full bg-bg-ivory pt-19 pb-25 scroll-mt-28 border-t border-t-gray-200 *:select-none"
@@ -88,11 +96,17 @@ export const Section2 = () => {
                     그 가치를 증명하고 있습니다.
                 </div>
                 <div className="flex mt-10 mx-auto w-285 h-148 rounded-[15px] overflow-hidden">
-                    <div className="w-140">
-                        <img
-                            src={listItemConfig[selectedIdx].image}
-                            className="object-cover w-full h-full"
-                        />
+                    <div className="w-140 relative">
+                        {listItemConfig.map((item, idx) => (
+                            <img
+                                src={item.image}
+                                key={item.image}
+                                className={cn(
+                                    'object-cover w-full h-full absolute',
+                                    idx === selectedIdx && 'z-10',
+                                )}
+                            />
+                        ))}
                     </div>
                     <div className="flex flex-col gap-3 flex-1 bg-[#eff0f1] px-8 pt-8">
                         {listItemConfig.map(({ title, description }, idx) => (
