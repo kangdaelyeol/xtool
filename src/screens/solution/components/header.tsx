@@ -16,10 +16,15 @@ export const Header = () => {
         }
     }, [])
 
+    const handleContackClick = () => {
+        const contactEl = document.querySelector('#contact')
+        contactEl?.scrollIntoView()
+    }
+
     return (
         <div
             className={cn(
-                'w-full sticky top-0 transition-all duration-250 z-50 bg-[#ffffff] *:select-none',
+                'w-full sticky top-0 transition-all duration-250 z-50 bg-[#ffffff] py-[12px] *:select-none',
                 scrolled && 'shadow-sm backdrop-blur-sm bg-[#ffffffc3]',
             )}
         >
@@ -44,30 +49,16 @@ export const Header = () => {
                         B2B SOLUTIONS
                     </div>
                 </div>
-                <div className="flex gap-10 *:font-notokr *:cursor-pointer *:py-5 *:relative *:text-[15px] *:text-center *:whitespace-nowrap">
-                    <div className="group">
-                        솔루션
-                        <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#000000] transition-all duration-250 group-hover:w-full" />
-                    </div>
-                    <div className="group">
-                        제품 라인업
-                        <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#000000] transition-all duration-250 group-hover:w-full" />
-                    </div>
-                    <div className="group">
-                        도입 프로세스
-                        <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#000000] transition-all duration-250 group-hover:w-full" />
-                    </div>
-                    <div className="group">
-                        인증 및 안전
-                        <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#000000] transition-all duration-250 group-hover:w-full" />
-                    </div>
-                </div>
+
                 <div className="flex gap-4 items-center *:cursor-pointer *:font-notokr *:font-[400] *:whitespace-nowrap">
                     <div className="flex gap-1 hover:bg-black/6 rounded-[5px] text-[15px] px-2.5 py-2">
                         <DownloadIcon size={20} color="#000000" />
                         카탈로그
                     </div>
-                    <div className="bg-navy hover:bg-navy/90 text-white text-[13px] rounded-[8px] px-3 py-2.5">
+                    <div
+                        className="bg-navy hover:bg-navy/90 text-white text-[13px] rounded-[8px] px-3 py-2.5"
+                        onClick={handleContackClick}
+                    >
                         견적 문의하기
                     </div>
                 </div>
