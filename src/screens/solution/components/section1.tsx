@@ -1,3 +1,5 @@
+import { cn } from '@/utils'
+
 const cardConfig = [
     {
         title: '디지털 제조 및 산업 도구',
@@ -27,13 +29,36 @@ interface CardProps {
 
 const Card = ({ title, description, image }: CardProps) => {
     return (
-        <div className="w-sm h-122 bg-education-white rounded-[20px] flex flex-col overflow-hidden">
-            <div className="h-70 flex justify-center items-center">
+        <div
+            className={cn(
+                'bg-education-white rounded-[20px] flex flex-col overflow-hidden',
+                'lg:w-[32%] lg:h-125 lg:mt-0',
+                'md:w-[32%] md:h-110 md:mt-0',
+                'w-[90%] mx-auto mt-10',
+            )}
+        >
+            <div className="h-90 lg:h-70 md:h-60 flex justify-center items-center">
                 <img src={image} className="object-cover h-full w-full" />
             </div>
-            <div className="flex flex-col gap-2.5 pl-7 pr-15 mt-8">
-                <div className="font-semibold text-[20px]">{title}</div>
-                <div className="text-font-gray text-[13.5px] leading-6 font-medium break-keep tracking-wider">
+            <div
+                className={cn(
+                    'flex flex-col *:break-keep',
+                    'lg:mt-8 lg:gap-2.5 lg:pb-0 lg:pl-7 lg:pr-15',
+                    'md:mt-4 md:gap-1.5 md:pb-0 md:pl-3 md:pr-5',
+                    'mt-3 gap-2 pl-4 pb-5 pr-20',
+                )}
+            >
+                <div className="font-semibold lg:text-[20px] md:text-[15px] text-[17px]">
+                    {title}
+                </div>
+                <div
+                    className={cn(
+                        'text-font-gray font-medium break-keep tracking-wider',
+                        'lg:text-[13.5px] lg:leading-6',
+                        'md:text-[12px] md:leading-5',
+                        'text-[13px] leading-6',
+                    )}
+                >
                     {description}
                 </div>
             </div>
@@ -44,18 +69,44 @@ const Card = ({ title, description, image }: CardProps) => {
 export const Section1 = () => {
     return (
         <div
-            className="w-full pb-25 pt-10 scroll-mt-28 *:select-none"
+            className={cn(
+                'w-full pb-25 pt-10 *:select-none',
+                'lg:scroll-mt-28 md:scroll-mt-28 scroll-mt-20',
+            )}
             id="business"
         >
-            <div className="w-full max-w-350 mx-auto *:font-notokr">
-                <div className="text-center mt-10 text-[40px] font-semibold tracking-wider">
+            <div
+                className={cn(
+                    'w-full mx-auto *:font-notokr',
+                    'lg:px-3.75 lg:min-w-250 lg:max-w-300',
+                    'md:px-2',
+                )}
+            >
+                <div
+                    className={cn(
+                        'text-center font-semibold tracking-wider break-keep',
+                        'lg:mt-10 lg:text-[40px]',
+                        'md:mt-10 md:text-[34px]',
+                        'text-[20px]',
+                    )}
+                >
                     비즈니스와 교육의 경계를 허무는 기술
                 </div>
-                <div className="text-center mt-2 text-font-gray-deep text-[16px] tracking-wider">
+                <div
+                    className={cn(
+                        'text-center mt-2 text-font-gray-deep tracking-wider break-keep',
+                        'lg:text-[17px] md:text-[17px] text-[14px] px-3',
+                    )}
+                >
                     xTool은 기업의 생산성 향상과 교육 현장의 창의적 변화를 위해
                     최첨단 디지털 제조 솔루션을 제공합니다.
                 </div>
-                <div className="flex justify-between mt-10 mx-auto max-w-7xl">
+                <div
+                    className={cn(
+                        'flex justify-between mx-auto w-full',
+                        'lg:flex-row md:flex-row flex-col lg:mt-10 md:mt-10',
+                    )}
+                >
                     {cardConfig.map(({ title, description, image }) => (
                         <Card
                             title={title}

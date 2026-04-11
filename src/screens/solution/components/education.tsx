@@ -9,6 +9,6 @@ export const Education = () => {
                 'md:h-47 md:bg-[url(/education/education.webp)] md:bg-size-[1100px_auto]',
                 'lg:h-47 lg:bg-[url(/education/education.webp)] lg:bg-size-[1400px_auto]',
             )}
-        ></div>
+        />
     )
 }
