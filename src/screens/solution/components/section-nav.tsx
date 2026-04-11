@@ -65,7 +65,7 @@ export const SectionNav = () => {
     }, [])
 
     return (
-        <div className="sticky top-[70.5px] bg-black/50 w-full backdrop-blur-sm z-20">
+        <div className="sticky top-[70.5px] bg-black/50 w-full backdrop-blur-sm z-20 *:select-none">
             <div className="flex mx-auto justify-center gap-10">
                 {navConfig.map((item) => (
                     <Item

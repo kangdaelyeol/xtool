@@ -19,7 +19,7 @@ export const Header = () => {
     return (
         <div
             className={cn(
-                'w-full sticky top-0 transition-all duration-250 z-50 bg-[#ffffff]',
+                'w-full sticky top-0 transition-all duration-250 z-50 bg-[#ffffff] *:select-none',
                 scrolled && 'shadow-sm backdrop-blur-sm bg-[#ffffffc3]',
             )}
         >

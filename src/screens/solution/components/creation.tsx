@@ -101,7 +101,7 @@ export const Creation = () => {
         })
     }, [])
     return (
-        <div className="w-full py-20">
+        <div className="w-full py-20 *:select-none">
             <div className="w-full max-w-350 mx-auto">
                 <div className="font-notokr text-[35px] font-bold text-center">
                     기계와 최첨단 소프트웨어의 결합으로 생명력을 불어넣는 창작물

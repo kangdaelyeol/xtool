@@ -77,7 +77,7 @@ const Item = ({ icon, title, description }: Props) => {
 export const Section3 = () => {
     return (
         <div
-            className="w-full pt-20 pb-25 scroll-mt-28  border-t border-t-gray-200"
+            className="w-full pt-20 pb-25 scroll-mt-28  border-t border-t-gray-200 *:select-none"
             id="system"
         >
             <div className="w-full max-w-350 mx-auto flex">

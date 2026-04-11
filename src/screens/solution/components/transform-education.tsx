@@ -148,7 +148,7 @@ export const TransformEducation = () => {
     const [sliderIdx, setSliderIdx] = useState(0)
 
     return (
-        <div className="w-full pt-20 pb-20 overflow-hidden">
+        <div className="w-full pt-20 pb-20 overflow-hidden *:select-none">
             <div className="max-w-350 mx-auto">
                 {/* Title */}
                 <div className="text-center text-black/90 text-[40px] font-semibold font-notokr tracking-wider">

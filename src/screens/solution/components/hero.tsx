@@ -2,7 +2,7 @@ import { ChevronDownIcon } from '@/screens/solution/icons'
 
 export const Hero = () => {
     return (
-        <div className="h-125 relative w-full">
+        <div className="h-125 relative w-full *:select-none">
             <img
                 src="/education-intro.webp"
                 className="object-cover h-125 absolute top-0 left-0"
@@ -14,7 +14,7 @@ export const Hero = () => {
                         솔루션
                     </div>
                     <div className="w-[400px] text-[#0000009b] text-[17px] leading-[28px]">
-                        대한민국 300+ 기업 및 기관이 선택한 압도적 기술력.{' '}
+                        대한민국 300+ 기업 및 기관이 선택한 압도적 기술력.
                         <br />
                         비즈니스 프로토타이핑부터 차세대 메이커 교육까지, <br />
                         전문가 팀이 도입의 모든 과정을 함께합니다.

@@ -76,7 +76,7 @@ export const Section2 = () => {
 
     return (
         <div
-            className="w-full bg-bg-ivory pt-19 pb-25 scroll-mt-28 border-t border-t-gray-200"
+            className="w-full bg-bg-ivory pt-19 pb-25 scroll-mt-28 border-t border-t-gray-200 *:select-none"
             id="solution"
         >
             <div className="w-full max-w-350 mx-auto *:font-notokr">
