@@ -1,5 +1,6 @@
-import type { JSX } from 'react'
+import { useEffect, useState, type JSX } from 'react'
 import { BusinessIcon, PresentationIcon, TruckIcon, WrenchIcon } from '../icons'
+import { cn } from '@/utils'
 
 type Icon = 'business' | 'truck' | 'wrench' | 'presentation'
 
@@ -50,74 +51,198 @@ const gridItemConfig = [
 ] as GridItem[][]
 
 const ItemIcon = ({ icon }: ItemIconProps): JSX.Element => {
+    const [iconSize, setIconSize] = useState(30)
+    useEffect(() => {
+        const handleResize = () => {
+            if (innerWidth >= 1024) return setIconSize(30)
+            if (innerWidth >= 768) return setIconSize(20)
+            return setIconSize(25)
+        }
+        handleResize()
+        window.addEventListener('resize', handleResize)
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
+
     switch (icon) {
         case 'business':
-            return <BusinessIcon size={30} color={'#000000'} />
+            return <BusinessIcon size={iconSize} color={'#000000'} />
         case 'truck':
-            return <TruckIcon size={30} color={'#000000'} />
+            return <TruckIcon size={iconSize} color={'#000000'} />
         case 'wrench':
-            return <WrenchIcon size={30} color={'#000000'} />
+            return <WrenchIcon size={iconSize} color={'#000000'} />
         case 'presentation':
-            return <PresentationIcon size={30} color={'#000000'} />
+            return <PresentationIcon size={iconSize} color={'#000000'} />
     }
 }
 
 const Item = ({ icon, title, description }: Props) => {
     return (
-        <div className="flex flex-col gap-3 bg-education-white w-60 p-5 rounded-[10px]">
-            <ItemIcon icon={icon} />
-            <div className="font-semibold">{title}</div>
-            <div className="text-[13.5px] text-font-gray tracking-wide break-keep">
-                {description}
+        <>
+            <div
+                className={cn(
+                    'flex flex-col bg-education-white p-5 rounded-[10px]',
+                    'lg:gap-3 lg:w-60',
+                    'md:gap-1',
+                    'max-md:hidden',
+                )}
+            >
+                <ItemIcon icon={icon} />
+                <div className="font-semibold lg:text-[16px] md:text-[14px]">
+                    {title}
+                </div>
+                <div className="lg:text-[13.5px] md:text-[12px] text-font-gray tracking-wide break-keep">
+                    {description}
+                </div>
             </div>
-        </div>
+            <div
+                className={cn(
+                    'flex flex-col bg-education-white p-5 rounded-[10px]',
+                    'hidden max-md:block',
+                )}
+            >
+                <div className="flex gap-2 items-center">
+                    <ItemIcon icon={icon} />
+                    <div className="font-semibold text-[14px]">{title}</div>
+                </div>
+                <div className="text-[13px] text-font-gray tracking-wide break-keep">
+                    {description}
+                </div>
+            </div>
+        </>
     )
 }
 
 export const Section3 = () => {
     return (
         <div
-            className="w-full pt-20 pb-25 scroll-mt-28  border-t border-t-gray-200 *:select-none"
+            className={cn(
+                'w-full pt-20 pb-25 border-t border-t-gray-200 *:select-none *:break-keep',
+                'lg:scroll-mt-28',
+                'md:scroll-mt-28',
+                'max-md:scroll-mt-22',
+            )}
             id="system"
         >
-            <div className="w-full max-w-350 mx-auto flex">
-                <div className="w-170 relative">
-                    <div className="w-115 h-80 flex justify-center items-center overflow-hidden rounded-[30px] absolute top-40 left-35 shadow-2xl">
+            <div
+                className={cn(
+                    'w-full mx-auto flex md:justify-center relative',
+                    'lg:max-w-350 lg:px-5',
+                    'md:px-5',
+                )}
+            >
+                <div
+                    className={cn(
+                        'w-full',
+                        'lg:max-w-170 lg:relative',
+                        'md:max-w-130 md:relative',
+                        'max-md:absolute max-md:w-[95%] max-md:top-30 max-md:h-[calc(70vw)] max-md:left-3',
+                    )}
+                >
+                    <div
+                        className={cn(
+                            'flex justify-center items-center overflow-hidden rounded-[30px] absolute shadow-2xl',
+                            'min-[1200px]:w-140 min-[1200px]:h-100 min-[1200px]:top-40 min-[1200px]:left-0',
+                            'lg:max-[1199px]:w-110 lg:max-[1199px]:h-80 lg:max-[1199px]:top-40 lg:max-[1199px]:left-0',
+                            'md:max-lg:w-[90%] md:max-lg:h-110 md:max-lg:top-30',
+                            'max-md:h-full max-md:w-full',
+                        )}
+                    >
                         <img
                             src="/so1.webp"
                             alt="support-img"
-                            className="object-cover"
+                            className="object-cover w-full h-full"
                         />
                     </div>
-                    <div className="w-60 h-40 rounded-[20px] bg-[#03d36c] flex flex-col pl-8 pt-8 absolute top-85 left-100 shadow-2xl">
+                    <div
+                        className={cn(
+                            'rounded-[20px] bg-[#03d36c] flex flex-col pl-8 pt-8 absolute shadow-2xl',
+                            'min-[1200px]:w-70 min-[1200px]:h-45 min-[1200px]:left-80 min-[1200px]:top-100',
+                            'lg:max-[1199px]:w-60 lg:max-[1199px]:h-42 lg:max-[1199px]:left-60 lg:max-[1199px]:top-90',
+                            'md:max-lg:top-110 md:max-lg:left-63 md:max-lg:w-60 md:max-lg:h-40',
+                            'max-md:w-40 max-md:-bottom-10 max-md:right-0 max-md:pl-3 max-md:pt-5 max-md:h-23',
+                        )}
+                    >
                         <img
                             src="/x-logo.png"
                             alt="xtool-logo"
-                            className="w-9"
+                            className="w-9 max-md:w-5"
                         />
-                        <div className="text-white font-semibold text-[30px] italic mt-2">
+                        <div
+                            className={cn(
+                                'text-white font-semibold text-[30px] italic mt-2',
+                                'max-md:text-[20px] max-md:mt-1',
+                            )}
+                        >
                             PRO
                         </div>
-                        <div className="text-white tracking-wider text-[13px]">
+                        <div className="text-white tracking-wider text-[13px] max-md:text-[10px]">
                             PROFESSIONAL SUPPORT
                         </div>
                     </div>
                 </div>
-                <div className="flex-1 flex flex-col gap-3">
-                    <div className="mr-auto px-4 py-1 bg-[#e4e9ee] text-[#002b5b] text-[13px] tracking-wider font-semibold rounded-lg border border-[#002a5b56]">
+                <div
+                    className={cn(
+                        'flex flex-col',
+                        'md:gap-3',
+                        'max-md:gap-2 max-md:px-3 max-md:w-full',
+                    )}
+                >
+                    <div
+                        className={cn(
+                            'mr-auto px-4 py-1 bg-[#e4e9ee] text-[#002b5b] text-[13px] tracking-wider font-semibold rounded-lg border border-[#002a5b56]',
+                        )}
+                    >
                         비즈니스 & 교육 전방위 지원
                     </div>
-                    <div className="text-[35px] font-semibold mt-4">
+                    <div
+                        className={cn(
+                            'font-semibold',
+                            'lg:text-[35px] lg:mt-4',
+                            'md:text-[28px] md:mt-1',
+                            'max-md:hidden',
+                        )}
+                    >
                         성공적인 도입과 운영을 위한
                         <br /> 전문적인 지원 시스템
                     </div>
-                    <div className="mt-3 text-[17px] text-font-gray-deep tracking-wider">
+                    <div className="hidden max-md:block font-semibold text-[18px]">
+                        성공적인 도입과 운영을 위한 전문적인 지원 시스템
+                    </div>
+                    <div
+                        className={cn(
+                            'text-font-gray-deep tracking-wider',
+                            'lg:text-[17px] lg:mt-3',
+                            'md:text-[14px] md:mt-1',
+                            'max-md:hidden',
+                        )}
+                    >
                         기업의 비즈니스 가치 창출과 교육기관의 학습 효과
                         극대화를 위해 <br /> xTool 전담 팀이 함께합니다.
                     </div>
-                    <div className="flex flex-col gap-5 mt-5 *:font-notokr">
+                    <div
+                        className={cn(
+                            'text-font-gray-deep tracking-wider text-[11px]',
+                            'hidden max-md:block',
+                        )}
+                    >
+                        기업의 비즈니스 가치 창출과 교육기관의 학습 효과
+                        극대화를 위해 xTool 전담 팀이 함께합니다.
+                    </div>
+                    <div
+                        className={cn(
+                            'flex flex-col *:font-notokr',
+                            'lg:mt-5 lg:gap-5',
+                            'md:mt-1 md:gap-2',
+                            'max-md:mt-[calc(50px+72vw)] max-md:gap-2',
+                        )}
+                    >
                         {gridItemConfig.map((list, idx) => (
-                            <div className="flex gap-5" key={idx}>
+                            <div
+                                className="flex lg:gap-5 md:gap-2 md:max-lg:flex-col max-md:flex-col max-md:gap-3"
+                                key={idx}
+                            >
                                 {list.map(({ title, description, icon }) => (
                                     <Item
                                         title={title}
