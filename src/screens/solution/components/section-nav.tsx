@@ -1,17 +1,22 @@
 import { cn } from '@/utils'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 interface ItemProps {
     label: string
-    selectedIdx: number
-    idx: number
+    activeSection: string
+    id: string
     onClick: () => void
 }
 
-const navConfig = ['비즈니스와 교육', '교육 솔루션', '지원 시스템', '문의하기']
+const navConfig = [
+    { id: 'business', label: '비즈니스와 교육' },
+    { id: 'solution', label: '교육 솔루션' },
+    { id: 'system', label: '지원 시스템' },
+    { id: 'contact', label: '문의하기' },
+]
 
-const Item = ({ label, selectedIdx, idx, onClick }: ItemProps) => {
-    const selected = selectedIdx === idx
+const Item = ({ label, activeSection, id, onClick }: ItemProps) => {
+    const selected = activeSection === id
     return (
         <div
             onClick={onClick}
@@ -39,18 +44,40 @@ const Item = ({ label, selectedIdx, idx, onClick }: ItemProps) => {
 }
 
 export const SectionNav = () => {
-    const [selectedIdx, setSelectedIdx] = useState(-1)
+    const [activeSection, setActiveSection] = useState('')
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) setActiveSection(entry.target.id)
+                })
+            },
+            { rootMargin: '-80px 0px 0px 0px', threshold: 0.3 },
+        )
+        navConfig.forEach((item) => {
+            const el = document.querySelector('#' + item.id)
+            if (el) observer.observe(el)
+        })
+        return () => {
+            observer.disconnect()
+        }
+    }, [])
 
     return (
-        <div className="sticky top-[70.5px] bg-black/50 w-full backdrop-blur-sm z-10">
+        <div className="sticky top-[70.5px] bg-black/50 w-full backdrop-blur-sm z-20">
             <div className="flex mx-auto justify-center gap-10">
-                {navConfig.map((label, idx) => (
+                {navConfig.map((item) => (
                     <Item
-                        label={label}
-                        selectedIdx={selectedIdx}
-                        idx={idx}
-                        key={label}
-                        onClick={() => setSelectedIdx(idx)}
+                        label={item.label}
+                        activeSection={activeSection}
+                        id={item.id}
+                        key={item.label}
+                        onClick={() => {
+                            const el = document.querySelector('#' + item.id)
+                            el?.scrollIntoView()
+                            setActiveSection(item.id)
+                        }}
                     />
                 ))}
             </div>

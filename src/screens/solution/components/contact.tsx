@@ -85,7 +85,7 @@ export const Contact = () => {
     const [publicInstitution, setPublicInstitution] = useState(false)
     const [partnership, setPartnership] = useState(false)
     return (
-        <div className="w-full bg-black">
+        <div className="w-full bg-black scroll-mt-28" id="contact">
             <div className="w-full max-w-350 mx-auto pt-20 pb-25">
                 <div className="text-center text-white text-[40px] font-semibold  tracking-wider ">
                     귀사의 비즈니스에 xTool을 더하세요

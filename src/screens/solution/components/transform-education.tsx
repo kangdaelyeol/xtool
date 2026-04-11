@@ -90,11 +90,13 @@ const PaginationDot = ({ count, sliderIdx, setSliderIdx }: PaginationProps) => {
                 val ? (
                     <div
                         onClick={() => setSliderIdx(idx)}
+                        key={idx}
                         className="flex justify-center cursor-pointer items-center rounded-[50%] bg-black w-2 h-2"
                     />
                 ) : (
                     <div
                         onClick={() => setSliderIdx(idx)}
+                        key={idx}
                         className="flex justify-center cursor-pointer items-center rounded-[50%] bg-gray-400 w-2 h-2"
                     />
                 ),

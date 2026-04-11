@@ -43,7 +43,7 @@ const Card = ({ title, description, image }: CardProps) => {
 
 export const Section1 = () => {
     return (
-        <div className="w-full pb-25 pt-10">
+        <div className="w-full pb-25 pt-10 scroll-mt-28" id="business">
             <div className="w-full max-w-350 mx-auto *:font-notokr">
                 <div className="text-center mt-10 text-[40px] font-semibold tracking-wider">
                     비즈니스와 교육의 경계를 허무는 기술
