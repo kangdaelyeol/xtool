@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ArrowLeftIcon, ArrowRightIcon } from '../icons'
 import { cn } from '@/utils'
 
@@ -55,8 +55,15 @@ const transformConfig = [
 
 const Card = ({ subject, title, description, image }: CardInfo) => {
     return (
-        <div className="flex flex-col rounded-[10px] overflow-hidden w-95 min-w-95 max-w-95 h-100 bg-education-white">
-            <div className="w-full h-50 flex justify-center items-center ">
+        <div
+            className={cn(
+                'flex flex-col rounded-[10px] overflow-hidden h-100 bg-education-white',
+                'lg:w-[33%] lg:min-w-[33%]',
+                'md:w-[49%] md:min-w-[49%]',
+                'max-md:w-[98%] max-md:min-w-[98%]',
+            )}
+        >
+            <div className="w-full h-50 flex justify-center items-center">
                 <img
                     src={image}
                     alt="transform-education"
@@ -116,7 +123,7 @@ const PaginationButton = ({
     }
 
     const goNext = () => {
-        if (sliderIdx >= 2) return
+        if (sliderIdx >= count - 1) return
         setSliderIdx((prev) => prev + 1)
     }
 
@@ -146,22 +153,68 @@ const PaginationButton = ({
 
 export const TransformEducation = () => {
     const [sliderIdx, setSliderIdx] = useState(0)
+    const [sliderCount, setSliderCount] = useState(3)
+
+    useEffect(() => {
+        const handleResize = () => {
+            setSliderIdx(0)
+            if (innerWidth >= 1024) return setSliderCount(3)
+            if (innerWidth >= 768) return setSliderCount(4)
+            return setSliderCount(5)
+        }
+        window.addEventListener('resize', handleResize)
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
+
+    const getSliderTransform = () => {
+        if (sliderCount === 3)
+            return `translateX(calc(-33%*${sliderIdx} + -20px*${sliderIdx}))`
+        else if (sliderCount === 4)
+            return `translateX(calc(-49%*${sliderIdx} + -20px*${sliderIdx}))`
+        else return `translateX(calc(-98%*${sliderIdx} + -20px*${sliderIdx}))`
+    }
+
+    const sliderTransform = getSliderTransform()
 
     return (
-        <div className="w-full pt-20 pb-20 overflow-hidden *:select-none">
-            <div className="max-w-350 mx-auto">
+        <div
+            className={cn(
+                'w-full overflow-hidden *:select-none',
+                'md:pt-20 md:pb-20',
+            )}
+        >
+            <div
+                className={cn(
+                    'mx-auto overflow-hidden',
+                    'lg:max-w-350 lg:px-5',
+                )}
+            >
                 {/* Title */}
-                <div className="text-center text-black/90 text-[40px] font-semibold font-notokr tracking-wider">
+                <div
+                    className={cn(
+                        'text-center text-black/90 font-semibold font-notokr tracking-wider break-keep',
+                        'lg:text-[40px] md:text-[40px] max-md:text-[26px]',
+                    )}
+                >
                     실습 프로젝트를 통한 교육 혁신
                 </div>
                 {/* Slider */}
-                <div className="mt-15 w-full flex flex-col px-10">
+                <div
+                    className={cn(
+                        'mt-15 w-full flex flex-col relative',
+                        'lg:-left-4',
+                        'md:px-2',
+                        'max-md:px-2 max-md:left-1',
+                    )}
+                >
                     <div
                         className={cn(
                             'flex gap-5 relative transition duration-300 ease',
                         )}
                         style={{
-                            transform: `translateX(-${sliderIdx * 400}px)`,
+                            transform: sliderTransform,
                         }}
                     >
                         {transformConfig.map((item) => (
@@ -170,14 +223,21 @@ export const TransformEducation = () => {
                     </div>
                 </div>
                 {/* Slider controller */}
-                <div className="mt-10 flex justify-between w-full px-5 items-center">
+                <div
+                    className={cn(
+                        'flex justify-between w-full items-center relative',
+                        'lg:mt-10 lg:-left-4',
+                        'md:mt-10 md:-left-3',
+                        'max-md:mt-3 max-md:-left-3',
+                    )}
+                >
                     <PaginationDot
-                        count={3}
+                        count={sliderCount}
                         setSliderIdx={setSliderIdx}
                         sliderIdx={sliderIdx}
                     />
                     <PaginationButton
-                        count={3}
+                        count={sliderCount}
                         setSliderIdx={setSliderIdx}
                         sliderIdx={sliderIdx}
                     />
