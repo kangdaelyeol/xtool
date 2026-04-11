@@ -40,8 +40,15 @@ interface CreationProps {
 
 const CreationNav = ({ videoIdx, setVideoIdx }: CreationProps) => {
     return (
-        <div className="mx-auto mt-5 flex justify-center">
-            <div className="flex gap-2 rounded-[200px] p-1 bg-gray-200 *:rounded-[200px] *:font-semibold *:px-6 *:py-4 *:whitespace-nowrap *:text-center *:text-[15px] *:font-notokr *:cursor-pointer *:select-none">
+        <div className="md:mx-auto mt-5 flex md:justify-center max-md:overflow-y-scroll">
+            <div
+                className={cn(
+                    'flex gap-2 rounded-[200px] p-1 bg-gray-200 *:rounded-[200px] *:font-semibold *:whitespace-nowrap *:text-center *:font-notokr *:cursor-pointer *:select-none',
+                    'lg:*:text-[15px] lg:*:px-6 lg:*:py-4',
+                    'md:*:text-[15px] md:*:px-5 md:*:py-3',
+                    'max-md:*:text-[15px] max-md:*:px-5 max-md:*:py-3',
+                )}
+            >
                 {creationConfig.map((item, idx) => (
                     <div
                         className={cn(
@@ -60,11 +67,14 @@ const CreationNav = ({ videoIdx, setVideoIdx }: CreationProps) => {
 
 const CreationVideo = ({ videoIdx }: { videoIdx: number }) => {
     return (
-        <div className="*:w-full *:absolute *:justify-center *:top-2 *:flex">
+        <div className="*:w-full *:absolute *:justify-center *:flex">
             {creationConfig.map((item, idx) => (
                 <div
                     key={item.label}
-                    className={cn(videoIdx === idx ? 'z-10' : 'z-0')}
+                    className={cn(
+                        videoIdx === idx ? 'z-10' : 'z-0',
+                        'lg:top-2 md:top-3 max-md:top-[calc(2%)]',
+                    )}
                 >
                     <video
                         src={item.src}
@@ -72,7 +82,7 @@ const CreationVideo = ({ videoIdx }: { videoIdx: number }) => {
                         playsInline
                         loop
                         muted
-                        className="w-[42%]"
+                        className="lg:w-[42%] md:w-[52%] max-md:w-[79%]"
                     />
                 </div>
             ))}
@@ -101,26 +111,53 @@ export const Creation = () => {
         })
     }, [])
     return (
-        <div className="w-full py-20 *:select-none">
+        <div className="w-full max-md:mt-20 lg:py-20 md:py-5 *:select-none">
             <div className="w-full max-w-350 mx-auto">
-                <div className="font-notokr text-[35px] font-bold text-center">
+                <div
+                    className={cn(
+                        'font-notokr font-bold text-center break-keep',
+                        'lg:text-[35px]',
+                        'md:text-[3vw]',
+                        'max-md:text-[23px]',
+                    )}
+                >
                     기계와 최첨단 소프트웨어의 결합으로 생명력을 불어넣는 창작물
                     탄생
                 </div>
                 <CreationNav videoIdx={videoIdx} setVideoIdx={setVideoIdx} />
-                <div className="text-center w-150 mx-auto mt-7 text-[14px] font-semibold text-font-gray break-keep">
+                <div
+                    className={cn(
+                        'text-center mx-auto mt-7 text-[14px] font-semibold text-font-gray break-keep',
+                        'lg:w-150',
+                        'md:w-150',
+                        'max-md:h-25 max-md:px-3',
+                    )}
+                >
                     {creationConfig[videoIdx].description}
                 </div>
             </div>
-            <div className="w-full h-130 relative mt-10">
+            <div className="w-full lg:h-130 md:h-130 max-md:h-[calc(70vw)] relative md:mt-10">
                 <CreationVideo videoIdx={videoIdx} />
-                <div className="absolute top-0 left-0 w-full">
+                <div className="absolute top-0 left-0 w-full hidden lg:block z-20">
                     <img
                         src="/creation/creation-1920.png"
                         className="w-full object-contain"
                     />
                 </div>
+                <div className="absolute top-0 left-0 w-full hidden md:max-lg:block z-20">
+                    <img
+                        src="/creation/creation-1024.webp"
+                        className="w-full object-contain"
+                    />
+                </div>
+                <div className="absolute top-0 left-0 w-full hidden max-md:block z-20">
+                    <img
+                        src="/creation/creation-768.webp"
+                        className="w-full object-contain"
+                    />
+                </div>
             </div>
+            <div className="hidden max-md:block w-full h-[calc(35vw)] bg-[url(/creation/creation-bottom-768.webp)] bg-size-[auto_35vw] bg-center bg-no-repeat" />
         </div>
     )
 }
