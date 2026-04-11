@@ -136,7 +136,7 @@ export const Creation = () => {
                     {creationConfig[videoIdx].description}
                 </div>
             </div>
-            <div className="w-full lg:h-130 md:h-130 max-md:h-[calc(70vw)] relative md:mt-10">
+            <div className="w-full lg:h-110 md:h-110 max-md:h-[calc(70vw)] relative md:mt-10">
                 <CreationVideo videoIdx={videoIdx} />
                 <div className="absolute top-0 left-0 w-full hidden lg:block z-20">
                     <img

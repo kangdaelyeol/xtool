@@ -10,9 +10,10 @@ export const Hero = () => {
     return (
         <div
             className={cn(
-                'relative w-full *:select-none h-150 bg-[#edf3fc]',
+                'relative w-full *:select-none bg-[#edf3fc]',
                 'lg:h-125',
                 'md:h-80',
+                'max-md:h-150',
             )}
         >
             <div
@@ -20,13 +21,15 @@ export const Hero = () => {
                     'w-full h-full top-0 left-0 bg-no-repeat bg-[url(/hero/education-mobile.webp)] bg-size-[100%_auto] bg-[#edf3fc] bg-position-[0px_0px]',
                     'lg:max-w-300 lg:mx-auto lg:bg-size-[auto_500px] lg:bg-position-[-700px_0px] lg:bg-[url(/hero/education-intro.webp)]',
                     'md:bg-size-[auto_320px] md:bg-position-[calc(35%-133px)_0px] md:bg-[url(/hero/education-intro.webp)]',
+                    'max-md:bg-position-[0px_-20px]',
                 )}
             />
             <div
                 className={cn(
-                    'mx-auto relative z-10 pt-[calc(15%-50px)] top-[-530px] left-[calc(4.9%+4px)]',
+                    'mx-auto relative z-10',
                     'lg:w-full lg:pt-0 min-[1200px]:left-[calc(50%-585px)] lg:max-[1199px]:left-[17px] lg:top-[-380px]',
                     'md:w-full md:pt-0 md:top-[-245px] md:max-lg:left-[calc(35%-250px)]',
+                    'max-md:top-[-530px] max-md:pt-[calc(15%-70px)] max-md:left-[calc(4.9%+4px)]',
                 )}
             >
                 <div

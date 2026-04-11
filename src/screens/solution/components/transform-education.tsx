@@ -162,6 +162,8 @@ export const TransformEducation = () => {
             if (innerWidth >= 768) return setSliderCount(4)
             return setSliderCount(5)
         }
+
+        handleResize()
         window.addEventListener('resize', handleResize)
         return () => {
             window.removeEventListener('resize', handleResize)
@@ -182,7 +184,8 @@ export const TransformEducation = () => {
         <div
             className={cn(
                 'w-full overflow-hidden *:select-none',
-                'md:pt-20 md:pb-20',
+                'md:py-20',
+                'max-md:py-10',
             )}
         >
             <div
