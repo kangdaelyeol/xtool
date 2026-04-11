@@ -24,28 +24,48 @@ export const Header = () => {
     return (
         <div
             className={cn(
-                'w-full sticky top-0 transition-all duration-250 z-50 bg-[#ffffff] py-[12px] *:select-none',
+                'w-full sticky top-0 transition-all duration-250 z-50 bg-[#ffffff] py-[5px] *:select-none',
+                'lg:py-[12px] md:py-[12px]',
                 scrolled && 'shadow-sm backdrop-blur-sm bg-[#ffffffc3]',
             )}
         >
             <div
                 className={cn(
-                    'max-w-300 m-auto w-full flex justify-between items-center py-1.5 px-10 transition-all duration-250',
-                    scrolled && 'py-1 px-8',
+                    'max-w-300 m-auto w-full flex justify-between items-center py-1.5 px-3 transition-all duration-250',
+                    'lg:px-10 md:px-10',
+                    scrolled && 'lg:py-1 lg:px-8 md:py-1 md:px-8',
+                    scrolled && 'px-1.5 py-1',
                 )}
             >
                 <div className="flex flex-col">
-                    <div className="flex items-center gap-1.75">
+                    <div
+                        className={cn(
+                            'flex items-center',
+                            'md:gap-1.75 lg:gap-1.75 gap-1',
+                        )}
+                    >
                         <img
                             src="/xtool-logo-text.png"
-                            className="h-3"
+                            className="lg:h-3 md:h-3 h-2"
                             alt="logo text"
                         />
-                        <span className="font-intertight font-semibold text-[17px] tracking-wider whitespace-nowrap">
+                        <span
+                            className={cn(
+                                'font-intertight font-semibold tracking-wider whitespace-nowrap',
+                                'lg:text-[17px] md:text-[17px] text-[13px]',
+                            )}
+                        >
                             Korea
                         </span>
                     </div>
-                    <div className="text-[12px] -mt-0.75 ml-px font-medium tracking-widest text-[#545f68] whitespace-nowrap">
+                    <div
+                        className={cn(
+                            'font-medium tracking-widest text-[#545f68] whitespace-nowrap',
+                            'text-[10px] ml-px -mt-0.5',
+                            'md:text-[12px] md:-mt-0.75 md:ml-px',
+                            'lg:text-[12px] lg:-mt-0.75 lg:ml-px',
+                        )}
+                    >
                         B2B SOLUTIONS
                     </div>
                 </div>
