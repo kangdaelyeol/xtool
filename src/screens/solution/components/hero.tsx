@@ -10,23 +10,23 @@ export const Hero = () => {
     return (
         <div
             className={cn(
-                'relative w-full *:select-none h-150',
+                'relative w-full *:select-none h-150 bg-[#edf3fc]',
                 'lg:h-125',
                 'md:h-80',
             )}
         >
             <div
                 className={cn(
-                    'absolute w-full h-full top-0 left-0 bg-no-repeat bg-[url(/hero/education-mobile.webp)] bg-size-[100%_auto] bg-[#edf3fc] bg-position-[0px_0px]',
-                    'lg:bg-size-[auto_500px] lg:bg-position-[-680px_0px] lg:bg-[url(/hero/education-intro.webp)]',
+                    'w-full h-full top-0 left-0 bg-no-repeat bg-[url(/hero/education-mobile.webp)] bg-size-[100%_auto] bg-[#edf3fc] bg-position-[0px_0px]',
+                    'lg:max-w-300 lg:mx-auto lg:bg-size-[auto_500px] lg:bg-position-[-700px_0px] lg:bg-[url(/hero/education-intro.webp)]',
                     'md:bg-size-[auto_320px] md:bg-position-[calc(35%-133px)_0px] md:bg-[url(/hero/education-intro.webp)]',
                 )}
             />
             <div
                 className={cn(
-                    'mx-auto relative z-10 pl-[calc(6%+3px)] pt-[calc(15%-50px)] top-[70px]',
-                    'lg:w-full lg:pt-0 lg:pl-9 lg:top-[130px]',
-                    'md:w-full md:pt-0 md:pl-[calc(35%-251px)] md:top-[85px]',
+                    'mx-auto relative z-10 pt-[calc(15%-50px)] top-[-530px] left-[calc(4.9%+4px)]',
+                    'lg:w-full lg:pt-0 min-[1200px]:left-[calc(50%-585px)] lg:max-[1199px]:left-[17px] lg:top-[-380px]',
+                    'md:w-full md:pt-0 md:top-[-245px] md:max-lg:left-[calc(35%-250px)]',
                 )}
             >
                 <div
