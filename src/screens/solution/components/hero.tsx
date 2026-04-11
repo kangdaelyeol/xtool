@@ -1,6 +1,11 @@
 import { ChevronDownIcon } from '@/screens/solution/icons'
 
 export const Hero = () => {
+    const handleContactClick = () => {
+        const contactSectionEl = document.querySelector('#contact')
+        contactSectionEl?.scrollIntoView()
+    }
+
     return (
         <div className="h-125 relative w-full *:select-none">
             <img
@@ -20,7 +25,10 @@ export const Hero = () => {
                         전문가 팀이 도입의 모든 과정을 함께합니다.
                     </div>
                     <div className="flex font-notokr *:cursor-pointer gap-5 mt-[20px]">
-                        <div className="flex gap-3 items-center bg-btn-dark text-[#ffffff] text-[15px] px-8 py-3.5 rounded-full hover:bg-btn-dark/85">
+                        <div
+                            className="flex gap-3 items-center bg-btn-dark text-[#ffffff] text-[15px] px-8 py-3.5 rounded-full hover:bg-btn-dark/85"
+                            onClick={handleContactClick}
+                        >
                             비즈니스 견적 상담
                             <ChevronDownIcon size={17} color="#ffffff" />
                         </div>

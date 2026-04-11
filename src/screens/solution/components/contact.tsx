@@ -86,11 +86,11 @@ export const Contact = () => {
     const [partnership, setPartnership] = useState(false)
     return (
         <div
-            className="w-full bg-black scroll-mt-28 *:select-none"
+            className="w-full bg-black scroll-mt-18 *:select-none"
             id="contact"
         >
             <div className="w-full max-w-350 mx-auto pt-20 pb-25">
-                <div className="text-center text-white text-[40px] font-semibold  tracking-wider ">
+                <div className="text-center text-white text-[40px] font-semibold tracking-wider">
                     귀사의 비즈니스에 xTool을 더하세요
                 </div>
                 <div className="text-center mt-5 tracking-wide text-[15px] text-gray-400">
