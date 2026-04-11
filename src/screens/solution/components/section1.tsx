@@ -32,9 +32,9 @@ const Card = ({ title, description, image }: CardProps) => {
         <div
             className={cn(
                 'bg-education-white rounded-[20px] flex flex-col overflow-hidden',
-                'lg:w-[32%] lg:h-125 lg:mt-0',
-                'md:w-[32%] md:h-110 md:mt-0',
-                'w-[90%] mx-auto mt-10',
+                'lg:w-[32%] lg:h-125',
+                'md:w-[32%] md:h-110',
+                'max-md:w-[95%] max-md:mx-auto max-md:mt-10',
             )}
         >
             <div className="h-90 lg:h-70 md:h-60 flex justify-center items-center">
@@ -71,7 +71,7 @@ export const Section1 = () => {
         <div
             className={cn(
                 'w-full pb-25 pt-10 *:select-none',
-                'lg:scroll-mt-28 md:scroll-mt-28 scroll-mt-20',
+                'lg:scroll-mt-28 md:scroll-mt-28 max-md:scroll-mt-20',
             )}
             id="business"
         >
@@ -87,7 +87,7 @@ export const Section1 = () => {
                         'text-center font-semibold tracking-wider break-keep',
                         'lg:mt-10 lg:text-[40px]',
                         'md:mt-10 md:text-[34px]',
-                        'text-[20px]',
+                        'max-md:text-[20px]',
                     )}
                 >
                     비즈니스와 교육의 경계를 허무는 기술
@@ -95,7 +95,8 @@ export const Section1 = () => {
                 <div
                     className={cn(
                         'text-center mt-2 text-font-gray-deep tracking-wider break-keep',
-                        'lg:text-[17px] md:text-[17px] text-[14px] px-3',
+                        'lg:text-[17px] md:text-[17px]',
+                        'max-md:text-[14px] max-md:px-3',
                     )}
                 >
                     xTool은 기업의 생산성 향상과 교육 현장의 창의적 변화를 위해

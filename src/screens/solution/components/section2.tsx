@@ -49,24 +49,38 @@ const ListItem = ({
     return (
         <div
             className={cn(
-                'flex justify-between items-center cursor-pointer rounded-[10px] px-5 py-5',
+                'flex justify-between items-center cursor-pointer rounded-[10px]',
+                'lg:px-5 lg:py-5',
+                'md:px-5 md:py-5',
+                'py-2 px-2',
                 !selected && 'bg-white',
             )}
             onClick={onClick}
         >
-            <div className="flex-flex-col">
-                <div className="font-semibold text-[17px]">{title}</div>
+            <div className="flex flex-col">
+                <div className="font-semibold lg:text-[20px] md:text-[20px] max-md:text-[17px]">
+                    {title}
+                </div>
                 {selected && (
-                    <div className="break-keep mt-2 font-medium text-font-gray-deep text-[13px] pr-30 leading-6">
+                    <div
+                        className={cn(
+                            'break-keep mt-2 font-medium text-font-gray-deep',
+                            'lg:text-[13px] lg:pr-5 lg:leading-6',
+                            'md:text-[13px] md:pr-3 md:leading-6',
+                            'text-[12px] pr-2 leading-5',
+                        )}
+                    >
                         {description}
                     </div>
                 )}
             </div>
-            {selected ? (
-                <ChevronUpIcon size={25} color={'#000000'} />
-            ) : (
-                <ChevronDownIcon size={25} color={'#000000'} />
-            )}
+            <div className="w-4.25">
+                {selected ? (
+                    <ChevronUpIcon size={25} color={'#000000'} />
+                ) : (
+                    <ChevronDownIcon size={25} color={'#000000'} />
+                )}
+            </div>
         </div>
     )
 }
@@ -84,41 +98,82 @@ export const Section2 = () => {
 
     return (
         <div
-            className="w-full bg-bg-ivory pt-19 pb-25 scroll-mt-28 border-t border-t-gray-200 *:select-none"
+            className={cn(
+                'w-full bg-bg-ivory border-t border-t-gray-200 *:select-none',
+                'lg:scroll-mt-28 lg:pt-19 lg:pb-25',
+                'md:scroll-mt-28 md:pt-19 md:pb-25',
+                'scroll-mt-20 pt-10 pb-13',
+            )}
             id="solution"
         >
-            <div className="w-full max-w-350 mx-auto *:font-notokr">
-                <div className="text-center text-[40px] font-semibold tracking-wider">
+            <div className={cn('w-full mx-auto *:font-notokr', 'lg:max-w-350')}>
+                <div
+                    className={cn(
+                        'text-center font-semibold tracking-wider break-keep',
+                        'lg:text-[40px] md:text-[40px] text-[26px]',
+                    )}
+                >
                     최적화된 산업 및 교육 솔루션
                 </div>
-                <div className="text-center mt-2 text-font-gray-deep text-[16px] tracking-wider">
+                <div
+                    className={cn(
+                        'text-center mt-2 text-font-gray-deep tracking-wider break-keep',
+                        'lg:text-[16px] md:text-[16px]',
+                        'max-md:text-[14px] max-md:px-2',
+                    )}
+                >
                     xTool의 레이저 솔루션은 비즈니스 환경과 교육 현장 모두에서
                     그 가치를 증명하고 있습니다.
                 </div>
-                <div className="flex mt-10 mx-auto w-285 h-148 rounded-[15px] overflow-hidden">
-                    <div className="w-140 relative">
-                        {listItemConfig.map((item, idx) => (
-                            <img
-                                src={item.image}
-                                key={item.image}
-                                className={cn(
-                                    'object-cover w-full h-full absolute',
-                                    idx === selectedIdx && 'z-10',
-                                )}
-                            />
-                        ))}
-                    </div>
-                    <div className="flex flex-col gap-3 flex-1 bg-[#eff0f1] px-8 pt-8">
-                        {listItemConfig.map(({ title, description }, idx) => (
-                            <ListItem
-                                title={title}
-                                description={description}
-                                key={title}
-                                idx={idx}
-                                selectedIdx={selectedIdx}
-                                onClick={() => setSelectedIdx(idx)}
-                            />
-                        ))}
+                <div className="mt-10 lg:px-5 md:px-5 px-1.5">
+                    <div
+                        className={cn(
+                            'flex rounded-[15px] overflow-hidden',
+                            'lg:w-full lg:h-148 lg:flex-row',
+                            'md:flex-col md:max-lg:h-auto',
+                            'max-md:flex-col max-md:h-auto',
+                        )}
+                    >
+                        <div
+                            className={cn(
+                                'relative',
+                                'lg:w-140',
+                                'md:max-lg:w-full md:max-lg:h-150',
+                                'max-md:h-70',
+                            )}
+                        >
+                            {listItemConfig.map((item, idx) => (
+                                <img
+                                    src={item.image}
+                                    key={item.image}
+                                    className={cn(
+                                        'object-cover w-full h-full absolute',
+                                        idx === selectedIdx && 'z-10',
+                                    )}
+                                />
+                            ))}
+                        </div>
+                        <div
+                            className={cn(
+                                'flex flex-col gap-3 flex-1 bg-[#eff0f1]',
+                                'lg:px-8 lg:pt-8',
+                                'md:px-8 md:pt-8 md:pb-10',
+                                'max-md:px-2 max-md:pt-3 max-md:pb-7',
+                            )}
+                        >
+                            {listItemConfig.map(
+                                ({ title, description }, idx) => (
+                                    <ListItem
+                                        title={title}
+                                        description={description}
+                                        key={title}
+                                        idx={idx}
+                                        selectedIdx={selectedIdx}
+                                        onClick={() => setSelectedIdx(idx)}
+                                    />
+                                ),
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
