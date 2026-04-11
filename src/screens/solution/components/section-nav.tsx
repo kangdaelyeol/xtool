@@ -21,12 +21,14 @@ const Item = ({ label, activeSection, id, onClick }: ItemProps) => {
         <div
             onClick={onClick}
             className={cn(
-                'flex flex-col items-center cursor-pointer text-[#ffffffb1] text-[14px] *:font-notokr',
+                'flex flex-col items-center cursor-pointer text-[#ffffffb1] *:font-notokr whitespace-nowrap',
+                'text-[12px] md:text-[14px] lg:text-[14px]',
             )}
         >
             <div
                 className={cn(
-                    'px-5 py-2.5',
+                    'px-2 py-2',
+                    'md:px-5 md:py-2.5 lg:px-5 lg:py-2.5',
                     selected && 'text-[#ffffff] font-semibold',
                 )}
             >
@@ -65,8 +67,18 @@ export const SectionNav = () => {
     }, [])
 
     return (
-        <div className="sticky top-[70.5px] bg-black/50 w-full backdrop-blur-sm z-20 *:select-none">
-            <div className="flex mx-auto justify-center gap-10">
+        <div
+            className={cn(
+                'sticky bg-black/50 w-full backdrop-blur-sm z-20 *:select-none',
+                'top-13.75 md:top-[70.5px] lg:top-[70.5px]',
+            )}
+        >
+            <div
+                className={cn(
+                    'flex mx-auto justify-center',
+                    'gap-3 md:gap-10 lg:gap-10',
+                )}
+            >
                 {navConfig.map((item) => (
                     <Item
                         label={item.label}
