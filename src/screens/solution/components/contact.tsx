@@ -2,6 +2,7 @@ import { cn, formatPhone } from '@/utils'
 
 import { CheckIcon, CircleIcon } from '../icons'
 import { useContact } from '@/controller/solution'
+import { Loading } from './loading'
 
 interface InputProps {
     className?: React.HTMLAttributes<HTMLElement>['className']
@@ -252,6 +253,13 @@ export const Contact = () => {
                     </div>
                 </div>
             </div>
+            {/* Loading Modal */}
+            {state.modalActive && (
+                <Loading
+                    loading={state.loading}
+                    hideModal={handlers.hideModal}
+                />
+            )}
         </div>
     )
 }

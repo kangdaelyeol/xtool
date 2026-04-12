@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 
+const GAS_URL =
+    'https://script.google.com/macros/s/AKfycbyuK6s8pmGAmJvd9azL1qlY9Y0F70YOGXcDGU4P0hmYfwx1bk1xzZIH9lNiMwlcyNmKfg/exec'
+
 interface InquiryTypes {
     enterprise: boolean
     education: boolean
@@ -18,8 +21,13 @@ interface UseContactValues {
     handlers: {
         toggleInquiryType: (key: keyof InquiryTypes) => void
         submitClick: () => Promise<void>
+        hideModal: () => void
     }
-    state: { inquiryTypes: InquiryTypes; loading: boolean }
+    state: {
+        inquiryTypes: InquiryTypes
+        loading: boolean
+        modalActive: boolean
+    }
 }
 
 export const useContact = (): UseContactValues => {
@@ -29,6 +37,20 @@ export const useContact = (): UseContactValues => {
     const emailRef = useRef<HTMLInputElement>(null)
     const contentRef = useRef<HTMLTextAreaElement>(null)
     const [ip, setIp] = useState('')
+    const [loading, setLoading] = useState(false)
+    const [modalActive, setModalActive] = useState(false)
+    const [inquiryTypes, setInquiryTypes] = useState({
+        enterprise: false,
+        education: false,
+        publicInstitution: false,
+        partnership: false,
+    })
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false)
+        }, 1000)
+    }, [])
 
     useEffect(() => {
         ;(async () => {
@@ -37,23 +59,34 @@ export const useContact = (): UseContactValues => {
                 .catch(() => '')
             setIp(ip)
         })()
+        setTimeout(() => {
+            fetch(GAS_URL, {
+                method: 'GET',
+                mode: 'no-cors',
+                cache: 'no-cache',
+            })
+        }, 1000)
     }, [])
 
-    const [loading, setLoading] = useState(false)
-    const [inquiryTypes, setInquiryTypes] = useState({
-        enterprise: false,
-        education: false,
-        publicInstitution: false,
-        partnership: false,
-    })
+    useEffect(() => {
+        if (modalActive) document.body.style.overflow = 'hidden'
+        else document.body.style.overflow = ''
+        return () => {
+            document.body.style.overflow = ''
+        }
+    }, [modalActive])
 
     const handlers = {
+        hideModal: () => {
+            setModalActive(false)
+        },
         toggleInquiryType: (key: keyof InquiryTypes) => {
             setInquiryTypes((prev) => ({ ...prev, [key]: !prev[key] }))
         },
         submitClick: async () => {
             if (loading) return
             setLoading(true)
+            setModalActive(true)
             const companyName = companyNameRef.current?.value.trim()
             const username = userNameRef.current?.value.trim()
             const phone = phoneRef.current?.value.trim()
@@ -62,23 +95,25 @@ export const useContact = (): UseContactValues => {
 
             if (!companyName || !username || !phone || !email) {
                 alert('필수 사항을 입력해주세요.')
+                setModalActive(false)
                 return setLoading(false)
             }
             if (Object.values(inquiryTypes).every((v) => v === false)) {
                 alert('문의 유형을 선택해주세요.')
+                setModalActive(false)
                 return setLoading(false)
             }
 
             if (phone.replace(/[^0-9]/g, '').length !== 11) {
                 alert('연락처를 확인해주세요.')
+                setModalActive(false)
                 return setLoading(false)
             }
             if (!/^[^\s@]+@[^\s@]+.[^\s@]$/g.test(email)) {
                 alert('이메일 주소를 확인해주세요.')
+                setModalActive(false)
                 return setLoading(false)
             }
-
-            console.log(companyName, username, phone, content)
 
             const inquiryArr = []
             if (inquiryTypes.enterprise)
@@ -101,20 +136,16 @@ export const useContact = (): UseContactValues => {
             })
 
             try {
-                const res = await fetch(
-                    'https://script.google.com/macros/s/AKfycbyuK6s8pmGAmJvd9azL1qlY9Y0F70YOGXcDGU4P0hmYfwx1bk1xzZIH9lNiMwlcyNmKfg/exec',
-                    {
-                        method: 'POST',
-                        body,
-                    },
-                )
-                if (res.ok) {
-                    alert('신청이 완료되었습니다.')
-                } else {
+                const res = await fetch(GAS_URL, {
+                    method: 'POST',
+                    body,
+                })
+                if (!res.ok) {
                     alert(
                         '네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.',
                     )
                     console.log(res)
+                    setModalActive(false)
                 }
                 setLoading(false)
             } catch (e) {
@@ -123,6 +154,7 @@ export const useContact = (): UseContactValues => {
                     '네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.',
                 )
                 setLoading(false)
+                setModalActive(false)
             }
         },
     }
@@ -130,6 +162,6 @@ export const useContact = (): UseContactValues => {
     return {
         refs: { contentRef, companyNameRef, userNameRef, phoneRef, emailRef },
         handlers,
-        state: { inquiryTypes, loading },
+        state: { inquiryTypes, loading, modalActive },
     }
 }

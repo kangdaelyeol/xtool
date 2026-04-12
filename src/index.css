@@ -19,4 +19,47 @@
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-gray-700: oklch(37.3% 0.034 259.733);
+
+    --animate-circle-draw: circle-draw 0.5s ease-out 0.3s both;
+    --animate-check-draw: check-draw 0.35s ease-out 0.7s both;
+    --animate-fade-out-text: fade-out-text 0.3s ease-out both;
+    --animate-fade-in-text: fade-in-text 0.5s ease-out 0.7s both;
+
+    @keyframes circle-draw {
+        0% {
+            stroke-dashoffset: 157;
+        }
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    @keyframes check-draw {
+        0% {
+            stroke-dashoffset: 36;
+        }
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    @keyframes fade-out-text {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            display: none;
+        }
+    }
+    @keyframes fade-in-text {
+        0% {
+            opacity: 0;
+            display: flex;
+        }
+        100% {
+            opacity: 1;
+            display: flex;
+        }
+    }
 }
