@@ -106,7 +106,7 @@ const Item = ({ icon, title, description }: Props) => {
                     <ItemIcon icon={icon} />
                     <div className="font-semibold text-[14px]">{title}</div>
                 </div>
-                <div className="text-[12px] mt-0.5 text-font-gray tracking-wide break-keep">
+                <div className="text-[11px] mt-1 text-font-gray tracking-wide break-keep">
                     {description}
                 </div>
             </div>
@@ -157,11 +157,12 @@ export const Section3 = () => {
                     </div>
                     <div
                         className={cn(
-                            'rounded-[20px] bg-[#03d36c] flex flex-col pl-8 pt-8 absolute shadow-2xl',
+                            'rounded-[20px] bg-[#03d36c] flex flex-col absolute shadow-2xl',
                             'min-[1200px]:w-70 min-[1200px]:h-45 min-[1200px]:left-80 min-[1200px]:top-100',
                             'lg:max-[1200px]:w-60 lg:max-[1200px]:h-42 lg:max-[1200px]:left-60 lg:max-[1200px]:top-90',
                             'md:max-lg:top-110 md:max-lg:left-63 md:max-lg:w-60 md:max-lg:h-40',
-                            'max-md:w-40 max-md:-bottom-10 max-md:right-0 max-md:pl-3 max-md:pt-5 max-md:h-23',
+                            'md:pl-8 md:pt-8',
+                            'max-md:w-40 max-md:-bottom-10 max-md:right-0 max-md:pl-3 max-md:pt-4 max-md:h-23',
                         )}
                     >
                         <img
@@ -171,13 +172,13 @@ export const Section3 = () => {
                         />
                         <div
                             className={cn(
-                                'text-white font-semibold text-[30px] italic mt-2',
+                                'text-white font-semibold text-[30px] italic md:mt-2',
                                 'max-md:text-[20px] max-md:mt-1',
                             )}
                         >
                             PRO
                         </div>
-                        <div className="text-white tracking-wider text-[13px] max-md:text-[10px]">
+                        <div className="text-white md:tracking-wider md:text-[13px] max-md:tracking-wide max-md:text-[10px]">
                             PROFESSIONAL SUPPORT
                         </div>
                     </div>

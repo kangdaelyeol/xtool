@@ -23,7 +23,7 @@ const Input = ({
 }: InputProps) => {
     return (
         <div className={cn('flex flex-col gap-1', className)}>
-            <div className="font-semibold text-[15px]">
+            <div className="font-semibold md:text-[15px] max-md:text-[13px]">
                 {title} {required && <span className="text-red-600">*</span>}
             </div>
             <input
@@ -91,14 +91,21 @@ export const Contact = () => {
         >
             <div
                 className={cn(
-                    'w-full mx-auto pt-20 pb-25',
+                    'w-full mx-auto pb-25',
                     'lg:max-w-280 lg:px-5',
+                    'md:pt-20 max-md:pt-10',
                 )}
             >
-                <div className="text-center text-white text-[40px] font-semibold tracking-wider max-md:text-[20px]">
+                <div className="text-center text-white md:text-[40px] font-semibold tracking-wider max-md:text-[20px]">
                     귀사의 비즈니스에 xTool을 더하세요
                 </div>
-                <div className="text-center mt-5 tracking-wide text-[15px] text-gray-400 max-md:text-[15px] max-md:px-4 break-keep">
+                <div
+                    className={cn(
+                        'text-center tracking-wide text-gray-400 break-keep',
+                        'md:text-[15px] md:mt-5',
+                        'max-md:mt-3 max-md:text-[13px] max-md:px-4',
+                    )}
+                >
                     기관의 예산과 운영 목적, 기업의 생산 공정에 가장 적합한
                     모델을 제안해 드립니다.
                 </div>
@@ -178,14 +185,14 @@ export const Contact = () => {
                         </div>
                         {/* Inquiry type - 문의 유형*/}
                         <div className="md:mt-8 max-md:mt-3">
-                            <div className="font-semibold text-[15px]">
+                            <div className="font-semibold md:text-[15px] max-md:text-[13px]">
                                 문의 유형{' '}
                                 <span className="text-red-600">*</span>
                             </div>
-                            <div className="text-font-gray-deep text-[13px]">
+                            <div className="text-font-gray-deep md:text-[13px] max-md:text-[11px]">
                                 다중선택 가능
                             </div>
-                            <div className="flex lg:flex-row md:flex-col max-md:flex-col gap-2 mt-2">
+                            <div className="flex lg:flex-row md:flex-col max-md:flex-col gap-2 md:mt-2 max-md:mt-1">
                                 <SelectItem
                                     label="기업 도입 (R&D, 브랜딩, 생산)"
                                     selected={enterprise}
@@ -215,11 +222,11 @@ export const Contact = () => {
                         </div>
                         {/* Detail - 상세 내용 */}
                         <div className="md:mt-8 max-md:mt-3">
-                            <div className="font-semibold text-[15px]">
+                            <div className="font-semibold md:text-[15px] max-md:text-[13px]">
                                 상세 내용
                             </div>
                             <textarea
-                                className="border border-border-gray rounded-[10px] md:placeholder:text-[15px] max-md:placeholder:text-[12px] max-h-30 min-h-30 text-[15px] resize-none mt-2 p-2 w-full"
+                                className="border border-border-gray rounded-[10px] md:placeholder:text-[15px] max-md:placeholder:text-[12px] max-h-30 min-h-30 text-[15px] resize-none md:mt-2 max-md:mt-1 p-2 w-full"
                                 placeholder="도입 목적, 예상 수량, 필요한 지원 서비스 등을 적어주세요"
                             ></textarea>
                         </div>
