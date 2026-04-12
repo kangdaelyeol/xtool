@@ -1,6 +1,7 @@
 import { cn, formatPhone } from '@/utils'
-import { useRef, useState } from 'react'
+
 import { CheckIcon, CircleIcon } from '../icons'
+import { useContact } from '@/controller/solution'
 
 interface InputProps {
     className?: React.HTMLAttributes<HTMLElement>['className']
@@ -10,6 +11,12 @@ interface InputProps {
     ref: React.RefObject<HTMLInputElement | null>
     title: string
     onChange?: React.HTMLAttributes<HTMLInputElement>['onChange']
+}
+
+interface SelectItemProps {
+    label: string
+    onClick: () => void
+    selected: boolean
 }
 
 const Input = ({
@@ -42,12 +49,6 @@ const Input = ({
     )
 }
 
-interface SelectItemProps {
-    label: string
-    onClick: () => void
-    selected: boolean
-}
-
 const SelectItem = ({ label, onClick, selected }: SelectItemProps) => {
     return (
         <div
@@ -76,14 +77,11 @@ const SelectItem = ({ label, onClick, selected }: SelectItemProps) => {
 }
 
 export const Contact = () => {
-    const companyNameRef = useRef<HTMLInputElement>(null)
-    const userNameRef = useRef<HTMLInputElement>(null)
-    const phoneRef = useRef<HTMLInputElement>(null)
-    const emailRef = useRef<HTMLInputElement>(null)
-    const [enterprise, setEnterprise] = useState(false)
-    const [education, setEducation] = useState(false)
-    const [publicInstitution, setPublicInstitution] = useState(false)
-    const [partnership, setPartnership] = useState(false)
+    const { refs, handlers, state } = useContact()
+    const { companyNameRef, userNameRef, phoneRef, emailRef, contentRef } = refs
+    const { enterprise, education, publicInstitution, partnership } =
+        state.inquiryTypes
+
     return (
         <div
             className="w-full bg-black scroll-mt-18 *:select-none"
@@ -196,13 +194,17 @@ export const Contact = () => {
                                 <SelectItem
                                     label="기업 도입 (R&D, 브랜딩, 생산)"
                                     selected={enterprise}
-                                    onClick={() => setEnterprise((v) => !v)}
+                                    onClick={() =>
+                                        handlers.toggleInquiryType('enterprise')
+                                    }
                                 />
 
                                 <SelectItem
                                     label="교육기관 도입 (학교, 대학교)"
                                     selected={education}
-                                    onClick={() => setEducation((v) => !v)}
+                                    onClick={() =>
+                                        handlers.toggleInquiryType('education')
+                                    }
                                 />
                             </div>
                             <div className="flex lg:flex-row md:flex-col max-md:flex-col gap-2 mt-2">
@@ -210,13 +212,19 @@ export const Contact = () => {
                                     label="공공기관 / 메이커스페이스 구축"
                                     selected={publicInstitution}
                                     onClick={() =>
-                                        setPublicInstitution((v) => !v)
+                                        handlers.toggleInquiryType(
+                                            'publicInstitution',
+                                        )
                                     }
                                 />
                                 <SelectItem
                                     label="기타 비즈니스 파트너십"
                                     selected={partnership}
-                                    onClick={() => setPartnership((v) => !v)}
+                                    onClick={() =>
+                                        handlers.toggleInquiryType(
+                                            'partnership',
+                                        )
+                                    }
                                 />
                             </div>
                         </div>
@@ -226,12 +234,14 @@ export const Contact = () => {
                                 상세 내용
                             </div>
                             <textarea
+                                ref={contentRef}
                                 className="border border-border-gray rounded-[10px] md:placeholder:text-[15px] max-md:placeholder:text-[12px] max-h-30 min-h-30 text-[15px] resize-none md:mt-2 max-md:mt-1 p-2 w-full"
                                 placeholder="도입 목적, 예상 수량, 필요한 지원 서비스 등을 적어주세요"
                             ></textarea>
                         </div>
                         {/* Submit - 제출 */}
                         <div
+                            onClick={handlers.submitClick}
                             className={cn(
                                 'mt-3 select-none w-full cursor-pointer bg-black text-white text-center font-notokr rounded-[9px] py-3.5',
                                 'hover:bg-gray-800',
