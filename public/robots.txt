@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://biz.xtool.co.kr/sitemap.xml
