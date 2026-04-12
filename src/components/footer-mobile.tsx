@@ -4,7 +4,7 @@ export const FooterMobile = () => {
     return (
         <div className="md:hidden max-md:block pb-5 w-full overflow-hidden flex flex-col *:break-keep *:select-none">
             <div className="mx-auto flex">
-                <div className="flex flex-col items-center border-r border-r-[#eeeeee] pt-10 w-[50%]">
+                <div className="flex flex-col items-center border-r border-r-[#eeeeee] py-5 w-[50%]">
                     <div className="text-[13px] font-medium tracking-wider">
                         CS CENTER
                     </div>
@@ -22,24 +22,24 @@ export const FooterMobile = () => {
                     </div>
                     <div
                         className={cn(
-                            'border bg-black cursor-pointer text-white w-37 text-center py-2 text-[13px] font-medium font-notokr tracking-wider mt-4 transition',
-                            'hover:bg-white hover:text-black ',
+                            'border bg-black rounded-[10px] cursor-pointer text-white w-37 text-center py-2 text-[13px] font-medium font-notokr tracking-wider mt-2',
+                            'hover:bg-gray-700',
                         )}
                     >
                         상품 Q&A 바로가기
                     </div>
                     <div
                         className={cn(
-                            'border bg-black cursor-pointer text-white w-37 text-center py-2 text-[13px] font-medium font-notokr tracking-wider mt-2 transition',
-                            'hover:bg-white hover:text-black ',
+                            'border bg-black rounded-[10px] cursor-pointer text-white w-37 text-center py-2 text-[13px] font-medium font-notokr tracking-wider mt-2',
+                            'hover:bg-gray-700',
                         )}
                     >
                         A/S·환불·교환 정책
                     </div>
                 </div>
-                <div className="flex flex-col pt-10 px-5 items-center w-[50%] *:text-center">
+                <div className="flex flex-col pt-8 px-5 items-center w-[50%] *:text-center">
                     <div className="font-semibold text-[14px]">BANK INFO</div>
-                    <div className="mt-2 text-[11px] tracking-wide text-font-gray-deep">
+                    <div className="mt-1 text-[11px] tracking-wider text-font-gray-deep">
                         기업 688-044727-04-014
                         <br />
                         예금주 : 주식회사 시안인터내셔널
@@ -47,7 +47,7 @@ export const FooterMobile = () => {
                     <div className="font-semibold mt-3 text-[13px]">
                         PURCHASE SAFETY SERVICE
                     </div>
-                    <div className="mt-2 text-[11px] tracking-wide text-font-gray-deep">
+                    <div className="mt-1 text-[11px] tracking-wider text-font-gray-deep">
                         고객님은 안전거래를 위해 현금 등으로 결제시 저희
                         쇼핑몰이 가입한 PG에스크로 구매안전서비스를 이용하실 수
                         있습니다.
@@ -60,7 +60,7 @@ export const FooterMobile = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col px-5 pt-10">
+            <div className="flex flex-col px-5 pt-10 border-t border-t-border-gray">
                 <div
                     className={cn(
                         'flex gap-3 *:text-[14px] *:transition *:cursor-pointer',
@@ -71,7 +71,7 @@ export const FooterMobile = () => {
                     <div>PRIVACY</div>
                     <div>GUIDE</div>
                 </div>
-                <div className="mt-3 text-font-gray-deep leading-5.5 text-[12px]">
+                <div className="mt-3 text-font-gray-deep leading-5.5 text-[12px] tracking-wide">
                     Company : 주식회사 시안인터내셔널 CEO : 오예은, 황정현
                     <br />
                     Business Registration : [2338112139],[530-36-00723]

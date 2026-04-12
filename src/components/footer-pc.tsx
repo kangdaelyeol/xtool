@@ -1,6 +1,12 @@
 import { cn } from '@/utils'
 
 export const FooterPc = () => {
+    const handleQnAClick = () => {
+        window.open(
+            'https://www.xtool.co.kr/board/product/list.html?board_no=6',
+            '_blank',
+        )
+    }
     return (
         <div className="pb-20 w-full overflow-hidden md:block max-md:hidden">
             <div className="w-full max-w-300 mx-auto flex justify-center *:break-keep">
@@ -21,17 +27,18 @@ export const FooterPc = () => {
                         주말 및 공휴일 휴무입니다.
                     </div>
                     <div
+                        onClick={handleQnAClick}
                         className={cn(
-                            'border bg-black cursor-pointer text-white w-48 text-center py-3 text-[15px] font-medium font-notokr tracking-wider mt-4 transition',
-                            'hover:bg-white hover:text-black ',
+                            'border bg-black cursor-pointer text-white w-48 text-center py-3 text-[15px] font-medium font-notokr tracking-wider mt-4 rounded-[10px]',
+                            'hover:bg-gray-700',
                         )}
                     >
                         상품 Q&A 바로가기
                     </div>
                     <div
                         className={cn(
-                            'border bg-black cursor-pointer text-white w-48 text-center py-3 text-[15px] font-medium font-notokr tracking-wider mt-2 transition',
-                            'hover:bg-white hover:text-black ',
+                            'border bg-black cursor-pointer text-white w-48 text-center py-3 text-[15px] font-medium font-notokr tracking-wider mt-2 rounded-[10px]',
+                            'hover:bg-gray-700',
                         )}
                     >
                         A/S·환불·교환 정책
@@ -48,7 +55,7 @@ export const FooterPc = () => {
                         <div>PRIVACY</div>
                         <div>GUIDE</div>
                     </div>
-                    <div className="mt-5 text-font-gray-deep leading-5.5 tracking-wide text-[12px]">
+                    <div className="mt-3 text-font-gray-deep leading-5.5 tracking-wide text-[12px]">
                         Company : 주식회사 시안인터내셔널 <br />
                         CEO : 오예은, 황정현
                         <br />
@@ -68,7 +75,7 @@ export const FooterPc = () => {
                 </div>
                 <div className="flex flex-col pt-10 w-[33%] px-5">
                     <div className="font-semibold">BANK INFO</div>
-                    <div className="mt-1.5 text-[12px] tracking-wide text-font-gray-deep">
+                    <div className="mt-1 text-[12px] tracking-wider text-font-gray-deep">
                         기업 688-044727-04-014
                         <br />
                         예금주 : 주식회사 시안인터내셔널
@@ -76,7 +83,7 @@ export const FooterPc = () => {
                     <div className="font-semibold mt-5">
                         PURCHASE SAFETY SERVICE
                     </div>
-                    <div className="mt-1.5 text-[12px] tracking-wide text-font-gray-deep">
+                    <div className="mt-1 text-[12px] tracking-wider text-font-gray-deep">
                         고객님은 안전거래를 위해 현금 등으로 결제시 저희
                         쇼핑몰이 가입한 PG에스크로 구매안전서비스를 이용하실 수
                         있습니다.
