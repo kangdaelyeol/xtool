@@ -57,10 +57,10 @@ const Card = ({ subject, title, description, image }: CardInfo) => {
     return (
         <div
             className={cn(
-                'flex flex-col rounded-[10px] overflow-hidden h-100 bg-education-white',
+                'flex flex-col rounded-[10px] overflow-hidden md:h-100 bg-education-white',
                 'lg:w-[33%] lg:min-w-[33%]',
                 'md:w-[49%] md:min-w-[49%]',
-                'max-md:w-[98%] max-md:min-w-[98%]',
+                'max-md:w-[98%] max-md:min-w-[98%] max-md:py-3',
             )}
         >
             <div className="w-full h-50 flex justify-center items-center">
@@ -70,14 +70,20 @@ const Card = ({ subject, title, description, image }: CardInfo) => {
                     className="object-cover w-full h-full"
                 />
             </div>
-            <div className="flex flex-col pt-7 px-6 *:font-notokr">
-                <div className="font-semibold text-[15px] text-black/85">
+            <div
+                className={cn(
+                    'flex flex-col *:font-notokr',
+                    'md:pt-7 md:px-6',
+                    'max-md:pt-5 max-md:px-5',
+                )}
+            >
+                <div className="font-semibold text-black/80 md:text-[15px] max-md:text-[13px]">
                     {subject}
                 </div>
-                <div className="font-bold text-[20px] mt-2 tracking-wide">
+                <div className="font-bold tracking-wide md:text-[20px] md:mt-2 max-md:text-[19px] max-md:mt-1">
                     {title}
                 </div>
-                <div className="text-[13px] mt-1 break-keep font-semibold text-font-gray-deep tracking-wide">
+                <div className="md:text-[13px] max-md:text-[12.5px] mt-1 break-keep font-semibold text-font-gray-deep tracking-wide">
                     {description}
                 </div>
             </div>

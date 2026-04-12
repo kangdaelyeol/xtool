@@ -27,7 +27,7 @@ export const Hero = () => {
             <div
                 className={cn(
                     'mx-auto relative z-10',
-                    'lg:w-full lg:pt-0 min-[1200px]:left-[calc(50%-585px)] lg:max-[1199px]:left-[17px] lg:top-[-380px]',
+                    'lg:w-full lg:pt-0 min-[1200px]:left-[calc(50%-585px)] lg:max-[1200px]:left-[17px] lg:top-[-380px]',
                     'md:w-full md:pt-0 md:top-[-245px] md:max-lg:left-[calc(35%-250px)]',
                     'max-md:top-[-530px] max-md:pt-[calc(15%-70px)] max-md:left-[calc(4.9%+4px)]',
                 )}

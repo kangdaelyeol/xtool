@@ -52,7 +52,7 @@ const ListItem = ({
                 'flex justify-between items-center cursor-pointer rounded-[10px]',
                 'lg:px-5 lg:py-5',
                 'md:px-5 md:py-5',
-                'py-2 px-2',
+                'max-md:py-3 max-md:px-5',
                 !selected && 'bg-white',
             )}
             onClick={onClick}
@@ -67,7 +67,7 @@ const ListItem = ({
                             'break-keep mt-2 font-medium text-font-gray-deep',
                             'lg:text-[13px] lg:pr-5 lg:leading-6',
                             'md:text-[13px] md:pr-3 md:leading-6',
-                            'text-[12px] pr-2 leading-5',
+                            'max-md:text-[12px] max-md:pr-2 max-md:leading-5',
                         )}
                     >
                         {description}

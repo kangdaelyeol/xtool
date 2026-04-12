@@ -40,13 +40,13 @@ interface CreationProps {
 
 const CreationNav = ({ videoIdx, setVideoIdx }: CreationProps) => {
     return (
-        <div className="md:mx-auto mt-5 flex md:justify-center max-md:overflow-y-scroll">
+        <div className="md:mx-auto mt-5 flex md:justify-center max-md:overflow-y-scroll max-md:px-3">
             <div
                 className={cn(
                     'flex gap-2 rounded-[200px] p-1 bg-gray-200 *:rounded-[200px] *:font-semibold *:whitespace-nowrap *:text-center *:font-notokr *:cursor-pointer *:select-none',
                     'lg:*:text-[15px] lg:*:px-6 lg:*:py-4',
                     'md:*:text-[15px] md:*:px-5 md:*:py-3',
-                    'max-md:*:text-[15px] max-md:*:px-5 max-md:*:py-3',
+                    'max-md:*:text-[13px] max-md:*:px-5 max-md:*:py-2.5',
                 )}
             >
                 {creationConfig.map((item, idx) => (
@@ -130,7 +130,7 @@ export const Creation = () => {
                         'text-center mx-auto mt-7 text-[14px] font-semibold text-font-gray break-keep',
                         'lg:w-150',
                         'md:w-150',
-                        'max-md:h-25 max-md:px-3',
+                        'max-md:h-25 max-md:px-4',
                     )}
                 >
                     {creationConfig[videoIdx].description}

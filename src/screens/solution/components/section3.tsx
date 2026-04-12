@@ -98,15 +98,15 @@ const Item = ({ icon, title, description }: Props) => {
             </div>
             <div
                 className={cn(
-                    'flex flex-col bg-education-white p-5 rounded-[10px]',
-                    'hidden max-md:block',
+                    'bg-education-white p-5 rounded-[10px]',
+                    'hidden max-md:flex flex-col',
                 )}
             >
                 <div className="flex gap-2 items-center">
                     <ItemIcon icon={icon} />
                     <div className="font-semibold text-[14px]">{title}</div>
                 </div>
-                <div className="text-[13px] text-font-gray tracking-wide break-keep">
+                <div className="text-[12px] mt-0.5 text-font-gray tracking-wide break-keep">
                     {description}
                 </div>
             </div>
@@ -118,10 +118,10 @@ export const Section3 = () => {
     return (
         <div
             className={cn(
-                'w-full pt-20 pb-25 border-t border-t-gray-200 *:select-none *:break-keep',
+                'w-full md:pt-20 pb-25 border-t border-t-gray-200 *:select-none *:break-keep',
                 'lg:scroll-mt-28',
                 'md:scroll-mt-28',
-                'max-md:scroll-mt-22',
+                'max-md:scroll-mt-22 max-md:pt-13',
             )}
             id="system"
         >
@@ -144,7 +144,7 @@ export const Section3 = () => {
                         className={cn(
                             'flex justify-center items-center overflow-hidden rounded-[30px] absolute shadow-2xl',
                             'min-[1200px]:w-140 min-[1200px]:h-100 min-[1200px]:top-40 min-[1200px]:left-0',
-                            'lg:max-[1199px]:w-110 lg:max-[1199px]:h-80 lg:max-[1199px]:top-40 lg:max-[1199px]:left-0',
+                            'lg:max-[1200px]:w-110 lg:max-[1200px]:h-80 lg:max-[1200px]:top-40 lg:max-[1200px]:left-0',
                             'md:max-lg:w-[90%] md:max-lg:h-110 md:max-lg:top-30',
                             'max-md:h-full max-md:w-full',
                         )}
@@ -159,7 +159,7 @@ export const Section3 = () => {
                         className={cn(
                             'rounded-[20px] bg-[#03d36c] flex flex-col pl-8 pt-8 absolute shadow-2xl',
                             'min-[1200px]:w-70 min-[1200px]:h-45 min-[1200px]:left-80 min-[1200px]:top-100',
-                            'lg:max-[1199px]:w-60 lg:max-[1199px]:h-42 lg:max-[1199px]:left-60 lg:max-[1199px]:top-90',
+                            'lg:max-[1200px]:w-60 lg:max-[1200px]:h-42 lg:max-[1200px]:left-60 lg:max-[1200px]:top-90',
                             'md:max-lg:top-110 md:max-lg:left-63 md:max-lg:w-60 md:max-lg:h-40',
                             'max-md:w-40 max-md:-bottom-10 max-md:right-0 max-md:pl-3 max-md:pt-5 max-md:h-23',
                         )}
@@ -186,12 +186,14 @@ export const Section3 = () => {
                     className={cn(
                         'flex flex-col',
                         'md:gap-3',
-                        'max-md:gap-2 max-md:px-3 max-md:w-full',
+                        'max-md:gap-2 max-md:px-5 max-md:w-full',
                     )}
                 >
                     <div
                         className={cn(
-                            'mr-auto px-4 py-1 bg-[#e4e9ee] text-[#002b5b] text-[13px] tracking-wider font-semibold rounded-lg border border-[#002a5b56]',
+                            'mr-auto bg-[#e4e9ee] text-[#002b5b] tracking-wider font-semibold rounded-lg border border-[#002a5b56]',
+                            'md:px-4 md:py-1 md:text-[13px]',
+                            'max-md:px-3 max-md:py-1 max-md:text-[12px]',
                         )}
                     >
                         비즈니스 & 교육 전방위 지원
@@ -207,7 +209,7 @@ export const Section3 = () => {
                         성공적인 도입과 운영을 위한
                         <br /> 전문적인 지원 시스템
                     </div>
-                    <div className="hidden max-md:block font-semibold text-[18px]">
+                    <div className="hidden max-md:block font-semibold text-[18px] mt-0.5">
                         성공적인 도입과 운영을 위한 전문적인 지원 시스템
                     </div>
                     <div
@@ -223,7 +225,7 @@ export const Section3 = () => {
                     </div>
                     <div
                         className={cn(
-                            'text-font-gray-deep tracking-wider text-[11px]',
+                            'text-font-gray-deep tracking-wider text-[11px] -mt-1',
                             'hidden max-md:block',
                         )}
                     >

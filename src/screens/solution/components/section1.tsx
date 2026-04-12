@@ -43,12 +43,12 @@ const Card = ({ title, description, image }: CardProps) => {
             <div
                 className={cn(
                     'flex flex-col *:break-keep',
-                    'lg:mt-8 lg:gap-2.5 lg:pb-0 lg:pl-7 lg:pr-15',
-                    'md:mt-4 md:gap-1.5 md:pb-0 md:pl-3 md:pr-5',
-                    'mt-3 gap-2 pl-4 pb-5 pr-20',
+                    'lg:mt-8 lg:gap-2.5 lg:pl-7 lg:pr-15',
+                    'md:mt-4 md:gap-1.5 md:pl-3 md:pr-5',
+                    'max-md:mt-3 max-md:gap-1 max-md:pl-4 max-md:pb-5 max-md:pr-5',
                 )}
             >
-                <div className="font-semibold lg:text-[20px] md:text-[15px] text-[17px]">
+                <div className="font-semibold lg:text-[20px] md:text-[15px] max-md:text-[17px]">
                     {title}
                 </div>
                 <div
@@ -56,7 +56,7 @@ const Card = ({ title, description, image }: CardProps) => {
                         'text-font-gray font-medium break-keep tracking-wider',
                         'lg:text-[13.5px] lg:leading-6',
                         'md:text-[12px] md:leading-5',
-                        'text-[13px] leading-6',
+                        'max-md:text-[12px] leading-5',
                     )}
                 >
                     {description}
@@ -96,7 +96,7 @@ export const Section1 = () => {
                     className={cn(
                         'text-center mt-2 text-font-gray-deep tracking-wider break-keep',
                         'lg:text-[17px] md:text-[17px]',
-                        'max-md:text-[14px] max-md:px-3',
+                        'max-md:text-[12px] max-md:px-5',
                     )}
                 >
                     xTool은 기업의 생산성 향상과 교육 현장의 창의적 변화를 위해
