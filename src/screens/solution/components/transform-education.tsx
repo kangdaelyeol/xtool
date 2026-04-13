@@ -162,11 +162,18 @@ export const TransformEducation = () => {
     const [sliderCount, setSliderCount] = useState(3)
 
     useEffect(() => {
+        let timer: number | null = null
+
         const handleResize = () => {
-            setSliderIdx(0)
-            if (innerWidth >= 1024) return setSliderCount(3)
-            if (innerWidth >= 768) return setSliderCount(4)
-            return setSliderCount(5)
+            if (timer) return
+            timer = setTimeout(() => {
+                console.log('resize')
+                timer = null
+                setSliderIdx(0)
+                if (innerWidth >= 1024) return setSliderCount(3)
+                if (innerWidth >= 768) return setSliderCount(4)
+                return setSliderCount(5)
+            }, 200)
         }
 
         handleResize()
