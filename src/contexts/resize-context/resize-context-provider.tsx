@@ -9,6 +9,7 @@ import { ResizeContext } from '.'
 export const ResizeContextProvider = ({ children }: PropsWithChildren) => {
     const [sliderIdx, setSliderIdx] = useState(0)
     const [sliderCount, setSliderCount] = useState(3)
+    const [iconSize, setIconSize] = useState(30)
 
     useEffect(() => {
         let timer: number | null = null
@@ -24,6 +25,10 @@ export const ResizeContextProvider = ({ children }: PropsWithChildren) => {
                     if (prev !== next) setSliderIdx(0)
                     return next
                 })
+                const iconSize =
+                    innerWidth >= 1024 ? 30 : innerWidth >= 768 ? 20 : 25
+
+                return setIconSize(iconSize)
             }, 200)
         }
 
@@ -73,7 +78,11 @@ export const ResizeContextProvider = ({ children }: PropsWithChildren) => {
 
     return (
         <ResizeContext.Provider
-            value={{ transformEducationHandlers, transformEducationStyle }}
+            value={{
+                transformEducationHandlers,
+                transformEducationStyle,
+                iconSize,
+            }}
         >
             {children}
         </ResizeContext.Provider>

@@ -1,6 +1,7 @@
-import { useEffect, useState, type JSX } from 'react'
+import { type JSX } from 'react'
 import { BusinessIcon, PresentationIcon, TruckIcon, WrenchIcon } from '../icons'
 import { cn } from '@/utils'
+import { useResizeContext } from '@/contexts'
 
 type Icon = 'business' | 'truck' | 'wrench' | 'presentation'
 
@@ -8,12 +9,10 @@ interface Props {
     icon: Icon
     title: string
     description: string
-    iconSize: number
 }
 
 interface ItemIconProps {
     icon: Icon
-    iconSize: number
 }
 
 interface GridItem {
@@ -27,8 +26,7 @@ const gridItemConfig = [
         {
             icon: 'business',
             title: '기업 전용 혜택',
-            description:
-                '대량 구매 할인, 기업 전용 유지보수 계약 및 서류 지원',
+            description: '대량 구매 할인, 기업 전용 유지보수 계약 및 서류 지원',
         },
         {
             icon: 'truck',
@@ -52,7 +50,8 @@ const gridItemConfig = [
     ],
 ] as GridItem[][]
 
-const ItemIcon = ({ icon, iconSize }: ItemIconProps): JSX.Element => {
+const ItemIcon = ({ icon }: ItemIconProps): JSX.Element => {
+    const { iconSize } = useResizeContext()
     switch (icon) {
         case 'business':
             return <BusinessIcon size={iconSize} color={'#000000'} />
@@ -65,7 +64,7 @@ const ItemIcon = ({ icon, iconSize }: ItemIconProps): JSX.Element => {
     }
 }
 
-const Item = ({ icon, title, description, iconSize }: Props) => {
+const Item = ({ icon, title, description }: Props) => {
     return (
         <>
             <div
@@ -76,7 +75,7 @@ const Item = ({ icon, title, description, iconSize }: Props) => {
                     'max-md:hidden',
                 )}
             >
-                <ItemIcon icon={icon} iconSize={iconSize} />
+                <ItemIcon icon={icon} />
                 <div className="font-semibold lg:text-[16px] md:text-[14px]">
                     {title}
                 </div>
@@ -91,7 +90,7 @@ const Item = ({ icon, title, description, iconSize }: Props) => {
                 )}
             >
                 <div className="flex gap-2 items-center">
-                    <ItemIcon icon={icon} iconSize={iconSize} />
+                    <ItemIcon icon={icon} />
                     <div className="font-semibold text-[14px]">{title}</div>
                 </div>
                 <div className="text-[11px] mt-1 text-font-gray tracking-wide break-keep">
@@ -103,27 +102,6 @@ const Item = ({ icon, title, description, iconSize }: Props) => {
 }
 
 export const Section3 = () => {
-    const [iconSize, setIconSize] = useState(30)
-    useEffect(() => {
-        let timer: number | null = null
-
-        const handleResize = () => {
-            if (timer) return
-            timer = setTimeout(() => {
-                timer = null
-                if (innerWidth >= 1024) return setIconSize(30)
-                if (innerWidth >= 768) return setIconSize(20)
-                return setIconSize(25)
-            }, 200)
-        }
-        handleResize()
-        window.addEventListener('resize', handleResize)
-        return () => {
-            window.removeEventListener('resize', handleResize)
-            if (timer) clearTimeout(timer)
-        }
-    }, [])
-
     return (
         <div
             className={cn(
@@ -261,7 +239,6 @@ export const Section3 = () => {
                                         description={description}
                                         icon={icon}
                                         key={title}
-                                        iconSize={iconSize}
                                     />
                                 ))}
                             </div>

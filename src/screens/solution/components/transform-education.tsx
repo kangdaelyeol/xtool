@@ -137,7 +137,9 @@ const PaginationButton = () => {
 }
 
 export const TransformEducation = () => {
-    const { transformEducationStyle } = useResizeContext()
+    const {
+        transformEducationStyle: { sliderTransform },
+    } = useResizeContext()
 
     return (
         <div
@@ -176,7 +178,7 @@ export const TransformEducation = () => {
                             'flex gap-5 relative transition duration-300 ease',
                         )}
                         style={{
-                            transform: transformEducationStyle.sliderTransform,
+                            transform: sliderTransform || '',
                         }}
                     >
                         {transformConfig.map((item) => (
