@@ -18,7 +18,7 @@ export const Hero = () => {
         >
             <div
                 className={cn(
-                    'w-full h-full top-0 left-0 bg-no-repeat bg-[url(/hero/education-mobile.webp)] bg-size-[100%_auto] bg-[#edf3fc] bg-position-[0px_0px]',
+                    'absolute inset-0 bg-no-repeat bg-[url(/hero/education-mobile.webp)] bg-size-[100%_auto] bg-[#edf3fc] bg-position-[0px_0px]',
                     'lg:max-w-300 lg:mx-auto lg:bg-size-[auto_500px] lg:bg-position-[-700px_0px] lg:bg-[url(/hero/education-intro.webp)]',
                     'md:bg-size-[auto_320px] md:bg-position-[calc(35%-133px)_0px] md:bg-[url(/hero/education-intro.webp)]',
                     'max-md:bg-position-[0px_-20px]',
@@ -27,9 +27,9 @@ export const Hero = () => {
             <div
                 className={cn(
                     'mx-auto relative z-10',
-                    'lg:w-full lg:pt-0 min-[1200px]:left-[calc(50%-585px)] lg:max-[1200px]:left-[17px] lg:top-[-380px]',
-                    'md:w-full md:pt-0 md:top-[-245px] md:max-lg:left-[calc(35%-250px)]',
-                    'max-md:top-[-530px] max-md:pt-[calc(15%-70px)] max-md:left-[calc(4.9%+4px)]',
+                    'lg:w-full lg:pt-0 min-[1200px]:left-[calc(50%-585px)] lg:max-[1200px]:left-[17px] lg:top-[120px]',
+                    'md:w-full md:pt-0 md:top-[80px] md:max-lg:left-[calc(35%-250px)]',
+                    'max-md:top-[80px] max-md:pt-[calc(15%-70px)] max-md:left-[calc(4.9%+4px)]',
                 )}
             >
                 <div
@@ -79,7 +79,7 @@ export const Hero = () => {
                         </div>
                         <div
                             className={cn(
-                                'text-font-gray text-[12px] rounded-full border border-font-gray] hover:bg-font-gray hover:text-[#ffffff] transition px-5 py-3 text-center',
+                                'text-font-gray text-[12px] rounded-full border border-font-gray hover:bg-font-gray hover:text-[#ffffff] transition px-5 py-3 text-center',
                                 'lg:text-[15px] lg:px-8 lg:py-3.5',
                                 'md:text-[13px] md:px-5 md:py-3',
                             )}
