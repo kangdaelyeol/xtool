@@ -24,16 +24,16 @@ export const FooterPc = () => {
                     </div>
                     <div
                         className={cn(
-                            '*:border *:bg-black *:select-none *:cursor-pointer *:text-white w-48 *:text-center *:py-3 *:text-[15px] *:font-medium *:font-notokr *:tracking-wider *:rounded-[10px]',
+                            '*:border *:bg-black *:block *:select-none *:cursor-pointer *:text-white w-48 *:text-center *:py-3 *:text-[15px] *:font-medium *:font-notokr *:tracking-wider *:rounded-[10px]',
                             '*:hover:bg-gray-700',
                         )}
                     >
-                        <div className="mt-4" onClick={handlers.qnaClick}>
+                        <a className="mt-4" onClick={handlers.qnaClick}>
                             상품 Q&A 바로가기
-                        </div>
-                        <div className="mt-2" onClick={handlers.asClick}>
+                        </a>
+                        <a className="mt-2" onClick={handlers.asClick}>
                             A/S·환불·교환 정책
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div className="flex flex-col px-8 pt-10 w-[33%]">
@@ -43,16 +43,16 @@ export const FooterPc = () => {
                             '*:hover:text-font-gray-deep',
                         )}
                     >
-                        <div onClick={handlers.agreementClick}>AGREEMENT</div>
-                        <div onClick={handlers.privacyClick}>PRIVACY</div>
-                        <div onClick={handlers.guideClick}>GUIDE</div>
+                        <a onClick={handlers.agreementClick}>AGREEMENT</a>
+                        <a onClick={handlers.privacyClick}>PRIVACY</a>
+                        <a onClick={handlers.guideClick}>GUIDE</a>
                     </div>
                     <div className="mt-3 text-font-gray-deep leading-5.5 tracking-wide text-[12px]">
                         Company : 주식회사 시안인터내셔널 <br />
                         CEO : 오예은, 황정현
                         <br />
                         Business Registration : [2338112139],[530-36-00723]
-                        <br /> Call : 1877-7971
+                        <br /> <a href="tel:1877-7971">Call : 1877-7971</a>
                         <br />
                         Address : 10896 경기 파주시 가람로116번길 107
                         운정한강듀클래스 319호, 제주특별자치도 제주시 신대로
@@ -81,10 +81,10 @@ export const FooterPc = () => {
                         있습니다.
                     </div>
                     <div className="mt-4 flex gap-3 *:cursor-pointer">
-                        <img src="/purchase1.png" />
-                        <img src="/purchase2.png" />
-                        <img src="/purchase3.png" />
-                        <img src="/purchase4.png" />
+                        <img src="/purchase1.png" alt="purchase" />
+                        <img src="/purchase2.png" alt="purchase" />
+                        <img src="/purchase3.png" alt="purchase" />
+                        <img src="/purchase4.png" alt="purchase" />
                     </div>
                 </div>
             </div>

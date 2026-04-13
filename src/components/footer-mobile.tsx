@@ -24,16 +24,16 @@ export const FooterMobile = () => {
                     </div>
                     <div
                         className={cn(
-                            ' *:border *:bg-black *:rounded-[10px] *:cursor-pointer *:text-white *:w-37 *:mx-auto *:text-center *:py-2 *:text-[13px] *:font-medium *:font-notokr *:tracking-wider',
+                            ' *:border *:bg-black *:block *:rounded-[10px] *:cursor-pointer *:text-white *:w-37 *:mx-auto *:text-center *:py-2 *:text-[13px] *:font-medium *:font-notokr *:tracking-wider',
                             '*:hover:bg-gray-700',
                         )}
                     >
-                        <div onClick={handlers.qnaClick} className="mt-4">
+                        <a onClick={handlers.qnaClick} className="mt-4">
                             상품 Q&A 바로가기
-                        </div>
-                        <div onClick={handlers.asClick} className="mt-2">
+                        </a>
+                        <a onClick={handlers.asClick} className="mt-2">
                             A/S·환불·교환 정책
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div className="flex flex-col pt-5 px-5 items-center w-[50%] *:text-center">
@@ -52,10 +52,10 @@ export const FooterMobile = () => {
                         있습니다.
                     </div>
                     <div className="mt-3 flex gap-3 *:cursor-pointer *:w-7 *:object-contain">
-                        <img src="/purchase1.png" />
-                        <img src="/purchase2.png" />
-                        <img src="/purchase3.png" />
-                        <img src="/purchase4.png" />
+                        <img src="/purchase1.png" alt="purchase" />
+                        <img src="/purchase2.png" alt="purchase" />
+                        <img src="/purchase3.png" alt="purchase" />
+                        <img src="/purchase4.png" alt="purchase" />
                     </div>
                 </div>
             </div>
@@ -66,9 +66,9 @@ export const FooterMobile = () => {
                         '*:hover:text-font-gray-deep',
                     )}
                 >
-                    <div onClick={handlers.agreementClick}>AGREEMENT</div>
-                    <div onClick={handlers.privacyClick}>PRIVACY</div>
-                    <div onClick={handlers.guideClick}>GUIDE</div>
+                    <a onClick={handlers.agreementClick}>AGREEMENT</a>
+                    <a onClick={handlers.privacyClick}>PRIVACY</a>
+                    <a onClick={handlers.guideClick}>GUIDE</a>
                 </div>
                 <div className="mt-3 text-font-gray-deep leading-5.5 text-[12px] tracking-wide">
                     Company : 주식회사 시안인터내셔널 CEO : 오예은, 황정현
