@@ -67,7 +67,7 @@ const Card = ({ subject, title, description, image }: CardInfo) => {
                 <img
                     src={image}
                     alt="transform-education"
-                    className="object-cover w-full h-full"
+                    className="object-cover w-full h-full pointer-events-none"
                 />
             </div>
             <div

@@ -4,7 +4,7 @@ export const FooterMobile = () => {
     return (
         <div className="md:hidden max-md:block pb-5 w-full overflow-hidden flex flex-col *:break-keep *:select-none">
             <div className="mx-auto flex">
-                <div className="flex flex-col items-center border-r border-r-[#eeeeee] py-5 w-[50%]">
+                <div className="flex flex-col *:mx-auto border-r border-r-[#eeeeee] py-5 w-[50%]">
                     <div className="text-[13px] font-medium tracking-wider">
                         CS CENTER
                     </div>
@@ -22,29 +22,22 @@ export const FooterMobile = () => {
                     </div>
                     <div
                         className={cn(
-                            'border bg-black rounded-[10px] cursor-pointer text-white w-37 text-center py-2 text-[13px] font-medium font-notokr tracking-wider mt-2',
-                            'hover:bg-gray-700',
+                            ' *:border *:bg-black *:rounded-[10px] *:cursor-pointer *:text-white *:w-37 *:mx-auto *:text-center *:py-2 *:text-[13px] *:font-medium *:font-notokr *:tracking-wider',
+                            '*:hover:bg-gray-700',
                         )}
                     >
-                        상품 Q&A 바로가기
-                    </div>
-                    <div
-                        className={cn(
-                            'border bg-black rounded-[10px] cursor-pointer text-white w-37 text-center py-2 text-[13px] font-medium font-notokr tracking-wider mt-2',
-                            'hover:bg-gray-700',
-                        )}
-                    >
-                        A/S·환불·교환 정책
+                        <div className="mt-4">상품 Q&A 바로가기</div>
+                        <div className="mt-2">A/S·환불·교환 정책</div>
                     </div>
                 </div>
-                <div className="flex flex-col pt-8 px-5 items-center w-[50%] *:text-center">
+                <div className="flex flex-col pt-5 px-5 items-center w-[50%] *:text-center">
                     <div className="font-semibold text-[14px]">BANK INFO</div>
                     <div className="mt-1 text-[11px] tracking-wider text-font-gray-deep">
                         기업 688-044727-04-014
                         <br />
                         예금주 : 주식회사 시안인터내셔널
                     </div>
-                    <div className="font-semibold mt-3 text-[13px]">
+                    <div className="font-semibold mt-6 text-[13px]">
                         PURCHASE SAFETY SERVICE
                     </div>
                     <div className="mt-1 text-[11px] tracking-wider text-font-gray-deep">
@@ -52,7 +45,7 @@ export const FooterMobile = () => {
                         쇼핑몰이 가입한 PG에스크로 구매안전서비스를 이용하실 수
                         있습니다.
                     </div>
-                    <div className="mt-4 flex gap-3 *:cursor-pointer *:w-7 *:object-contain">
+                    <div className="mt-3 flex gap-3 *:cursor-pointer *:w-7 *:object-contain">
                         <img src="/purchase1.png" />
                         <img src="/purchase2.png" />
                         <img src="/purchase3.png" />
@@ -60,7 +53,7 @@ export const FooterMobile = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col px-5 pt-10 border-t border-t-border-gray">
+            <div className="flex flex-col px-5 pt-6 border-t border-t-border-gray">
                 <div
                     className={cn(
                         'flex gap-3 *:text-[14px] *:transition *:cursor-pointer',

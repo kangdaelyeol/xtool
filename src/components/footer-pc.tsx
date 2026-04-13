@@ -27,27 +27,21 @@ export const FooterPc = () => {
                         주말 및 공휴일 휴무입니다.
                     </div>
                     <div
-                        onClick={handleQnAClick}
                         className={cn(
-                            'border bg-black cursor-pointer text-white w-48 text-center py-3 text-[15px] font-medium font-notokr tracking-wider mt-4 rounded-[10px]',
-                            'hover:bg-gray-700',
+                            '*:border *:bg-black *:select-none *:cursor-pointer *:text-white w-48 *:text-center *:py-3 *:text-[15px] *:font-medium *:font-notokr *:tracking-wider *:rounded-[10px]',
+                            '*:hover:bg-gray-700',
                         )}
                     >
-                        상품 Q&A 바로가기
-                    </div>
-                    <div
-                        className={cn(
-                            'border bg-black cursor-pointer text-white w-48 text-center py-3 text-[15px] font-medium font-notokr tracking-wider mt-2 rounded-[10px]',
-                            'hover:bg-gray-700',
-                        )}
-                    >
-                        A/S·환불·교환 정책
+                        <div className="mt-4" onClick={handleQnAClick}>
+                            상품 Q&A 바로가기
+                        </div>
+                        <div className="mt-2">A/S·환불·교환 정책</div>
                     </div>
                 </div>
                 <div className="flex flex-col px-8 pt-10 w-[33%]">
                     <div
                         className={cn(
-                            'flex gap-3 *:text-[15px] *:transition *:cursor-pointer *:select-none',
+                            'flex gap-3 *:text-[15px] *:cursor-pointer *:select-none',
                             '*:hover:text-font-gray-deep',
                         )}
                     >

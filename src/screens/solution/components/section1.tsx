@@ -38,7 +38,10 @@ const Card = ({ title, description, image }: CardProps) => {
             )}
         >
             <div className="h-90 lg:h-70 md:h-60 flex justify-center items-center">
-                <img src={image} className="object-cover h-full w-full" />
+                <img
+                    src={image}
+                    className="object-cover h-full w-full pointer-events-none"
+                />
             </div>
             <div
                 className={cn(

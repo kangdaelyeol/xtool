@@ -40,13 +40,13 @@ export const Header = () => {
                 <div className="flex flex-col">
                     <div
                         className={cn(
-                            'flex items-center',
+                            'flex items-center cursor-pointer',
                             'md:gap-1.75 lg:gap-1.75 gap-1',
                         )}
                     >
                         <img
                             src="/xtool-logo-text.png"
-                            className="lg:h-3 md:h-3 h-2"
+                            className="lg:h-3 md:h-3 h-2 pointer-events-none"
                             alt="logo text"
                         />
                         <span

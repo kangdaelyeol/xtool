@@ -147,7 +147,7 @@ export const Section2 = () => {
                                     src={item.image}
                                     key={item.image}
                                     className={cn(
-                                        'object-cover w-full h-full absolute',
+                                        'object-cover w-full h-full absolute pointer-events-none',
                                         idx === selectedIdx && 'z-10',
                                     )}
                                 />

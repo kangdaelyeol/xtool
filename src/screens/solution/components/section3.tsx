@@ -152,7 +152,7 @@ export const Section3 = () => {
                         <img
                             src="/so1.webp"
                             alt="support-img"
-                            className="object-cover w-full h-full"
+                            className="object-cover w-full h-full pointer-events-none"
                         />
                     </div>
                     <div
@@ -168,7 +168,7 @@ export const Section3 = () => {
                         <img
                             src="/x-logo.png"
                             alt="xtool-logo"
-                            className="w-9 max-md:w-5"
+                            className="w-9 max-md:w-5 pointer-events-none"
                         />
                         <div
                             className={cn(
