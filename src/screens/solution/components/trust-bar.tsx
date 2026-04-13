@@ -2,7 +2,7 @@ import { cn } from '@/utils'
 
 export const TrustBar = () => {
     return (
-        <div className="w-full border-b border-b-border-gray *:select-none">
+        <div className="w-full border-b-[0.5px] border-b-font-gray-deep/30 *:select-none">
             <div
                 className={cn(
                     'w-full mx-auto flex justify-between  *:font-notokr *:break-keep',

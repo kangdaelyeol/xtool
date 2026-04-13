@@ -28,13 +28,13 @@ const gridItemConfig = [
             icon: 'business',
             title: '기업 전용 혜택',
             description:
-                '대량 구매 할인, 기업 전용 유지보수 계약 및 R&D 증빙 서류 지원',
+                '대량 구매 할인, 기업 전용 유지보수 계약 및 서류 지원',
         },
         {
             icon: 'truck',
             title: '신속한 공급망',
             description:
-                '국내 재고 보유를 통한 빠른 납기 및 긴급 소모품 당일 발송 시스템',
+                '국내 재고 보유를 통한 빠른 납기 및 긴급 소모품 발송 시스템',
         },
     ],
     [

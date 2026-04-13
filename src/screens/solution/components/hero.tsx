@@ -34,7 +34,7 @@ export const Hero = () => {
             >
                 <div
                     className={cn(
-                        'flex flex-col gap-3',
+                        'flex flex-col gap-3 relative',
                         'lg:gap-7',
                         'md:gap-4',
                     )}
@@ -56,16 +56,14 @@ export const Hero = () => {
                             'md:text-[14.5px] md:leading-[24px] md:w-[400px]',
                         )}
                     >
-                        대한민국 300+ 기업 및 기관이 선택한 압도적 기술력.
-                        <br />
-                        비즈니스 프로토타이핑부터 차세대 메이커 교육까지, <br />
-                        전문가 팀이 도입의 모든 과정을 함께합니다.
+                        기업·기관 맞춤 레이저 엑스툴 장비 도입을 지원합니다
                     </div>
                     <div
                         className={cn(
-                            'flex flex-col mr-auto gap-3 font-notokr *:cursor-pointer mt-[10px]',
-                            'lg:flex-row lg:gap-5 lg:mt-[20px]',
-                            'md:flex-row md:gap-3 md:mt-[5px]',
+                            'flex flex-row mr-auto font-notokr *:cursor-pointer',
+                            'lg:gap-5 lg:mt-[120px]',
+                            'md:gap-3 md:mt-[50px]',
+                            'max-md:gap-3 max-md:mt-[10px] max-md:flex-col',
                         )}
                     >
                         <div
@@ -76,7 +74,7 @@ export const Hero = () => {
                             )}
                             onClick={handleContactClick}
                         >
-                            비즈니스 견적 상담
+                            상담 바로가기
                             <ChevronDownIcon size={17} color="#ffffff" />
                         </div>
                         <div

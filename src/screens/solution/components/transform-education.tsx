@@ -19,36 +19,31 @@ const transformConfig = [
     {
         subject: '수학',
         title: '다면체 주사위',
-        description:
-            '본 프로젝트에서는 공간적 상상력과 수학적 능력을 활용하여 입체 기하학 및 확률과 같은 개념을 이해하는 데 매우 유용한 도구인 주사위를 제작하게 됩니다.',
+        description: '레이저로 직접 만들며 입체 구조를 이해',
         image: '/transform/transform1.webp',
     },
     {
         subject: '미술 & 공예',
-        title: 'Zentangle 패턴 미술',
-        description:
-            '본 프로젝트에서는 공간적 상상력과 스프레이 페인팅 기법을 활용하게 됩니다. 이 프로젝트는 미적 감각과 손재주를 향상시켜주기 때문에 미술 공예 수업에 매우 적합합니다.',
+        title: '패턴 디자인 굿즈 제작',
+        description: '원하는 디자인을 직접 각인하며 창작 결과물 완성',
         image: '/transform/transform2.webp',
     },
     {
         subject: '공학',
-        title: '디지털 피아노',
-        description:
-            '본 프로젝트에서는 크리스마스 테마의 디지털 피아노로 축제 분위기의 멜로디를 만들게 됩니다. F1 Ultra를 사용하여 건반과 센서를 연결하는 PCB를 제작하고, 음악과 전자공학을 융합할 것입니다.',
+        title: '디지털 피아노 제작',
+        description: '레이저 가공과 전자회로를 결합해 직접 제작',
         image: '/transform/transform3.webp',
     },
     {
         subject: '지리학',
-        title: '지형 모델',
-        description:
-            '본 프로젝트에서는 레이저 커팅으로 3D 지형 모형을 제작하여 물리 지리를 탐구합니다. 이 흥미로운 활동은 공간 지각 능력을 향상시켜주므로 지리학 또는 지구과학 수업에 적합합니다.',
+        title: '지형 모델 제작',
+        description: '레이저로 지형을 직접 만들며 공간 구조를 쉽게 이해',
         image: '/transform/transform4.webp',
     },
     {
         subject: '미술 & 공예',
-        title: 'DIY 이름표',
-        description:
-            '본 프로젝트에서는 나무판에 부착할 금속 이름표를 디자인하고 개인화합니다. 이 실습 활동은 창의력과 손재주를 길러주므로 미술 공예 수업에 적합합니다.',
+        title: 'DIY 이름표 제작',
+        description: '디자인부터 각인까지 직접 제작하며 나만의 결과물을 완성',
         image: '/transform/transform5.webp',
     },
 ] as CardInfo[]
@@ -57,10 +52,10 @@ const Card = ({ subject, title, description, image }: CardInfo) => {
     return (
         <div
             className={cn(
-                'flex flex-col rounded-[10px] overflow-hidden md:h-100 bg-education-white',
+                'flex flex-col rounded-[10px] overflow-hidden bg-education-white',
                 'lg:w-[33%] lg:min-w-[33%]',
-                'md:w-[49%] md:min-w-[49%]',
-                'max-md:w-[98%] max-md:min-w-[98%] max-md:py-3',
+                'md:w-[49%] md:min-w-[49%] md:py-5',
+                'max-md:w-[98%] max-md:min-w-[98%] max-md:py-5',
             )}
         >
             <div className="w-full h-50 flex justify-center items-center">
@@ -168,9 +163,19 @@ export const TransformEducation = () => {
             if (timer) return
             timer = setTimeout(() => {
                 timer = null
+
+                if (innerWidth >= 1024) {
+                    if (sliderCount === 3) return
+                    setSliderIdx(0)
+                    return setSliderCount(3)
+                }
+                if (innerWidth >= 768) {
+                    if (sliderCount === 4) return
+                    setSliderIdx(0)
+                    return setSliderCount(4)
+                }
+                if (sliderCount === 5) return
                 setSliderIdx(0)
-                if (innerWidth >= 1024) return setSliderCount(3)
-                if (innerWidth >= 768) return setSliderCount(4)
                 return setSliderCount(5)
             }, 200)
         }
@@ -179,8 +184,9 @@ export const TransformEducation = () => {
         window.addEventListener('resize', handleResize)
         return () => {
             window.removeEventListener('resize', handleResize)
+            if (timer) clearTimeout(timer)
         }
-    }, [])
+    }, [sliderCount])
 
     const getSliderTransform = () => {
         if (sliderCount === 3)
@@ -241,8 +247,8 @@ export const TransformEducation = () => {
                 <div
                     className={cn(
                         'flex justify-between w-full items-center relative',
-                        'lg:mt-10 lg:-left-4',
-                        'md:mt-10 md:-left-3',
+                        'lg:mt-5 lg:-left-4',
+                        'md:mt-5 md:-left-3',
                         'max-md:mt-3 max-md:-left-3',
                     )}
                 >

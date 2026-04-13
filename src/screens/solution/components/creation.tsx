@@ -8,28 +8,27 @@ interface creationState {
 }
 const creationConfig = [
     {
-        label: '낮은 진입 장벽, 높은 성공 가능성',
+        label: '쉽게 시작하는 작업 환경',
         src: '/creation/creation-video-1.mp4',
         description:
-            '간단하게 시작하고, 끝없이 탐구해 보세요. 직관적인 디자인으로 초보자도 쉽게 시작할 수 있으며, 무한한 창의적 가능성을 통해 숙련된 사용자는 모든 프로젝트에서 한계를 뛰어넘을 수 있습니다.',
+            '초보자도 빠르게 적응할 수 있는 직관적인 소프트웨어와 다양한 기능으로 확장 가능한 작업 환경을 제공합니다.',
     },
     {
-        label: '모든 기기에서 사용 가능',
+        label: 'PC, 탬플릿 사용가능',
         src: '/creation/creation-video-2.mov',
-        description:
-            '편집부터 후처리까지, PC, iPad 또는 모바일 기기를 사용하든 관계없이 xTool Creative Space(XCS)를 통해 원활하고 효율적인 워크플로우를 경험해 보세요.',
+        description: 'PC, 탬플릿 기기에서도 사용 가능 합니다.',
     },
     {
-        label: 'AI Make',
+        label: 'AI 디자인 자동 생성',
         src: '/creation/creation-video-3.mp4',
         description:
-            '디자인 아이디어는 있는데 시간이 부족하신가요? 입력만 하시면 AImake가 멋진 시안을 만들어 드립니다. 세계 최초의 AI 생성기가 레이저 커팅, 조각, 인쇄 등 다양한 용도에 맞는 70가지 이상의 스타일을 제공합니다.',
+            '아이디어를 입력하면 AI가 디자인을 자동으로 생성합니다. 빠르게 시안을 만들고 작업까지 연결하세요.',
     },
     {
-        label: '클라우드 기반 스토리지',
+        label: '클라우드 파일 관리',
         src: '/creation/creation-video-4.mov',
         description:
-            '파일에 쉽게 접근하고 싶으신가요? 모든 수업 자료는 클라우드에 안전하게 저장되어 있어 언제 어디서든 로그인하여 자료에 접근할 수 있습니다.',
+            '작업 파일을 클라우드에 저장하고 다시 불러올 수 있습니다. 장소에 관계없이 동일한 작업 환경을 유지할 수 있습니다.',
     },
 ] as creationState[]
 
@@ -111,7 +110,7 @@ export const Creation = () => {
         })
     }, [])
     return (
-        <div className="w-full max-md:mt-20 lg:py-20 md:py-5 *:select-none">
+        <div className="w-full max-md:mt-10 lg:py-10 md:py-5 *:select-none">
             <div className="w-full max-w-350 mx-auto">
                 <div
                     className={cn(
@@ -121,16 +120,15 @@ export const Creation = () => {
                         'max-md:text-[23px]',
                     )}
                 >
-                    기계와 최첨단 소프트웨어의 결합으로 생명력을 불어넣는 창작물
-                    탄생
+                    누구나 쉽게 시작하는 xTool 소프트웨어 (XCS)
                 </div>
                 <CreationNav videoIdx={videoIdx} setVideoIdx={setVideoIdx} />
                 <div
                     className={cn(
-                        'text-center mx-auto mt-7 text-[14px] font-semibold text-font-gray break-keep',
-                        'lg:w-150',
-                        'md:w-150',
-                        'max-md:h-25 max-md:px-4',
+                        'text-center mx-auto mt-7 font-semibold text-font-gray break-keep',
+                        'lg:w-full lg:text-[15px]',
+                        'md:w-full md:text-[14px]',
+                        'max-md:h-17 max-md:px-4 max-md:text-[14px]',
                     )}
                 >
                     {creationConfig[videoIdx].description}
