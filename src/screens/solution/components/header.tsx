@@ -16,7 +16,7 @@ export const Header = () => {
         }
     }, [])
 
-    const handleContackClick = () => {
+    const handleContactClick = () => {
         const contactEl = document.querySelector('#contact')
         contactEl?.scrollIntoView()
     }
@@ -71,16 +71,20 @@ export const Header = () => {
                 </div>
 
                 <div className="flex gap-4 items-center *:cursor-pointer *:font-notokr *:font-[400] *:whitespace-nowrap">
-                    <div className="flex gap-1 hover:bg-black/6 rounded-[5px] text-[15px] px-2.5 py-2">
+                    {/* div -> button 접근성 최적화
+                        button을 div로 구현하려면 role='button' tabIndex onKeyDown 등을 추가로 구현해야 한다.
+                        실무적으로도 SEO크롤러나 접근성 검사도구에서 감점 요인이 될 수 있음.
+                     */}
+                    <button className="flex gap-1 hover:bg-black/6 rounded-[5px] text-[15px] px-2.5 py-2">
                         <DownloadIcon size={20} color="#000000" />
                         카탈로그
-                    </div>
-                    <div
+                    </button>
+                    <button
                         className="bg-navy hover:bg-navy/90 text-white text-[13px] rounded-[8px] px-3 py-2.5"
-                        onClick={handleContackClick}
+                        onClick={handleContactClick}
                     >
                         견적 문의하기
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>
