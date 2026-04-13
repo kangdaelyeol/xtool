@@ -167,7 +167,6 @@ export const TransformEducation = () => {
         const handleResize = () => {
             if (timer) return
             timer = setTimeout(() => {
-                console.log('resize')
                 timer = null
                 setSliderIdx(0)
                 if (innerWidth >= 1024) return setSliderCount(3)

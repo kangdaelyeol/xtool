@@ -1,12 +1,8 @@
+import { useFooter } from '@/controller'
 import { cn } from '@/utils'
 
 export const FooterPc = () => {
-    const handleQnAClick = () => {
-        window.open(
-            'https://www.xtool.co.kr/board/product/list.html?board_no=6',
-            '_blank',
-        )
-    }
+    const { handlers } = useFooter()
     return (
         <div className="pb-20 w-full overflow-hidden md:block max-md:hidden">
             <div className="w-full max-w-300 mx-auto flex justify-center *:break-keep">
@@ -32,10 +28,12 @@ export const FooterPc = () => {
                             '*:hover:bg-gray-700',
                         )}
                     >
-                        <div className="mt-4" onClick={handleQnAClick}>
+                        <div className="mt-4" onClick={handlers.qnaClick}>
                             상품 Q&A 바로가기
                         </div>
-                        <div className="mt-2">A/S·환불·교환 정책</div>
+                        <div className="mt-2" onClick={handlers.asClick}>
+                            A/S·환불·교환 정책
+                        </div>
                     </div>
                 </div>
                 <div className="flex flex-col px-8 pt-10 w-[33%]">
@@ -45,9 +43,9 @@ export const FooterPc = () => {
                             '*:hover:text-font-gray-deep',
                         )}
                     >
-                        <div>AGREEMENT</div>
-                        <div>PRIVACY</div>
-                        <div>GUIDE</div>
+                        <div onClick={handlers.agreementClick}>AGREEMENT</div>
+                        <div onClick={handlers.privacyClick}>PRIVACY</div>
+                        <div onClick={handlers.guideClick}>GUIDE</div>
                     </div>
                     <div className="mt-3 text-font-gray-deep leading-5.5 tracking-wide text-[12px]">
                         Company : 주식회사 시안인터내셔널 <br />
