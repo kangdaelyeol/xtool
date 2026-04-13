@@ -1,18 +1,12 @@
-import { useEffect, useState } from 'react'
-import { ArrowLeftIcon, ArrowRightIcon } from '../icons'
 import { cn } from '@/utils'
+import { ArrowLeftIcon, ArrowRightIcon } from '../icons'
+import { useResizeContext } from '@/contexts'
 
 interface CardInfo {
     subject: string
     title: string
     description: string
     image: string
-}
-
-interface PaginationProps {
-    count: number
-    sliderIdx: number
-    setSliderIdx: React.Dispatch<React.SetStateAction<number>>
 }
 
 const transformConfig = [
@@ -86,24 +80,23 @@ const Card = ({ subject, title, description, image }: CardInfo) => {
     )
 }
 
-const PaginationDot = ({ count, sliderIdx, setSliderIdx }: PaginationProps) => {
-    const paginationConfig = [] as boolean[]
-    for (let i = 0; i < count; i++) {
-        if (i === sliderIdx) paginationConfig.push(true)
-        else paginationConfig.push(false)
-    }
+const PaginationDot = () => {
+    const {
+        transformEducationStyle: { dotActiveList },
+        transformEducationHandlers: { goToIdx },
+    } = useResizeContext()
     return (
         <div className="flex gap-2 pl-7">
-            {paginationConfig.map((val, idx) =>
+            {dotActiveList.map((val, idx) =>
                 val ? (
                     <div
-                        onClick={() => setSliderIdx(idx)}
+                        onClick={() => goToIdx(idx)}
                         key={idx}
                         className="flex justify-center cursor-pointer items-center rounded-[50%] bg-black w-2 h-2"
                     />
                 ) : (
                     <div
-                        onClick={() => setSliderIdx(idx)}
+                        onClick={() => goToIdx(idx)}
                         key={idx}
                         className="flex justify-center cursor-pointer items-center rounded-[50%] bg-gray-400 w-2 h-2"
                     />
@@ -113,20 +106,11 @@ const PaginationDot = ({ count, sliderIdx, setSliderIdx }: PaginationProps) => {
     )
 }
 
-const PaginationButton = ({
-    count,
-    sliderIdx,
-    setSliderIdx,
-}: PaginationProps) => {
-    const goPrev = () => {
-        if (sliderIdx <= 0) return
-        setSliderIdx((prev) => prev - 1)
-    }
-
-    const goNext = () => {
-        if (sliderIdx >= count - 1) return
-        setSliderIdx((prev) => prev + 1)
-    }
+const PaginationButton = () => {
+    const {
+        transformEducationHandlers: { goNext, goPrev },
+        transformEducationStyle: { paginationLeftBtn, paginationRightBtn },
+    } = useResizeContext()
 
     return (
         <div className="flex gap-5">
@@ -134,7 +118,7 @@ const PaginationButton = ({
                 onClick={goPrev}
                 className={cn(
                     'flex justify-center items-center rounded-[50%] cursor-pointer',
-                    sliderIdx === 0 ? 'bg-gray-400' : 'bg-black',
+                    paginationLeftBtn,
                 )}
             >
                 <ArrowLeftIcon size={30} color="#ffffff" />
@@ -143,7 +127,7 @@ const PaginationButton = ({
                 onClick={goNext}
                 className={cn(
                     'flex justify-center items-center rounded-[50%] cursor-pointer',
-                    sliderIdx === count - 1 ? 'bg-gray-400' : 'bg-black',
+                    paginationRightBtn,
                 )}
             >
                 <ArrowRightIcon size={30} color="#ffffff" />
@@ -153,50 +137,7 @@ const PaginationButton = ({
 }
 
 export const TransformEducation = () => {
-    const [sliderIdx, setSliderIdx] = useState(0)
-    const [sliderCount, setSliderCount] = useState(3)
-
-    useEffect(() => {
-        let timer: number | null = null
-
-        const handleResize = () => {
-            if (timer) return
-            timer = setTimeout(() => {
-                timer = null
-
-                if (innerWidth >= 1024) {
-                    if (sliderCount === 3) return
-                    setSliderIdx(0)
-                    return setSliderCount(3)
-                }
-                if (innerWidth >= 768) {
-                    if (sliderCount === 4) return
-                    setSliderIdx(0)
-                    return setSliderCount(4)
-                }
-                if (sliderCount === 5) return
-                setSliderIdx(0)
-                return setSliderCount(5)
-            }, 200)
-        }
-
-        handleResize()
-        window.addEventListener('resize', handleResize)
-        return () => {
-            window.removeEventListener('resize', handleResize)
-            if (timer) clearTimeout(timer)
-        }
-    }, [sliderCount])
-
-    const getSliderTransform = () => {
-        if (sliderCount === 3)
-            return `translateX(calc(-33%*${sliderIdx} + -20px*${sliderIdx}))`
-        else if (sliderCount === 4)
-            return `translateX(calc(-49%*${sliderIdx} + -20px*${sliderIdx}))`
-        else return `translateX(calc(-98%*${sliderIdx} + -20px*${sliderIdx}))`
-    }
-
-    const sliderTransform = getSliderTransform()
+    const { transformEducationStyle } = useResizeContext()
 
     return (
         <div
@@ -235,7 +176,7 @@ export const TransformEducation = () => {
                             'flex gap-5 relative transition duration-300 ease',
                         )}
                         style={{
-                            transform: sliderTransform,
+                            transform: transformEducationStyle.sliderTransform,
                         }}
                     >
                         {transformConfig.map((item) => (
@@ -252,16 +193,8 @@ export const TransformEducation = () => {
                         'max-md:mt-3 max-md:-left-3',
                     )}
                 >
-                    <PaginationDot
-                        count={sliderCount}
-                        setSliderIdx={setSliderIdx}
-                        sliderIdx={sliderIdx}
-                    />
-                    <PaginationButton
-                        count={sliderCount}
-                        setSliderIdx={setSliderIdx}
-                        sliderIdx={sliderIdx}
-                    />
+                    <PaginationDot />
+                    <PaginationButton />
                 </div>
             </div>
         </div>
