@@ -22,11 +22,16 @@ interface UseContactValues {
         toggleInquiryType: (key: keyof InquiryTypes) => void
         submitClick: () => Promise<void>
         hideModal: () => void
+        privacyAgreementClick: () => void
+        privacyTermClick: () => void
+        hidePrivacyTermClick: () => void
     }
     state: {
         inquiryTypes: InquiryTypes
         loading: boolean
         modalActive: boolean
+        privacyAgreement: boolean
+        privacyModal: boolean
     }
 }
 
@@ -39,6 +44,9 @@ export const useContact = (): UseContactValues => {
     const [ip, setIp] = useState('')
     const [loading, setLoading] = useState(false)
     const [modalActive, setModalActive] = useState(false)
+    const [privacyAgreement, setPrivacyAgreement] = useState(false)
+    const [privacyModal, setPrivacyModal] = useState(false)
+
     const [inquiryTypes, setInquiryTypes] = useState({
         enterprise: false,
         education: false,
@@ -69,14 +77,23 @@ export const useContact = (): UseContactValues => {
     }, [])
 
     useEffect(() => {
-        if (modalActive) document.body.style.overflow = 'hidden'
+        if (modalActive || privacyModal) document.body.style.overflow = 'hidden'
         else document.body.style.overflow = ''
         return () => {
             document.body.style.overflow = ''
         }
-    }, [modalActive])
+    }, [modalActive, privacyModal])
 
     const handlers = {
+        privacyTermClick: () => {
+            setPrivacyModal(true)
+        },
+        hidePrivacyTermClick: () => {
+            setPrivacyModal(false)
+        },
+        privacyAgreementClick: () => {
+            setPrivacyAgreement((v) => !v)
+        },
         hideModal: () => {
             setModalActive(false)
         },
@@ -85,8 +102,7 @@ export const useContact = (): UseContactValues => {
         },
         submitClick: async () => {
             if (loading) return
-            setLoading(true)
-            setModalActive(true)
+
             const companyName = companyNameRef.current?.value.trim()
             const username = userNameRef.current?.value.trim()
             const phone = phoneRef.current?.value.trim()
@@ -94,25 +110,21 @@ export const useContact = (): UseContactValues => {
             const content = contentRef.current?.value.trim()
 
             if (!companyName || !username || !phone || !email) {
-                alert('필수 사항을 입력해주세요.')
-                setModalActive(false)
-                return setLoading(false)
+                return alert('필수 사항을 입력해주세요.')
             }
             if (Object.values(inquiryTypes).every((v) => v === false)) {
-                alert('문의 유형을 선택해주세요.')
-                setModalActive(false)
-                return setLoading(false)
+                return alert('문의 유형을 선택해주세요.')
             }
 
             if (phone.replace(/[^0-9]/g, '').length !== 11) {
-                alert('연락처를 확인해주세요.')
-                setModalActive(false)
-                return setLoading(false)
+                return alert('연락처를 확인해주세요.')
             }
             if (!/^[^\s@]+@[^\s@]+.[^\s@]$/g.test(email)) {
-                alert('이메일 주소를 확인해주세요.')
-                setModalActive(false)
-                return setLoading(false)
+                return alert('이메일 주소를 확인해주세요.')
+            }
+
+            if (!privacyAgreement) {
+                return alert('개인정보 수집 및 이용란에 동의가 필요합니다.')
             }
 
             const inquiryArr = []
@@ -135,6 +147,8 @@ export const useContact = (): UseContactValues => {
                 ip,
             })
 
+            setLoading(true)
+            setModalActive(true)
             try {
                 const res = await fetch(GAS_URL, {
                     method: 'POST',
@@ -162,6 +176,12 @@ export const useContact = (): UseContactValues => {
     return {
         refs: { contentRef, companyNameRef, userNameRef, phoneRef, emailRef },
         handlers,
-        state: { inquiryTypes, loading, modalActive },
+        state: {
+            inquiryTypes,
+            loading,
+            modalActive,
+            privacyAgreement,
+            privacyModal,
+        },
     }
 }

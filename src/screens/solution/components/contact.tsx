@@ -3,6 +3,7 @@ import { cn, formatPhone } from '@/utils'
 import { CheckIcon, CircleIcon } from '../icons'
 import { useContact } from '@/controller/solution'
 import { Loading } from './loading'
+import { PrivacyTerm } from './privacy-term'
 
 interface InputProps {
     className?: React.HTMLAttributes<HTMLElement>['className']
@@ -240,6 +241,29 @@ export const Contact = () => {
                                 placeholder="도입 목적, 예상 수량, 필요한 지원 서비스 등을 적어주세요"
                             ></textarea>
                         </div>
+                        {/* 개인정보 수집 동의 */}
+                        <div className="flex gap-2 mt-2 items-center">
+                            <div
+                                onClick={handlers.privacyAgreementClick}
+                                className="w-5.5 h-5.5 ml-1 rounded-[3px] bg-gray-100 border border-gray-300 cursor-pointer flex justify-center items-center"
+                            >
+                                {state.privacyAgreement && (
+                                    <CheckIcon size={15} color="#444" />
+                                )}
+                            </div>
+                            <div
+                                className="font-notokr text-font-gray select-none cursor-pointer max-md:text-[14px] md:text-[13.5px]"
+                                onClick={handlers.privacyAgreementClick}
+                            >
+                                개인정보 수집 및 이용에 동의합니다.
+                            </div>
+                            <div
+                                onClick={handlers.privacyTermClick}
+                                className="font-semibold underline underline-offset-4 select-none cursor-pointer hover:text-gray-600 tracking-wide max-md:text-[14px] md:text-[13.5px]"
+                            >
+                                자세히보기
+                            </div>
+                        </div>
                         {/* Submit - 제출 */}
                         <div
                             onClick={handlers.submitClick}
@@ -259,6 +283,10 @@ export const Contact = () => {
                     loading={state.loading}
                     hideModal={handlers.hideModal}
                 />
+            )}
+            {/* Privacy term Modal */}
+            {state.privacyModal && (
+                <PrivacyTerm handleHideClick={handlers.hidePrivacyTermClick} />
             )}
         </div>
     )
