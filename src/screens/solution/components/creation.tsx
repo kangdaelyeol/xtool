@@ -1,5 +1,5 @@
 import { cn } from '@/utils'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface creationState {
     label: string
@@ -65,6 +65,19 @@ const CreationNav = ({ videoIdx, setVideoIdx }: CreationProps) => {
 }
 
 const CreationVideo = ({ videoIdx }: { videoIdx: number }) => {
+    // Video재생 최적화
+    // 4개 비디오를 동시에 재생하면서 1개의 비디오를 보여주는 것은 나머지 3개의 재생을 위해 불필요한 컴퓨팅 자원을 소모하게 만드므로, 이는 비효율적임.
+    // 따라서 보여지는 비디오에 대해서만 재생을 하며, 나머지는 pause처리.
+    const videoRefList = useRef<HTMLVideoElement[] | null[]>([])
+
+    useEffect(() => {
+        videoRefList.current?.forEach((video, idx) => {
+            if (!video) return
+            if (videoIdx === idx) video.play()
+            else video.pause()
+        })
+    }, [videoIdx])
+
     return (
         <div className="*:w-full *:absolute *:justify-center *:flex">
             {creationConfig.map((item, idx) => (
@@ -76,6 +89,9 @@ const CreationVideo = ({ videoIdx }: { videoIdx: number }) => {
                     )}
                 >
                     <video
+                        ref={(el) => {
+                            videoRefList.current[idx] = el
+                        }}
                         src={item.src}
                         autoPlay
                         playsInline
