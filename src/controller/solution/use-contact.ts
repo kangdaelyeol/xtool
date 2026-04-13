@@ -46,6 +46,7 @@ export const useContact = (): UseContactValues => {
     const [modalActive, setModalActive] = useState(false)
     const [privacyAgreement, setPrivacyAgreement] = useState(false)
     const [privacyModal, setPrivacyModal] = useState(false)
+    const [submitCompleted, setSubmitCompleted] = useState(false)
 
     const [inquiryTypes, setInquiryTypes] = useState({
         enterprise: false,
@@ -102,6 +103,8 @@ export const useContact = (): UseContactValues => {
         },
         submitClick: async () => {
             if (loading) return
+            if (submitCompleted)
+                return alert('이미 상담 신청이 완료되었습니다.')
 
             const companyName = companyNameRef.current?.value.trim()
             const username = userNameRef.current?.value.trim()
@@ -115,14 +118,12 @@ export const useContact = (): UseContactValues => {
             if (Object.values(inquiryTypes).every((v) => v === false)) {
                 return alert('문의 유형을 선택해주세요.')
             }
-
             if (phone.replace(/[^0-9]/g, '').length !== 11) {
                 return alert('연락처를 확인해주세요.')
             }
             if (!/^[^\s@]+@[^\s@]+.[^\s@]$/g.test(email)) {
                 return alert('이메일 주소를 확인해주세요.')
             }
-
             if (!privacyAgreement) {
                 return alert('개인정보 수집 및 이용란에 동의가 필요합니다.')
             }
@@ -162,6 +163,7 @@ export const useContact = (): UseContactValues => {
                     setModalActive(false)
                 }
                 setLoading(false)
+                setSubmitCompleted(true)
             } catch (e) {
                 console.log(e)
                 alert(

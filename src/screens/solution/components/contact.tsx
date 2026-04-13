@@ -252,14 +252,14 @@ export const Contact = () => {
                                 )}
                             </div>
                             <div
-                                className="font-notokr text-font-gray select-none cursor-pointer max-md:text-[14px] md:text-[13.5px]"
+                                className="font-notokr text-font-gray select-none cursor-pointer max-md:text-[14px] md:text-[13.5px] lg:text-[16px]"
                                 onClick={handlers.privacyAgreementClick}
                             >
                                 개인정보 수집 및 이용에 동의합니다.
                             </div>
                             <div
                                 onClick={handlers.privacyTermClick}
-                                className="font-semibold underline underline-offset-4 select-none cursor-pointer hover:text-gray-600 tracking-wide max-md:text-[14px] md:text-[13.5px]"
+                                className="font-semibold underline underline-offset-4 select-none cursor-pointer hover:text-gray-600 tracking-wide max-md:text-[14px] md:text-[13.5px] lg:text-[16px]"
                             >
                                 자세히보기
                             </div>
