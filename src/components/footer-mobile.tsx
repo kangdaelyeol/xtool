@@ -1,4 +1,5 @@
 import { cn } from '@/utils'
+import { PhoneIcon } from './icons'
 
 export const FooterMobile = () => {
     return (
@@ -8,8 +9,9 @@ export const FooterMobile = () => {
                     <div className="text-[13px] font-medium tracking-wider">
                         CS CENTER
                     </div>
-                    <div className="text-[22px] font-semibold mt-1.5 tracking-wide">
-                        1877-7971
+                    <div className="text-[20px] flex gap-1 items-center font-semibold mt-1.5 tracking-wide border-[0.5px] border-font-gray-deep rounded-lg px-2">
+                        <PhoneIcon />
+                        <a href="tel:1877-7971">1877-7971</a>
                     </div>
                     <div className="text-font-gray-deep text-[12px] tracking-wider mt-1">
                         평일 10:00 - 16:00

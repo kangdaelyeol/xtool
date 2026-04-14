@@ -107,13 +107,25 @@ export const FooterPc = () => {
                         있습니다.
                     </div>
                     <div className="mt-4 flex gap-3 *:cursor-pointer">
-                        <a href="http://www.ftc.go.kr/" rel="noreferrer noopener" target="_blank">
+                        <a
+                            href="http://www.ftc.go.kr/"
+                            rel="noreferrer noopener"
+                            target="_blank"
+                        >
                             <img src="/purchase1.png" alt="purchase" />
                         </a>
-                        <a href="http://www.taxsave.go.kr/" rel="noreferrer noopener" target="_blank">
+                        <a
+                            href="http://www.taxsave.go.kr/"
+                            rel="noreferrer noopener"
+                            target="_blank"
+                        >
                             <img src="/purchase3.png" alt="purchase" />
                         </a>
-                        <a href="https://www.xtool.co.kr/#none" rel="noreferrer noopener" target="_blank">
+                        <a
+                            href="https://www.xtool.co.kr/#none"
+                            rel="noreferrer noopener"
+                            target="_blank"
+                        >
                             <img src="/purchase4.png" alt="purchase" />
                         </a>
                     </div>
