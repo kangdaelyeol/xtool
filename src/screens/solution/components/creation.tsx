@@ -6,6 +6,12 @@ interface creationState {
     src: string
     description: string
 }
+
+interface CreationProps {
+    videoIdx: number
+    setVideoIdx: React.Dispatch<React.SetStateAction<number>>
+}
+
 const creationConfig = [
     {
         label: '쉽게 시작하는 작업 환경',
@@ -31,11 +37,6 @@ const creationConfig = [
             '작업 파일을 클라우드에 저장하고 다시 불러올 수 있습니다. 장소에 관계없이 동일한 작업 환경을 유지할 수 있습니다.',
     },
 ] as creationState[]
-
-interface CreationProps {
-    videoIdx: number
-    setVideoIdx: React.Dispatch<React.SetStateAction<number>>
-}
 
 const CreationNav = ({ videoIdx, setVideoIdx }: CreationProps) => {
     return (

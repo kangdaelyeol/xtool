@@ -1,6 +1,6 @@
 import { cn } from '@/utils'
-import { ArrowLeftIcon, ArrowRightIcon } from '../icons'
 import { useResizeContext } from '@/contexts'
+import { ArrowLeftIcon, ArrowRightIcon } from '../icons'
 
 interface CardInfo {
     subject: string

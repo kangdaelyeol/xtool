@@ -1,5 +1,11 @@
 import { cn } from '@/utils'
 
+interface CardProps {
+    title: string
+    description: string
+    image: string
+}
+
 const cardConfig = [
     {
         title: '디지털 제조 및 산업 도구',
@@ -20,12 +26,6 @@ const cardConfig = [
         image: '/so2.webp',
     },
 ]
-
-interface CardProps {
-    title: string
-    description: string
-    image: string
-}
 
 const Card = ({ title, description, image }: CardProps) => {
     return (

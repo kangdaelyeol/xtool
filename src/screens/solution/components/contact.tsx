@@ -1,7 +1,6 @@
 import { cn, formatPhone } from '@/utils'
-
-import { CheckIcon, CircleIcon } from '../icons'
 import { useContact } from '@/controller/solution'
+import { CheckIcon, CircleIcon } from '../icons'
 import { Loading } from './loading'
 import { PrivacyTerm } from './privacy-term'
 

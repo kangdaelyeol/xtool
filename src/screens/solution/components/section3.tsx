@@ -1,7 +1,7 @@
 import { type JSX } from 'react'
-import { BusinessIcon, PresentationIcon, TruckIcon, WrenchIcon } from '../icons'
 import { cn } from '@/utils'
 import { useResizeContext } from '@/contexts'
+import { BusinessIcon, PresentationIcon, TruckIcon, WrenchIcon } from '../icons'
 
 type Icon = 'business' | 'truck' | 'wrench' | 'presentation'
 

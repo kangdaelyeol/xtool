@@ -1,6 +1,14 @@
-import { cn } from '@/utils'
 import { useEffect, useState } from 'react'
+import { cn } from '@/utils'
 import { ChevronDownIcon, ChevronUpIcon } from '../icons'
+
+interface ListItemProps {
+    idx: number
+    selectedIdx: number
+    title: string
+    description: string
+    onClick: () => void
+}
 
 const listItemConfig = [
     {
@@ -28,14 +36,6 @@ const listItemConfig = [
         image: '/list4.webp',
     },
 ]
-
-interface ListItemProps {
-    idx: number
-    selectedIdx: number
-    title: string
-    description: string
-    onClick: () => void
-}
 
 const ListItem = ({
     idx,
