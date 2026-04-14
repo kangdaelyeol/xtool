@@ -1,8 +1,6 @@
-import { useFooter } from '@/controller'
 import { cn } from '@/utils'
 
 export const FooterPc = () => {
-    const { handlers } = useFooter()
     return (
         <div className="pb-20 w-full overflow-hidden md:block max-md:hidden">
             <div className="w-full max-w-300 mx-auto flex justify-center *:break-keep">
@@ -28,10 +26,20 @@ export const FooterPc = () => {
                             '*:hover:bg-gray-700',
                         )}
                     >
-                        <a className="mt-4" onClick={handlers.qnaClick}>
+                        <a
+                            className="mt-4"
+                            href="https://www.xtool.co.kr/board/product/list.html?board_no=6"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             상품 Q&A 바로가기
                         </a>
-                        <a className="mt-2" onClick={handlers.asClick}>
+                        <a
+                            className="mt-2"
+                            href="https://cyankorea.notion.site/2c39c11a34c6805cb411da0e18fa20d1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             A/S·환불·교환 정책
                         </a>
                     </div>
@@ -43,9 +51,27 @@ export const FooterPc = () => {
                             '*:hover:text-font-gray-deep',
                         )}
                     >
-                        <a onClick={handlers.agreementClick}>AGREEMENT</a>
-                        <a onClick={handlers.privacyClick}>PRIVACY</a>
-                        <a onClick={handlers.guideClick}>GUIDE</a>
+                        <a
+                            href="https://www.xtool.co.kr/member/agreement.html"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            AGREEMENT
+                        </a>
+                        <a
+                            href="https://www.xtool.co.kr/member/privacy.html"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            PRIVACY
+                        </a>
+                        <a
+                            href="https://www.xtool.co.kr/shopinfo/guide.html"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            GUIDE
+                        </a>
                     </div>
                     <div className="mt-3 text-font-gray-deep leading-5.5 tracking-wide text-[12px]">
                         Company : 주식회사 시안인터내셔널 <br />
@@ -81,10 +107,15 @@ export const FooterPc = () => {
                         있습니다.
                     </div>
                     <div className="mt-4 flex gap-3 *:cursor-pointer">
-                        <img src="/purchase1.png" alt="purchase" />
-                        <img src="/purchase2.png" alt="purchase" />
-                        <img src="/purchase3.png" alt="purchase" />
-                        <img src="/purchase4.png" alt="purchase" />
+                        <a href="http://www.ftc.go.kr/" rel="noreferrer noopener" target="_blank">
+                            <img src="/purchase1.png" alt="purchase" />
+                        </a>
+                        <a href="http://www.taxsave.go.kr/" rel="noreferrer noopener" target="_blank">
+                            <img src="/purchase3.png" alt="purchase" />
+                        </a>
+                        <a href="https://www.xtool.co.kr/#none" rel="noreferrer noopener" target="_blank">
+                            <img src="/purchase4.png" alt="purchase" />
+                        </a>
                     </div>
                 </div>
             </div>
