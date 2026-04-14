@@ -1,5 +1,5 @@
 import { cn } from '@/utils'
-import { PhoneIcon } from './icons'
+import { PhoneIcon } from '@/components/icons'
 
 export const FooterMobile = () => {
     return (
