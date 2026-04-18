@@ -158,7 +158,7 @@ export const TransformEducation = () => {
                 {/* Title */}
                 <div
                     className={cn(
-                        'text-center text-black/90 font-semibold font-notokr break-keep',
+                        'text-center text-black/90 font-semibold font-notokr break-keep tracking-[-1.2px]',
                         'lg:text-[40px] md:text-[40px] max-md:text-[26px]',
                     )}
                 >

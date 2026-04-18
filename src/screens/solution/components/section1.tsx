@@ -51,12 +51,12 @@ const Card = ({ title, description, image }: CardProps) => {
                     'max-md:mt-3 max-md:gap-1 max-md:pl-4 max-md:pb-5 max-md:pr-5',
                 )}
             >
-                <div className="font-semibold lg:text-[24px] md:text-[19px] max-md:text-[17px]">
+                <div className="font-semibold lg:text-[24px] md:text-[19px] max-md:text-[17px] tracking-[-0.72px]">
                     {title}
                 </div>
                 <div
                     className={cn(
-                        'text-font-gray break-keep tracking-wide',
+                        'text-font-gray break-keep tracking-[-0.54px]',
                         'lg:text-[17px] lg:leading-7',
                         'md:text-[15px] md:leading-6',
                         'max-md:text-[12px] leading-5',
@@ -87,7 +87,7 @@ export const Section1 = () => {
             >
                 <div
                     className={cn(
-                        'text-center font-semibold break-keep',
+                        'text-center font-semibold break-keep tracking-[-1.2px] text-title-black',
                         'lg:mt-15 lg:text-[40px]',
                         'md:mt-15 md:text-[34px]',
                         'max-md:text-[20px] max-md:mt-10',
@@ -97,7 +97,7 @@ export const Section1 = () => {
                 </div>
                 <div
                     className={cn(
-                        'text-center mt-3.5 text-font-gray-deep break-keep',
+                        'text-center mt-3.5 text-font-gray-deep break-keep tracking-[-0.6px]',
                         'lg:text-[20px] md:text-[18px]',
                         'max-md:text-[12px] max-md:px-5',
                     )}

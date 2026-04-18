@@ -57,13 +57,13 @@ const ListItem = ({
             onClick={onClick}
         >
             <div className="flex flex-col">
-                <div className="font-semibold lg:text-[20px] md:text-[20px] max-md:text-[17px]">
+                <div className="font-semibold lg:text-[20px] md:text-[20px] max-md:text-[17px] tracking-[-0.78px]">
                     {title}
                 </div>
                 {selected && (
                     <div
                         className={cn(
-                            'break-keep mt-2  text-font-gray-deep',
+                            'break-keep mt-2 text-font-gray-deep tracking-[-0.54px]',
                             'lg:text-[15px] lg:pr-5 lg:leading-6',
                             'md:text-[13px] md:pr-3 md:leading-6',
                             'max-md:text-[12px] max-md:pr-2 max-md:leading-5',
@@ -108,7 +108,7 @@ export const Section2 = () => {
             <div className={cn('w-full mx-auto *:font-notokr', 'lg:max-w-350')}>
                 <div
                     className={cn(
-                        'text-center font-semibold break-keep',
+                        'text-center font-semibold break-keep tracking-[-1.2px]',
                         'lg:text-[40px] md:text-[40px] text-[26px]',
                     )}
                 >
@@ -116,7 +116,7 @@ export const Section2 = () => {
                 </div>
                 <div
                     className={cn(
-                        'text-center mt-2 text-font-gray-deep break-keep',
+                        'text-center mt-2 text-font-gray-deep break-keep tracking-[-0.6px]',
                         'lg:text-[20px] md:text-[20px]',
                         'max-md:text-[14px] max-md:px-4',
                     )}

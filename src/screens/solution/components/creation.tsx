@@ -43,10 +43,10 @@ const CreationNav = ({ videoIdx, setVideoIdx }: CreationProps) => {
         <div className="md:mx-auto mt-5 flex md:justify-center max-md:overflow-y-scroll max-md:px-3">
             <div
                 className={cn(
-                    'flex gap-2 rounded-[200px] p-1 bg-gray-200 *:rounded-[200px] *:font-semibold *:whitespace-nowrap *:text-center *:font-notokr *:cursor-pointer *:select-none',
-                    'lg:*:text-[15px] lg:*:px-6 lg:*:py-4',
-                    'md:*:text-[15px] md:*:px-5 md:*:py-3',
-                    'max-md:*:text-[13px] max-md:*:px-5 max-md:*:py-2.5',
+                    'flex gap-2 rounded-[200px] p-1 bg-gray-200 *:rounded-[200px] *:font-normal *:whitespace-nowrap *:text-center *:font-notokr *:cursor-pointer *:select-none tracking-[-0.6px]',
+                    'lg:*:text-[20px] lg:*:px-6 lg:*:py-4',
+                    'md:*:text-[16px] md:*:px-5 md:*:py-3',
+                    'max-md:*:text-[16px] max-md:*:px-5 max-md:*:py-2.5',
                 )}
             >
                 {creationConfig.map((item, idx) => (
@@ -131,10 +131,10 @@ export const Creation = () => {
             <div className="w-full max-w-350 mx-auto">
                 <div
                     className={cn(
-                        'font-notokr font-bold text-center break-keep',
-                        'lg:text-[35px]',
-                        'md:text-[3vw]',
-                        'max-md:text-[23px]',
+                        'font-notokr font-bold text-center break-keep tracking-[-1.2px]',
+                        'lg:text-[40px]',
+                        'md:text-[40px]',
+                        'max-md:text-[20px]',
                     )}
                 >
                     누구나 쉽게 시작하는 xTool 소프트웨어 (XCS)
@@ -142,9 +142,9 @@ export const Creation = () => {
                 <CreationNav videoIdx={videoIdx} setVideoIdx={setVideoIdx} />
                 <div
                     className={cn(
-                        'text-center mx-auto mt-7 font-semibold text-font-gray break-keep',
-                        'lg:w-full lg:text-[15px]',
-                        'md:w-full md:text-[14px]',
+                        'text-center mx-auto mt-7 font-semibold text-font-gray-deep font-[400] break-keep tracking-[-0.6px]',
+                        'lg:w-full lg:text-[20px]',
+                        'md:w-full md:text-[20px]',
                         'max-md:h-17 max-md:px-4 max-md:text-[14px]',
                     )}
                 >

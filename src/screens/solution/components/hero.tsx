@@ -37,7 +37,7 @@ export const Hero = () => {
                 <div className={cn('flex flex-col relative')}>
                     <div
                         className={cn(
-                            'font-[700] font-notokr',
+                            'font-[700] font-notokr text-title-black',
                             'lg:text-[40px] lg:mt-17',
                             'md:text-[22px] md:mt-13',
                             'max-md:text-[25px] max-md:mt-8',
@@ -48,7 +48,7 @@ export const Hero = () => {
                     </div>
                     <div
                         className={cn(
-                            'text-[#000000b3] tracking-wide',
+                            'text-title-black tracking-wide font-[400]',
                             'lg:text-[20px] lg:mt-5',
                             'md:text-[16px] md:mt-3',
                             'max-md:text-[15px] max-md:mt-3',
