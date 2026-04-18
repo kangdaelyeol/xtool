@@ -31,7 +31,7 @@ const Input = ({
 }: InputProps) => {
     return (
         <div className={cn('flex flex-col gap-1', className)}>
-            <div className="font-semibold md:text-[15px] max-md:text-[13px]">
+            <div className="font-semibold md:text-[18px] max-md:text-[18px] tracking-[-0.5px] text-black-title">
                 {title} {required && <span className="text-red-600">*</span>}
             </div>
             <input
@@ -41,7 +41,7 @@ const Input = ({
                 required={required}
                 placeholder={placeholder}
                 className={cn(
-                    'border border-border-gray rounded-[5px] py-2 px-2 tracking-wider md:placeholder:text-[14px] text-[14px] max-md:placeholder:text-[12px]',
+                    'border border-border-gray rounded-[5px] py-2 px-2 tracking-[-0.5px] md:placeholder:text-[16px] text-[16px] max-md:placeholder:text-[12px]',
                     'hover:placeholder:text-font-gray hover:border-black',
                     'focus:placeholder:text-font-gray focus:border-black',
                 )}
@@ -55,19 +55,19 @@ const SelectItem = ({ label, onClick, selected }: SelectItemProps) => {
         <div
             onClick={onClick}
             className={cn(
-                'flex flex-1 items-center border border-border-gray p-3 rounded-[10px] cursor-pointer',
+                'flex flex-1 items-center border border-border-gray p-3 rounded-[5px] cursor-pointer',
                 'hover:border-black',
                 selected && 'bg-[#eeeeee] border-black',
             )}
         >
             {selected ? (
-                <CheckIcon color="#000000" size={10} />
+                <CheckIcon color="#000000" size={12} />
             ) : (
-                <CircleIcon color="#777777" size={10} />
+                <CircleIcon color="#777777" size={12} />
             )}
             <div
                 className={cn(
-                    'text-font-gray-deep ml-2 lg:text-[12px] select-none max-md:text-[12px]',
+                    'text-font-gray-deep ml-2 lg:text-[16px] select-none max-md:text-[12px]',
                     selected && 'text-black border-black',
                 )}
             >
@@ -91,18 +91,18 @@ export const Contact = () => {
             <div
                 className={cn(
                     'w-full mx-auto pb-25',
-                    'lg:max-w-280 lg:px-5',
+                    'lg:max-w-280 md:px-5',
                     'md:pt-20 max-md:pt-10',
                 )}
             >
-                <div className="text-center text-white md:text-[40px] font-semibold tracking-wider max-md:text-[20px]">
+                <div className="text-center text-white md:text-[40px] font-semibold tracking-[-1.2px] max-md:text-[28px]">
                     귀사의 비즈니스에 xTool을 더하세요
                 </div>
                 <div
                     className={cn(
-                        'text-center tracking-wide text-gray-400 break-keep',
-                        'md:text-[15px] md:mt-5',
-                        'max-md:mt-3 max-md:text-[13px] max-md:px-4',
+                        'text-center tracking-[-0.6px] text-[#d9d9d9] break-keep',
+                        'md:text-[20px] md:mt-3',
+                        'max-md:mt-2 max-md:text-[13px] max-md:px-4',
                     )}
                 >
                     기관의 예산과 운영 목적, 기업의 생산 공정에 가장 적합한
@@ -111,17 +111,15 @@ export const Contact = () => {
 
                 <div
                     className={cn(
-                        "w-full rounded-[25px] mx-auto bg-[url('/contact.webp')] bg-no-repeat p-4",
-                        'lg:bg-size-[120%] lg:bg-position-[10%_20%]',
-                        'md:mt-20 md:bg-center md:bg-cover',
-                        'max-md:bg-center max-md:bg-cover max-md:mt-10',
+                        'w-full rounded-[15px] mx-auto',
+                        'md:mt-10',
+                        'max-md:mt-10',
                     )}
                 >
                     <div
                         className={cn(
-                            'bg-white rounded-[15px]',
-                            'lg:h-170',
-                            'md:w-[50%] md:py-8 md:px-8',
+                            'bg-white rounded-[10px] bg-white w-full',
+                            'md:py-8 md:px-8',
                             'max-md:py-4 max-md:px-3',
                         )}
                     >
@@ -155,7 +153,7 @@ export const Contact = () => {
                         <div
                             className={cn(
                                 'flex',
-                                'lg:gap-7 lg:mt-8 lg:flex-row',
+                                'lg:gap-7 lg:mt-5 lg:flex-row',
                                 'md:flex-col md:gap-3 md:mt-3',
                                 'max-md:flex-col max-md:mt-2 max-md:gap-2',
                             )}
@@ -184,12 +182,12 @@ export const Contact = () => {
                         </div>
                         {/* Inquiry type - 문의 유형*/}
                         <div className="md:mt-8 max-md:mt-3">
-                            <div className="font-semibold md:text-[15px] max-md:text-[13px]">
+                            <div className="font-semibold md:text-[18px] max-md:text-[18px]">
                                 문의 유형{' '}
                                 <span className="text-red-600">*</span>
                             </div>
-                            <div className="text-font-gray-deep md:text-[13px] max-md:text-[11px]">
-                                다중선택 가능
+                            <div className="text-font-gray-deep md:text-[14px] max-md:text-[14px]">
+                                중복 선택 가능
                             </div>
                             <div className="flex lg:flex-row md:flex-col max-md:flex-col gap-2 md:mt-2 max-md:mt-1">
                                 <SelectItem
@@ -231,17 +229,20 @@ export const Contact = () => {
                         </div>
                         {/* Detail - 상세 내용 */}
                         <div className="md:mt-8 max-md:mt-3">
-                            <div className="font-semibold md:text-[15px] max-md:text-[13px]">
+                            <div className="font-semibold md:text-[18px] max-md:text-[18px] tracking-[-0.5px]">
                                 상세 내용
                             </div>
                             <textarea
                                 ref={contentRef}
-                                className="border border-border-gray rounded-[10px] md:placeholder:text-[15px] max-md:placeholder:text-[12px] max-h-30 min-h-30 text-[15px] resize-none md:mt-2 max-md:mt-1 p-2 w-full"
+                                className={cn(
+                                    'border border-border-gray p-3 w-full max-h-30 min-h-30 resize-none rounded-[5px] ',
+                                    'text-[14px] mt-2 placeholder:text-[14px] tracking-[-0.5px]',
+                                )}
                                 placeholder="도입 목적, 예상 수량, 필요한 지원 서비스 등을 적어주세요"
                             ></textarea>
                         </div>
                         {/* 개인정보 수집 동의 */}
-                        <div className="flex gap-2 mt-2 items-center">
+                        <div className="flex gap-2 mt-2 py-3 items-center">
                             <div
                                 onClick={handlers.privacyAgreementClick}
                                 className="w-5.5 h-5.5 ml-1 rounded-[3px] bg-gray-100 border border-gray-300 cursor-pointer flex justify-center items-center"
@@ -251,14 +252,14 @@ export const Contact = () => {
                                 )}
                             </div>
                             <div
-                                className="font-notokr text-font-gray select-none cursor-pointer max-md:text-[14px] md:text-[13.5px] lg:text-[16px]"
+                                className="font-notokr text-font-gray font-[300] select-none cursor-pointer max-md:text-[14px] md:text-[16px] lg:text-[16px] tracking-[-0.5px]"
                                 onClick={handlers.privacyAgreementClick}
                             >
                                 개인정보 수집 및 이용에 동의합니다.
                             </div>
                             <div
                                 onClick={handlers.privacyTermClick}
-                                className="font-semibold underline underline-offset-4 select-none cursor-pointer hover:text-gray-600 tracking-wide max-md:text-[14px] md:text-[13.5px] lg:text-[16px]"
+                                className="underline underline-offset-4 select-none cursor-pointer hover:text-gray-600 tracking-[-0.5px] max-md:text-[14px] md:text-[16px]"
                             >
                                 자세히보기
                             </div>
@@ -267,7 +268,7 @@ export const Contact = () => {
                         <div
                             onClick={handlers.submitClick}
                             className={cn(
-                                'mt-3 select-none w-full cursor-pointer bg-black text-white text-center font-notokr rounded-[9px] py-3.5',
+                                'mt-3 select-none w-fullv font-[700] cursor-pointer bg-black text-white text-center font-notokr rounded-[9px] py-3.5 text-[20px] tracking-[-0.6px]',
                                 'hover:bg-gray-800',
                             )}
                         >
