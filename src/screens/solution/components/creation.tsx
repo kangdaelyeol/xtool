@@ -22,7 +22,7 @@ const creationConfig = [
     {
         label: 'PC, 태블릿 사용가능',
         src: '/creation/creation-video-2.mov',
-        description: 'PC, 탬플릿 기기에서도 사용 가능 합니다.',
+        description: 'PC, 태블릿 기기에서도 사용 가능 합니다.',
     },
     {
         label: 'AI 디자인 자동 생성',

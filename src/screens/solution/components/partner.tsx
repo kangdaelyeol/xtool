@@ -26,7 +26,7 @@ export const Partner = () => {
         let transX = 0
         let rafId: number
         const moveSlider = () => {
-            transX += 2
+            transX += 1
             if (
                 sliderRef.current &&
                 transX >= (sliderRef.current.scrollWidth + 60) / 2
