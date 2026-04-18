@@ -54,13 +54,13 @@ const ItemIcon = ({ icon }: ItemIconProps): JSX.Element => {
     const { iconSize } = useResizeContext()
     switch (icon) {
         case 'business':
-            return <BusinessIcon size={iconSize} color={'#000000'} />
+            return <BusinessIcon size={iconSize} color={'#121212'} />
         case 'truck':
-            return <TruckIcon size={iconSize} color={'#000000'} />
+            return <TruckIcon size={iconSize} color={'#121212'} />
         case 'wrench':
-            return <WrenchIcon size={iconSize} color={'#000000'} />
+            return <WrenchIcon size={iconSize} color={'#121212'} />
         case 'presentation':
-            return <PresentationIcon size={iconSize} color={'#000000'} />
+            return <PresentationIcon size={iconSize} color={'#121212'} />
     }
 }
 
@@ -70,30 +70,33 @@ const Item = ({ icon, title, description }: Props) => {
             <div
                 className={cn(
                     'flex flex-col bg-education-white p-5 rounded-[10px]',
-                    'lg:gap-3 lg:w-60',
+                    'lg:gap-2 min-[1120px]:w-70',
+                    'lg:max-[1120px]:w-60',
                     'md:gap-1',
                     'max-md:hidden',
                 )}
             >
                 <ItemIcon icon={icon} />
-                <div className="font-semibold lg:text-[16px] md:text-[14px]">
+                <div className="font-semibold lg:text-[24px] md:text-[22px] tracking-[-0.7px] text-black-title">
                     {title}
                 </div>
-                <div className="lg:text-[13.5px] md:text-[12px] text-font-gray tracking-wide break-keep">
+                <div className="min-[1120px]:text-[18px] lg:max-[1120px]:text-[16px] md:text-[17px] text-font-gray font-[300] tracking-[-0.6px] break-keep">
                     {description}
                 </div>
             </div>
             <div
                 className={cn(
-                    'bg-education-white p-5 rounded-[10px]',
+                    'bg-education-white p-4 rounded-[10px]',
                     'hidden max-md:flex flex-col',
                 )}
             >
                 <div className="flex gap-2 items-center">
                     <ItemIcon icon={icon} />
-                    <div className="font-semibold text-[14px]">{title}</div>
+                    <div className="font-semibold text-[18px] tracking-[-1.2px]">
+                        {title}
+                    </div>
                 </div>
-                <div className="text-[11px] mt-1 text-font-gray tracking-wide break-keep">
+                <div className="text-[14px] mt-1 text-font-gray tracking-[-0.6px] break-keep">
                     {description}
                 </div>
             </div>
@@ -105,10 +108,10 @@ export const Section3 = () => {
     return (
         <div
             className={cn(
-                'w-full md:pt-20 pb-25 border-t border-t-gray-200 *:select-none *:break-keep',
+                'w-full md:pt-15 border-t border-t-gray-200 *:select-none *:break-keep',
                 'lg:scroll-mt-28',
-                'md:scroll-mt-28',
-                'max-md:scroll-mt-22 max-md:pt-13',
+                'md:scroll-mt-28 md:pb-25',
+                'max-md:scroll-mt-22 max-md:pt-13 max-md:pb-15',
             )}
             id="system"
         >
@@ -124,49 +127,49 @@ export const Section3 = () => {
                         'w-full',
                         'lg:max-w-170 lg:relative',
                         'md:max-w-130 md:relative',
-                        'max-md:absolute max-md:w-[95%] max-md:top-30 max-md:h-[calc(70vw)] max-md:left-3',
+                        'max-md:absolute max-md:w-full max-md:top-30 max-md:left-3',
                     )}
                 >
                     <div
                         className={cn(
-                            'flex justify-center items-center overflow-hidden rounded-[30px] absolute shadow-2xl',
-                            'min-[1200px]:w-140 min-[1200px]:h-100 min-[1200px]:top-40 min-[1200px]:left-0',
-                            'lg:max-[1200px]:w-110 lg:max-[1200px]:h-80 lg:max-[1200px]:top-40 lg:max-[1200px]:left-0',
+                            'flex justify-center items-center overflow-hidden rounded-[10px] absolute shadow-2xl',
+                            'min-[1200px]:w-125 min-[1200px]:h-132 min-[1200px]:top-10 min-[1200px]:left-3',
+                            'lg:max-[1200px]:w-110 lg:max-[1200px]:h-123 lg:max-[1200px]:top-10 lg:max-[1200px]:left-3',
                             'md:max-lg:w-[90%] md:max-lg:h-110 md:max-lg:top-30',
-                            'max-md:h-full max-md:w-full',
+                            'max-md:h-full max-md:w-full max-md:mx-auto max-md:hidden',
                         )}
                     >
                         <img
-                            src="/so1.webp"
+                            src="/support/support-x.webp"
                             alt="support-img"
                             className="object-cover w-full h-full pointer-events-none"
                         />
                     </div>
                     <div
                         className={cn(
-                            'rounded-[20px] bg-[#03d36c] flex flex-col absolute shadow-2xl',
-                            'min-[1200px]:w-70 min-[1200px]:h-45 min-[1200px]:left-80 min-[1200px]:top-100',
-                            'lg:max-[1200px]:w-60 lg:max-[1200px]:h-42 lg:max-[1200px]:left-60 lg:max-[1200px]:top-90',
-                            'md:max-lg:top-110 md:max-lg:left-63 md:max-lg:w-60 md:max-lg:h-40',
-                            'md:pl-8 md:pt-8',
-                            'max-md:w-40 max-md:-bottom-10 max-md:right-0 max-md:pl-3 max-md:pt-4 max-md:h-23',
+                            'rounded-[10px] bg-[#00CE65] flex flex-col absolute shadow-2xl',
+                            'min-[1200px]:w-[254px] min-[1200px]:h-[184px] min-[1200px]:left-75 min-[1200px]:top-110',
+                            'lg:max-[1200px]:w-[230px] lg:max-[1200px]:h-46 lg:max-[1200px]:left-60 lg:max-[1200px]:top-90',
+                            'md:max-lg:top-110 md:max-lg:right-7 md:max-lg:w-60 md:max-lg:h-46',
+                            'md:pl-5 md:pt-5',
+                            'max-md:w-40 max-md:-bottom-10 max-md:right-0 max-md:pl-3 max-md:pt-4 max-md:h-23 max-md:hidden',
                         )}
                     >
                         <img
                             src="/x-logo.png"
                             alt="xtool-logo"
-                            className="w-9 max-md:w-5 pointer-events-none"
+                            className="w-10 max-md:w-5 pointer-events-none"
                         />
                         <div
                             className={cn(
-                                'text-white font-semibold text-[30px] italic md:mt-2',
+                                'text-white font-semibold text-[40px] text-end pr-5 md:mt-6 tracking-[-1.2px]',
                                 'max-md:text-[20px] max-md:mt-1',
                             )}
                         >
                             PRO
                         </div>
-                        <div className="text-white md:tracking-wider md:text-[13px] max-md:tracking-wide max-md:text-[10px]">
-                            PROFESSIONAL SUPPORT
+                        <div className="text-white md:text-[28px] font-semibold -mt-1 tracking-[-0.6px] max-md:text-[10px] text-end pr-5">
+                            전문 지원 시스템
                         </div>
                     </div>
                 </div>
@@ -179,53 +182,79 @@ export const Section3 = () => {
                 >
                     <div
                         className={cn(
-                            'mr-auto bg-[#e4e9ee] text-[#002b5b] tracking-wider font-semibold rounded-lg border border-[#002a5b56]',
-                            'md:px-4 md:py-1 md:text-[13px]',
-                            'max-md:px-3 max-md:py-1 max-md:text-[12px]',
-                        )}
-                    >
-                        비즈니스 & 교육 전방위 지원
-                    </div>
-                    <div
-                        className={cn(
-                            'font-semibold',
-                            'lg:text-[35px] lg:mt-4',
-                            'md:text-[28px] md:mt-1',
+                            'font-semibold text-title-black tracking-[-1.2px] ',
+                            'lg:text-[40px] lg:mt-4 lg:leading-[64px]',
+                            'md:text-[33px] md:mt-1',
                             'max-md:hidden',
                         )}
                     >
-                        성공적인 도입과 운영을 위한
-                        <br /> 전문적인 지원 시스템
+                        도입부터 운영까지 책임지는
+                        <br /> PRO 전문 지원 시스템
                     </div>
-                    <div className="hidden max-md:block font-semibold text-[18px] mt-0.5">
-                        성공적인 도입과 운영을 위한 전문적인 지원 시스템
-                    </div>
+
                     <div
                         className={cn(
-                            'text-font-gray-deep tracking-wider',
-                            'lg:text-[17px] lg:mt-3',
-                            'md:text-[14px] md:mt-1',
+                            'text-font-gray-deep tracking-[-0.6px]',
+                            'min-[1290px]:text-[20px]',
+                            'lg:max-[1290px]:text-[17px] lg:mt-3',
+                            'md:max-lg:text-[20px] md:mt-1',
                             'max-md:hidden',
                         )}
                     >
-                        기업의 비즈니스 가치 창출과 교육기관의 학습 효과
-                        극대화를 위해 <br /> xTool 전담 팀이 함께합니다.
+                        기업의 비즈니스 성과와 교육 효과를 높이기 위해 xTool
+                        전담팀이 함께합니다.
+                    </div>
+                    {/* responsive - max-md */}
+                    <div
+                        className={cn(
+                            'font-semibold text-[20px] text-center text-title-black tracking-[-1.2px] hidden max-md:block',
+                        )}
+                    >
+                        도입부터 운영까지 책임지는 PRO 전문 지원 시스템
                     </div>
                     <div
                         className={cn(
-                            'text-font-gray-deep tracking-wider text-[11px] -mt-1',
+                            'text-font-gray-deep tracking-[-0.6px] text-[14px] text-center mt-1',
                             'hidden max-md:block',
                         )}
                     >
                         기업의 비즈니스 가치 창출과 교육기관의 학습 효과
                         극대화를 위해 xTool 전담 팀이 함께합니다.
                     </div>
+                    <div className={cn('hidden max-md:block relative mt-4')}>
+                        <img
+                            src="/support/support-x.webp"
+                            alt="support-img"
+                            className="object-cover w-full h-full pointer-events-none"
+                        />
+                        <div
+                            className={cn(
+                                'max-md:block absolute w-40 -bottom-10 -right-3 pl-3 pt-4 pb-2 hidden bg-[#00CE65] rounded-[10px]',
+                            )}
+                        >
+                            <img
+                                src="/x-logo.png"
+                                alt="xtool-logo"
+                                className="w-7 pointer-events-none"
+                            />
+                            <div
+                                className={cn(
+                                    'text-white font-semibold text-[25px] text-end pr-5 mt-2 tracking-[-1.2px]',
+                                )}
+                            >
+                                PRO
+                            </div>
+                            <div className="text-white font-semibold -mt-1 tracking-[-0.6px] text-[17px] text-end pr-5">
+                                전문 지원 시스템
+                            </div>
+                        </div>
+                    </div>
                     <div
                         className={cn(
                             'flex flex-col *:font-notokr',
                             'lg:mt-5 lg:gap-5',
                             'md:mt-1 md:gap-2',
-                            'max-md:mt-[calc(50px+72vw)] max-md:gap-2',
+                            'max-md:gap-2 max-md:mt-10',
                         )}
                     >
                         {gridItemConfig.map((list, idx) => (

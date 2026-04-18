@@ -26,7 +26,7 @@ export const ResizeContextProvider = ({ children }: PropsWithChildren) => {
                     return next
                 })
                 const iconSize =
-                    innerWidth >= 1024 ? 30 : innerWidth >= 768 ? 20 : 25
+                    innerWidth >= 1024 ? 40 : innerWidth >= 768 ? 35 : 25
 
                 return setIconSize(iconSize)
             }, 200)
