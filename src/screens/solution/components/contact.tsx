@@ -96,7 +96,7 @@ export const Contact = () => {
                     className={cn(
                         'text-center tracking-[-0.6px] text-[#d9d9d9] break-keep',
                         'md:text-[20px] md:mt-3',
-                        'max-md:mt-2 max-md:text-[13px] max-md:px-4',
+                        'max-md:mt-2 max-md:text-[12.5px]',
                     )}
                 >
                     기관의 예산과 운영 목적, 기업의 생산 공정에 가장 적합한

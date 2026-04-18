@@ -22,13 +22,13 @@ const Item = ({ label, activeSection, id, onClick }: ItemProps) => {
             onClick={onClick}
             className={cn(
                 'flex flex-col items-center cursor-pointer text-[#ffffffb1] *:font-notokr whitespace-nowrap',
-                'text-[12px] md:text-[14px] lg:text-[14px]',
+                'text-[12px] md:text-[16px] lg:text-[18px]',
             )}
         >
             <div
                 className={cn(
                     'px-2 py-2',
-                    'md:px-5 md:py-2.5 lg:px-5 lg:py-2.5',
+                    'md:px-5 md:py-2.5 lg:px-5 lg:py-2.5 hover:text-[#fff]',
                     selected && 'text-[#ffffff] font-semibold',
                 )}
             >

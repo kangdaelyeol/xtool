@@ -40,8 +40,8 @@ export const Header = () => {
                     />
                     <div
                         className={cn(
-                            'font-medium tracking-widest text-[#545f68] whitespace-nowrap',
-                            'text-[16px] ml-2',
+                            'font-medium tracking-wide text-[#121212] whitespace-nowrap',
+                            'text-[16px] ml-1.5',
                             'max-md:text-[14px]',
                         )}
                     >
