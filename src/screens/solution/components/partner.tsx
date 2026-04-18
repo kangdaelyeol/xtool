@@ -6,7 +6,7 @@ const PartnerIcon = ({ idx }: { idx: number }) => {
         <div className="h-full flex justify-center items-center shrink-0">
             <img
                 src={`/partner/${idx}.webp`}
-                className="h-[25px] object-contain"
+                className="h-6.25 object-contain"
             />
         </div>
     )
@@ -36,7 +36,7 @@ export const Partner = () => {
         return () => cancelAnimationFrame(rafId)
     }, [])
     const list = [] as number[]
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < 32; i++) {
         list.push(i % 8)
     }
 

@@ -76,7 +76,7 @@ export const SectionNav = () => {
             <div
                 className={cn(
                     'flex mx-auto justify-center',
-                    'gap-3 md:gap-10 lg:gap-10',
+                    'max-md:gap-5 md:gap-12 lg:gap-14',
                 )}
             >
                 {navConfig.map((item) => (

@@ -19,9 +19,9 @@ export default function SolutionScreen() {
             <Hero />
             <SectionNav />
             <Partner />
-            <TrustBar />
             <Section1 />
             <Section2 />
+            <TrustBar />
             <TransformEducation />
             <Creation />
             <Section3 />

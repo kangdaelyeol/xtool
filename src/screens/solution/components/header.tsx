@@ -16,11 +16,6 @@ export const Header = () => {
         }
     }, [])
 
-    const handleContactClick = () => {
-        const contactEl = document.querySelector('#contact')
-        contactEl?.scrollIntoView()
-    }
-
     return (
         <div
             className={cn(
@@ -37,36 +32,20 @@ export const Header = () => {
                     scrolled && 'px-1.5 py-1',
                 )}
             >
-                <div className="flex flex-col">
-                    <div
-                        className={cn(
-                            'flex items-center cursor-pointer',
-                            'md:gap-1.75 lg:gap-1.75 gap-1',
-                        )}
-                    >
-                        <img
-                            src="/xtool-logo-text.png"
-                            className="lg:h-3 md:h-3 h-2 pointer-events-none"
-                            alt="logo text"
-                        />
-                        <span
-                            className={cn(
-                                'font-intertight font-semibold tracking-wider whitespace-nowrap',
-                                'lg:text-[17px] md:text-[17px] text-[13px]',
-                            )}
-                        >
-                            Korea
-                        </span>
-                    </div>
+                <div className="flex items-center">
+                    <img
+                        src="/xtool-logo-text.png"
+                        className="lg:h-3 md:h-3 max-md:h-2.5 pointer-events-none object-contain"
+                        alt="logo text"
+                    />
                     <div
                         className={cn(
                             'font-medium tracking-widest text-[#545f68] whitespace-nowrap',
-                            'text-[10px] ml-px -mt-0.5',
-                            'md:text-[12px] md:-mt-0.75 md:ml-px',
-                            'lg:text-[12px] lg:-mt-0.75 lg:ml-px',
+                            'text-[16px] ml-2',
+                            'max-md:text-[14px]',
                         )}
                     >
-                        B2B SOLUTIONS
+                        B2B SOLUTION
                     </div>
                 </div>
 
@@ -76,14 +55,8 @@ export const Header = () => {
                         실무적으로도 SEO크롤러나 접근성 검사도구에서 감점 요인이 될 수 있음.
                      */}
                     <button className="flex gap-1 hover:bg-black/6 rounded-[5px] text-[15px] px-2.5 py-2">
-                        <DownloadIcon size={20} color="#000000" />
-                        카탈로그
-                    </button>
-                    <button
-                        className="bg-navy hover:bg-navy/90 text-white text-[13px] rounded-[8px] px-3 py-2.5"
-                        onClick={handleContactClick}
-                    >
-                        견적 문의하기
+                        기업 소개서
+                        <DownloadIcon size={18} color="#000000" />
                     </button>
                 </div>
             </div>
