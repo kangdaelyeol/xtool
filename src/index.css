@@ -19,6 +19,7 @@
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-gray-700: oklch(37.3% 0.034 259.733);
+    --color-trust-green: #00ce65;
 
     --animate-circle-draw: circle-draw 0.5s ease-out 0.3s both;
     --animate-check-draw: check-draw 0.35s ease-out 0.7s both;

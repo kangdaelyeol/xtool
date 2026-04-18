@@ -6,7 +6,7 @@ const PartnerIcon = ({ idx }: { idx: number }) => {
         <div className="h-full flex justify-center items-center shrink-0">
             <img
                 src={`/partner/${idx}.webp`}
-                className="h-6.25 object-contain"
+                className="h-6.25 max-md:h-5 object-contain"
             />
         </div>
     )
@@ -41,7 +41,11 @@ export const Partner = () => {
     }
 
     return (
-        <div className={cn('flex bg-education-white h-25 overflow-hidden')}>
+        <div
+            className={cn(
+                'flex bg-education-white h-25 max-md:h-20 overflow-hidden',
+            )}
+        >
             <div
                 ref={sliderRef}
                 className="w-full h-full flex gap-15 *:select-none *:pointer-events-none"
