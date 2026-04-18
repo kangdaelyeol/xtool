@@ -31,6 +31,7 @@ export const Footer = () => {
                     </div>
                     <div
                         className={cn(
+                            'font-medium',
                             'min-[1500px]:mt-3 min-[1500px]:text-[40px] lg:max-[1500px]:text-[36px] lg:max-[1500px]:mt-3',
                             'md:max-lg:text-[30px] md:max-lg:mt-2',
                             'max-md:text-[28px] max-md:mt-2',
