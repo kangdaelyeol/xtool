@@ -1,7 +1,7 @@
 import {
     Contact,
     Creation,
-    Education,
+    Partner,
     Header,
     Hero,
     Section1,
@@ -18,7 +18,7 @@ export default function SolutionScreen() {
             <Header />
             <Hero />
             <SectionNav />
-            <Education />
+            <Partner />
             <TrustBar />
             <Section1 />
             <Section2 />

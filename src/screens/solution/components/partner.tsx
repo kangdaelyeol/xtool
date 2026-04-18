@@ -12,7 +12,7 @@ const PartnerIcon = ({ idx }: { idx: number }) => {
     )
 }
 
-export const Education = () => {
+export const Partner = () => {
     const sliderRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
@@ -44,7 +44,7 @@ export const Education = () => {
         <div className={cn('flex bg-education-white h-25 overflow-hidden')}>
             <div
                 ref={sliderRef}
-                className="w-full h-full flex gap-[60px] *:select-none *:pointer-events-none"
+                className="w-full h-full flex gap-15 *:select-none *:pointer-events-none"
             >
                 {list.map((idx, i) => (
                     <PartnerIcon idx={idx} key={i} />

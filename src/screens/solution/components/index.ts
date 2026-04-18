@@ -1,6 +1,6 @@
 export * from './header'
 export * from './hero'
-export * from './education'
+export * from './partner'
 export * from './trust-bar'
 export * from './section-nav'
 export * from './section1'
