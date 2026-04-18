@@ -3,14 +3,16 @@ import { cn } from '@/utils'
 export const Footer = () => {
     return (
         <div className="min-[1500px]:h-106.5 md:max-[1500px]:h-80 relative overflow-hidden">
-            <img
-                src="/footer/footer-pc.webp"
-                alt="footer-image"
-                className="absolute top-0 left-0 object-cover min-w-300 w-full h-full md:max-lg:-left-40 -z-10 max-md:hidden"
-            />
+            <div className="absolute inset-0 flex justify-center items-center max-md:hidden">
+                <img
+                    src="/footer/footer-pc.webp"
+                    alt="footer-image"
+                    className="object-cover w-full h-full lg:max-[1200px]:object-[-250px_0px] md:max-lg:object-[-290px_0px] -z-10"
+                />
+            </div>
             <div className="hidden h-100 w-full max-md:flex">
                 <img
-                    className="hidden max-md:block h-full w-full object-cover max-[440px]:object-[-80px_0px]"
+                    className="hidden max-md:block h-full w-full object-cover max-[440px]:object-[-80px_0px] min-[630px]:object-[0px_-70px]"
                     src="/footer/footer-mobile.webp"
                     alt="footer-image"
                 />
