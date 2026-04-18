@@ -113,7 +113,7 @@ export const Contact = () => {
                     className={cn(
                         'w-full rounded-[15px] mx-auto',
                         'md:mt-10',
-                        'max-md:mt-10',
+                        'max-md:mt-10 max-md:px-2',
                     )}
                 >
                     <div
