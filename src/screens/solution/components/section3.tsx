@@ -108,10 +108,10 @@ export const Section3 = () => {
     return (
         <div
             className={cn(
-                'w-full md:pt-15 border-t border-t-gray-200 *:select-none *:break-keep',
+                'w-full border-t border-t-gray-200 *:select-none *:break-keep py-25 max-md:py-15',
                 'lg:scroll-mt-28',
-                'md:scroll-mt-28 md:pb-25',
-                'max-md:scroll-mt-22 max-md:pt-13 max-md:pb-15',
+                'md:scroll-mt-28',
+                'max-md:scroll-mt-22',
             )}
             id="system"
         >

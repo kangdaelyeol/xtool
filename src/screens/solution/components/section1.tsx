@@ -73,7 +73,7 @@ export const Section1 = () => {
     return (
         <div
             className={cn(
-                'w-full pb-20 *:select-none',
+                'w-full md:py-25 max-md:py-15 *:select-none',
                 'lg:scroll-mt-28 md:scroll-mt-28 max-md:scroll-mt-20',
             )}
             id="business"
@@ -88,9 +88,9 @@ export const Section1 = () => {
                 <div
                     className={cn(
                         'text-center font-semibold break-keep tracking-[-1.2px] text-title-black',
-                        'lg:mt-15 lg:text-[40px]',
-                        'md:mt-15 md:text-[34px]',
-                        'max-md:text-[20px] max-md:mt-10',
+                        'lg:text-[40px]',
+                        'md:text-[34px]',
+                        'max-md:text-[20px]',
                     )}
                 >
                     비즈니스와 교육의 경계를 허무는 기술

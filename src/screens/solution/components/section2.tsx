@@ -63,7 +63,7 @@ const ListItem = ({
                 {selected && (
                     <div
                         className={cn(
-                            'break-keep mt-2 text-font-gray-deep tracking-[-0.54px]',
+                            'break-keep mt-2 text-font-gray-deep tracking-[-0.5px]',
                             'lg:text-[15px] lg:pr-5 lg:leading-6',
                             'md:text-[13px] md:pr-3 md:leading-6',
                             'max-md:text-[12px] max-md:pr-2 max-md:leading-5',
@@ -98,10 +98,10 @@ export const Section2 = () => {
     return (
         <div
             className={cn(
-                'w-full bg-bg-ivory *:select-none',
-                'lg:scroll-mt-28 lg:pt-19',
-                'md:scroll-mt-28 md:pt-19',
-                'max-md:scroll-mt-20 max-md:pt-10',
+                'w-full bg-bg-ivory *:select-none md:pt-25 md:pb-15  max-md:pt-10 max-md:pb-15',
+                'lg:scroll-mt-28',
+                'md:scroll-mt-28',
+                'max-md:scroll-mt-20',
             )}
             id="solution"
         >

@@ -144,9 +144,7 @@ export const TransformEducation = () => {
     return (
         <div
             className={cn(
-                'w-full overflow-hidden *:select-none',
-                'md:py-20',
-                'max-md:py-15',
+                'w-full overflow-hidden *:select-none md:py-25 max-md:py-15',
             )}
         >
             <div

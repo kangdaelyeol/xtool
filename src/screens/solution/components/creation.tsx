@@ -20,7 +20,7 @@ const creationConfig = [
             '초보자도 빠르게 적응할 수 있는 직관적인 소프트웨어와 다양한 기능으로 확장 가능한 작업 환경을 제공합니다.',
     },
     {
-        label: 'PC, 탬플릿 사용가능',
+        label: 'PC, 태블릿 사용가능',
         src: '/creation/creation-video-2.mov',
         description: 'PC, 탬플릿 기기에서도 사용 가능 합니다.',
     },
@@ -127,7 +127,7 @@ export const Creation = () => {
         })
     }, [])
     return (
-        <div className="w-full max-md:mt-10 lg:py-10 md:py-5 *:select-none">
+        <div className="w-full md:py-25 max-md:py-15 *:select-none">
             <div className="w-full max-w-350 mx-auto">
                 <div
                     className={cn(

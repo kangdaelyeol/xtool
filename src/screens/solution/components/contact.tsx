@@ -85,16 +85,10 @@ export const Contact = () => {
 
     return (
         <div
-            className="w-full bg-black scroll-mt-18 *:select-none"
+            className="w-full bg-black scroll-mt-18 *:select-none py-25 max-md:py-15"
             id="contact"
         >
-            <div
-                className={cn(
-                    'w-full mx-auto pb-25',
-                    'lg:max-w-280 md:px-5',
-                    'md:pt-20 max-md:pt-10',
-                )}
-            >
+            <div className={cn('w-full mx-auto', 'lg:max-w-280 md:px-5')}>
                 <div className="text-center text-white md:text-[40px] font-semibold tracking-[-1.2px] max-md:text-[28px]">
                     귀사의 비즈니스에 xTool을 더하세요
                 </div>
