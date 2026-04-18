@@ -46,10 +46,10 @@ const Card = ({ subject, title, description, image }: CardInfo) => {
     return (
         <div
             className={cn(
-                'flex flex-col rounded-[10px] overflow-hidden bg-education-white',
+                'flex flex-col rounded-[5px] overflow-hidden bg-education-white pb-5',
                 'lg:w-[33%] lg:min-w-[33%]',
-                'md:w-[49%] md:min-w-[49%] md:py-5',
-                'max-md:w-[98%] max-md:min-w-[98%] max-md:py-5',
+                'md:w-[49%] md:min-w-[49%]',
+                'max-md:w-[98%] max-md:min-w-[98%]',
             )}
         >
             <div className="w-full h-50 flex justify-center items-center">
@@ -62,17 +62,17 @@ const Card = ({ subject, title, description, image }: CardInfo) => {
             <div
                 className={cn(
                     'flex flex-col *:font-notokr',
-                    'md:pt-7 md:px-6',
-                    'max-md:pt-5 max-md:px-5',
+                    'md:pt-5 md:px-5',
+                    'max-md:pt-5 max-md:pl-5',
                 )}
             >
-                <div className="font-semibold text-black/80 md:text-[15px] max-md:text-[13px]">
+                <div className="text-black/80 md:text-[15px] max-md:text-[13px]">
                     {subject}
                 </div>
-                <div className="font-bold tracking-wide md:text-[20px] md:mt-2 max-md:text-[19px] max-md:mt-1">
+                <div className="font-bold lg:text-[20px] md:text-[22px] md:mt-2 max-md:text-[19px] max-md:mt-1">
                     {title}
                 </div>
-                <div className="md:text-[13px] max-md:text-[12.5px] mt-1 break-keep font-semibold text-font-gray-deep tracking-wide">
+                <div className="lg:text-[14px] md:text-[14px] max-md:text-[12.5px] mt-1 break-keep text-font-gray-deep ">
                     {description}
                 </div>
             </div>
@@ -86,7 +86,7 @@ const PaginationDot = () => {
         transformEducationHandlers: { goToIdx },
     } = useResizeContext()
     return (
-        <div className="flex gap-2 pl-7">
+        <div className="flex gap-2 pl-1 max-md:pl-7 md:pl-6">
             {dotActiveList.map((val, idx) =>
                 val ? (
                     <div
@@ -146,7 +146,7 @@ export const TransformEducation = () => {
             className={cn(
                 'w-full overflow-hidden *:select-none',
                 'md:py-20',
-                'max-md:py-10',
+                'max-md:py-15',
             )}
         >
             <div
@@ -158,7 +158,7 @@ export const TransformEducation = () => {
                 {/* Title */}
                 <div
                     className={cn(
-                        'text-center text-black/90 font-semibold font-notokr tracking-wider break-keep',
+                        'text-center text-black/90 font-semibold font-notokr break-keep',
                         'lg:text-[40px] md:text-[40px] max-md:text-[26px]',
                     )}
                 >
@@ -167,7 +167,7 @@ export const TransformEducation = () => {
                 {/* Slider */}
                 <div
                     className={cn(
-                        'mt-15 w-full flex flex-col relative',
+                        'mt-10 w-full flex flex-col relative',
                         'lg:-left-4',
                         'md:px-2',
                         'max-md:px-2 max-md:left-1',
@@ -190,7 +190,7 @@ export const TransformEducation = () => {
                 <div
                     className={cn(
                         'flex justify-between w-full items-center relative',
-                        'lg:mt-5 lg:-left-4',
+                        'lg:mt-5 lg:-left-1',
                         'md:mt-5 md:-left-3',
                         'max-md:mt-3 max-md:-left-3',
                     )}

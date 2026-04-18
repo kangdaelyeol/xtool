@@ -5,9 +5,10 @@ export const TrustBar = () => {
         <div className="w-full bg-bg-ivory *:select-none">
             <div
                 className={cn(
-                    'w-full mx-auto flex justify-between pt-15 pb-25 *:font-notokr *:break-keep',
+                    'w-full mx-auto flex justify-between *:font-notokr *:break-keep',
                     'lg:max-w-300 lg:px-10',
-                    'md:max-w-300 md:px-10',
+                    'md:max-w-300 md:px-10 md:pt-15 md:pb-25',
+                    'max-md:pt-10 max-md:pb-15',
                 )}
             >
                 <div className="flex flex-col items-center basis-0 shrink grow">

@@ -87,7 +87,7 @@ export const Section1 = () => {
             >
                 <div
                     className={cn(
-                        'text-center font-semibold tracking-wider break-keep',
+                        'text-center font-semibold break-keep',
                         'lg:mt-15 lg:text-[40px]',
                         'md:mt-15 md:text-[34px]',
                         'max-md:text-[20px] max-md:mt-10',
@@ -97,7 +97,7 @@ export const Section1 = () => {
                 </div>
                 <div
                     className={cn(
-                        'text-center mt-3.5 text-font-gray-deep tracking-wide break-keep',
+                        'text-center mt-3.5 text-font-gray-deep break-keep',
                         'lg:text-[20px] md:text-[18px]',
                         'max-md:text-[12px] max-md:px-5',
                     )}

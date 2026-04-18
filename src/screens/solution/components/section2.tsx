@@ -108,7 +108,7 @@ export const Section2 = () => {
             <div className={cn('w-full mx-auto *:font-notokr', 'lg:max-w-350')}>
                 <div
                     className={cn(
-                        'text-center font-semibold tracking-wider break-keep',
+                        'text-center font-semibold break-keep',
                         'lg:text-[40px] md:text-[40px] text-[26px]',
                     )}
                 >
@@ -116,7 +116,7 @@ export const Section2 = () => {
                 </div>
                 <div
                     className={cn(
-                        'text-center mt-2 text-font-gray-deep tracking-wider break-keep',
+                        'text-center mt-2 text-font-gray-deep break-keep',
                         'lg:text-[20px] md:text-[20px]',
                         'max-md:text-[14px] max-md:px-4',
                     )}
