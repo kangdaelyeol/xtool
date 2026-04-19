@@ -18,7 +18,7 @@ export const Footer = () => {
                 />
             </div>
 
-            <div className="lg:max-[1500px]:max-w-240 min-[1500px]:max-w-400 md:max-lg:max-w-230 mx-auto px-10 max-md:absolute max-md:z-10 max-md:top-7">
+            <div className="lg:max-[1500px]:max-w-240 min-[1500px]:max-w-320 md:max-lg:max-w-230 mx-auto px-10 max-md:absolute max-md:z-10 max-md:top-7">
                 <div className="flex flex-col *:text-white *:tracking-[-0.6px]">
                     <div
                         className={cn(
