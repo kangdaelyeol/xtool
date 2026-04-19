@@ -85,7 +85,7 @@ export const Contact = () => {
 
     return (
         <div
-            className="w-full bg-black scroll-mt-18 *:select-none py-25 max-md:py-15 md:scroll-mt-30 max-md:scroll-mt-23"
+            className="w-full bg-black *:select-none py-25 max-md:py-15 md:scroll-mt-18 max-md:scroll-mt-23"
             id="contact"
         >
             <div className={cn('w-full mx-auto', 'lg:max-w-280 md:px-5')}>
