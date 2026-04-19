@@ -8,11 +8,11 @@ const PartnerIcon = ({ idx }: { idx: number }) => {
                 src={`/partner/${idx}.webp`}
                 className={cn(
                     'h-6.25 max-md:h-5 object-contain',
-                    idx === 0 && 'h-8.5',
-                    idx === 4 && 'h-8.5',
-                    idx === 5 && 'h-8',
-                    idx === 6 && 'h-10 mt-1.5',
-                    idx === 7 && 'h-9.5',
+                    idx === 0 && 'h-8.5 max-md:h-7',
+                    idx === 4 && 'h-8.5 max-md:h-7',
+                    idx === 5 && 'h-8 max-md:h-6.5',
+                    idx === 6 && 'h-10 mt-1.5 max-md:h-8 max-md:mt-1',
+                    idx === 7 && 'h-9.5 max-md:h-7.5',
                 )}
             />
         </div>

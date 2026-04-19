@@ -7,7 +7,7 @@ export const Footer = () => {
                 <img
                     src="/footer/footer-pc.webp"
                     alt="footer-image"
-                    className="object-cover w-full h-full lg:max-[1200px]:object-[-250px_0px] md:max-lg:object-[-290px_0px] -z-10"
+                    className="object-cover w-full h-full lg:max-[1200px]:object-[calc(-650px+40vw)_0px] md:max-lg:object-[calc(-1000px+70vw)_0px] -z-10"
                 />
             </div>
             <div className="hidden h-100 w-full max-md:flex">
@@ -18,7 +18,7 @@ export const Footer = () => {
                 />
             </div>
 
-            <div className="max-[1500px]:max-w-300 min-[1500px]:max-w-400 mx-auto px-10 max-md:absolute max-md:z-10 max-md:top-7">
+            <div className="lg:max-[1500px]:max-w-240 min-[1500px]:max-w-400 md:max-lg:max-w-230 mx-auto px-10 max-md:absolute max-md:z-10 max-md:top-7">
                 <div className="flex flex-col *:text-white *:tracking-[-0.6px]">
                     <div
                         className={cn(
