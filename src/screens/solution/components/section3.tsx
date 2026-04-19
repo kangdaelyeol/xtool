@@ -5,6 +5,9 @@ import { BusinessIcon, PresentationIcon, TruckIcon, WrenchIcon } from '../icons'
 
 type Icon = 'business' | 'truck' | 'wrench' | 'presentation'
 
+const subCopy =
+    '기업의 비즈니스 성과와 교육 효과를 높이기 위해 xTool 전담팀이 함께합니다.'
+
 interface Props {
     icon: Icon
     title: string
@@ -40,7 +43,7 @@ const gridItemConfig = [
             icon: 'wrench',
             title: '전문 기술 지원',
             description:
-                '전문 엔지니어의 현장 설치, 초기 세팅 및 정기 점검 서비스 제공',
+                '전문 엔지니어의 현장 설치 및 초기 세팅 및 정기 점검 서비스',
         },
         {
             icon: 'presentation',
@@ -199,8 +202,7 @@ export const Section3 = () => {
                             'max-md:hidden',
                         )}
                     >
-                        기업의 비즈니스 성과와 교육 효과를 높이기 위해 xTool
-                        전담팀이 함께합니다.
+                        {subCopy}
                     </div>
                     {/* responsive - max-md */}
                     <div
@@ -216,8 +218,7 @@ export const Section3 = () => {
                             'hidden max-md:block',
                         )}
                     >
-                        기업의 비즈니스 가치 창출과 교육기관의 학습 효과
-                        극대화를 위해 xTool 전담 팀이 함께합니다.
+                        {subCopy}
                     </div>
                     <div className={cn('hidden max-md:block relative mt-4')}>
                         <img

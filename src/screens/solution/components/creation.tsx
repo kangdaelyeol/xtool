@@ -20,9 +20,9 @@ const creationConfig = [
             '초보자도 빠르게 적응할 수 있는 직관적인 소프트웨어와 다양한 기능으로 확장 가능한 작업 환경을 제공합니다.',
     },
     {
-        label: 'PC, 태블릿 사용가능',
+        label: 'PC 및 태블릿 사용가능',
         src: '/creation/creation-video-2.mov',
-        description: 'PC, 태블릿 기기에서도 사용 가능 합니다.',
+        description: 'PC 및 태블릿 기기에서도 사용 가능 합니다.',
     },
     {
         label: 'AI 디자인 자동 생성',

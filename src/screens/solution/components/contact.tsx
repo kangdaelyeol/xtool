@@ -85,11 +85,11 @@ export const Contact = () => {
 
     return (
         <div
-            className="w-full bg-black scroll-mt-18 *:select-none py-25 max-md:py-15"
+            className="w-full bg-black scroll-mt-18 *:select-none py-25 max-md:py-15 md:scroll-mt-30 max-md:scroll-mt-23"
             id="contact"
         >
             <div className={cn('w-full mx-auto', 'lg:max-w-280 md:px-5')}>
-                <div className="text-center text-white md:text-[40px] font-semibold tracking-[-1.2px] max-md:text-[28px]">
+                <div className="text-center text-white md:text-[40px] font-semibold tracking-[-1.2px] max-md:text-[25px]">
                     귀사의 비즈니스에 xTool을 더하세요
                 </div>
                 <div
@@ -99,8 +99,8 @@ export const Contact = () => {
                         'max-md:mt-2 max-md:text-[12.5px]',
                     )}
                 >
-                    기관의 예산과 운영 목적, 기업의 생산 공정에 가장 적합한
-                    모델을 제안해 드립니다.
+                    기관의 예산과 운영 목적, 기업의 생산 환경에 맞춰 최적의
+                    모델을 제안드립니다.
                 </div>
 
                 <div
@@ -232,7 +232,7 @@ export const Contact = () => {
                                     'border border-border-gray p-3 w-full max-h-30 min-h-30 resize-none rounded-[5px] ',
                                     'text-[14px] mt-2 placeholder:text-[14px] tracking-[-0.5px]',
                                 )}
-                                placeholder="도입 목적, 예상 수량, 필요한 지원 서비스 등을 적어주세요"
+                                placeholder="도입 목적, 예상 수량, 필요하신 지원 내용 등을 자유롭게 작성해 주새요"
                             ></textarea>
                         </div>
                         {/* 개인정보 수집 동의 */}
