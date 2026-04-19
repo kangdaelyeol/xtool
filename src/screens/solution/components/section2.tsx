@@ -57,7 +57,7 @@ const ListItem = ({
             onClick={onClick}
         >
             <div className="flex flex-col">
-                <div className="font-semibold lg:text-[20px] md:text-[20px] max-md:text-[17px] tracking-[-0.78px]">
+                <div className="font-semibold text-[20px] tracking-[-0.78px]">
                     {title}
                 </div>
                 {selected && (
@@ -66,7 +66,7 @@ const ListItem = ({
                             'break-keep mt-2 text-font-gray-deep tracking-[-0.5px]',
                             'lg:text-[15px] lg:pr-5 lg:leading-6',
                             'md:text-[13px] md:pr-3 md:leading-6',
-                            'max-md:text-[12px] max-md:pr-2 max-md:leading-5',
+                            'max-md:text-[13px] max-md:pr-2 max-md:leading-5',
                         )}
                     >
                         {description}

@@ -108,7 +108,7 @@ export const Section3 = () => {
     return (
         <div
             className={cn(
-                'w-full border-t border-t-gray-200 *:select-none *:break-keep py-25 max-md:py-15',
+                'w-full border-t border-t-gray-200 *:select-none *:break-keep py-25 max-md:py-10',
                 'lg:scroll-mt-28',
                 'md:scroll-mt-28',
                 'max-md:scroll-mt-22',
@@ -127,7 +127,7 @@ export const Section3 = () => {
                         'w-full',
                         'lg:max-w-170 lg:relative',
                         'md:max-w-130 md:relative',
-                        'max-md:absolute max-md:w-full max-md:top-30 max-md:left-3',
+                        'max-md:hidden',
                     )}
                 >
                     <div
@@ -136,7 +136,6 @@ export const Section3 = () => {
                             'min-[1200px]:w-125 min-[1200px]:h-132 min-[1200px]:top-10 min-[1200px]:left-3',
                             'lg:max-[1200px]:w-110 lg:max-[1200px]:h-123 lg:max-[1200px]:top-10 lg:max-[1200px]:left-3',
                             'md:max-lg:w-[90%] md:max-lg:h-110 md:max-lg:top-30',
-                            'max-md:h-full max-md:w-full max-md:mx-auto max-md:hidden',
                         )}
                     >
                         <img
@@ -152,13 +151,12 @@ export const Section3 = () => {
                             'lg:max-[1200px]:w-[230px] lg:max-[1200px]:h-46 lg:max-[1200px]:left-60 lg:max-[1200px]:top-90',
                             'md:max-lg:top-110 md:max-lg:right-7 md:max-lg:w-60 md:max-lg:h-46',
                             'md:pl-5 md:pt-5',
-                            'max-md:w-40 max-md:-bottom-10 max-md:right-0 max-md:pl-3 max-md:pt-4 max-md:h-23 max-md:hidden',
                         )}
                     >
                         <img
                             src="/x-logo.png"
                             alt="xtool-logo"
-                            className="w-10 max-md:w-5 pointer-events-none"
+                            className="w-10 pointer-events-none"
                         />
                         <div
                             className={cn(
@@ -194,10 +192,10 @@ export const Section3 = () => {
 
                     <div
                         className={cn(
-                            'text-font-gray-deep tracking-[-0.6px]',
+                            'text-font-gray-deep tracking-[-0.6px] mt-1',
                             'min-[1290px]:text-[20px]',
-                            'lg:max-[1290px]:text-[17px] lg:mt-3',
-                            'md:max-lg:text-[20px] md:mt-1',
+                            'lg:max-[1290px]:text-[17px]',
+                            'md:max-lg:text-[20px]',
                             'max-md:hidden',
                         )}
                     >
@@ -229,7 +227,7 @@ export const Section3 = () => {
                         />
                         <div
                             className={cn(
-                                'max-md:block absolute w-40 -bottom-10 -right-3 pl-3 pt-4 pb-2 hidden bg-[#00CE65] rounded-[10px]',
+                                'hidden max-md:block absolute w-40 -bottom-10 -right-3 pl-3 pt-4 pb-2 bg-[#00CE65] rounded-[10px]',
                             )}
                         >
                             <img

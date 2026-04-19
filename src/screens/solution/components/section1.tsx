@@ -34,7 +34,7 @@ const Card = ({ title, description, image }: CardProps) => {
                 'bg-education-white rounded-[10px] flex flex-col overflow-hidden md:pb-5',
                 'lg:w-[32%]',
                 'md:w-[32%]',
-                'max-md:w-[95%] max-md:mx-auto max-md:mt-10',
+                'max-md:w-[95%] max-md:mx-auto max-md:mt-5',
             )}
         >
             <div className="max-md:h-90 lg:h-70 md:h-60 flex justify-center items-center">
@@ -51,7 +51,7 @@ const Card = ({ title, description, image }: CardProps) => {
                     'max-md:mt-3 max-md:gap-1 max-md:pl-4 max-md:pb-5 max-md:pr-5',
                 )}
             >
-                <div className="font-semibold lg:text-[24px] md:text-[19px] max-md:text-[17px] tracking-[-0.72px]">
+                <div className="font-semibold lg:text-[24px] md:text-[19px] max-md:text-[20px] tracking-[-0.72px]">
                     {title}
                 </div>
                 <div
@@ -59,7 +59,7 @@ const Card = ({ title, description, image }: CardProps) => {
                         'text-font-gray break-keep tracking-[-0.54px]',
                         'lg:text-[17px] lg:leading-7',
                         'md:text-[15px] md:leading-6',
-                        'max-md:text-[12px] leading-5',
+                        'max-md:text-[14px] leading-5',
                     )}
                 >
                     {description}
@@ -90,7 +90,7 @@ export const Section1 = () => {
                         'text-center font-semibold break-keep tracking-[-1.2px] text-title-black',
                         'lg:text-[40px]',
                         'md:text-[34px]',
-                        'max-md:text-[20px]',
+                        'max-md:text-[25px]',
                     )}
                 >
                     비즈니스와 교육의 경계를 허무는 기술
@@ -99,7 +99,7 @@ export const Section1 = () => {
                     className={cn(
                         'text-center mt-3.5 text-font-gray-deep break-keep tracking-[-0.6px]',
                         'lg:text-[20px] md:text-[18px]',
-                        'max-md:text-[12px] max-md:px-5',
+                        'max-md:text-[14px] max-md:px-5',
                     )}
                 >
                     엑스툴은 기업의 생산성 향상과 교육 현장의 창의적 변화를 위해
@@ -107,8 +107,9 @@ export const Section1 = () => {
                 </div>
                 <div
                     className={cn(
-                        'flex justify-between mx-auto w-full',
-                        'lg:flex-row md:flex-row flex-col lg:mt-10 md:mt-10',
+                        'flex flex-col justify-between mx-auto w-full',
+                        'md:mt-10 md:flex-row',
+                        'lg:flex-row lg:mt-10 ',
                     )}
                 >
                     {cardConfig.map(({ title, description, image }) => (
