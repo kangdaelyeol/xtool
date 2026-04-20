@@ -40,8 +40,8 @@ export const Header = () => {
                     />
                     <div
                         className={cn(
-                            'font-medium tracking-wide text-[#121212] whitespace-nowrap',
-                            'text-[16px] ml-1.5',
+                            'font-medium font-montserrat text-[#121212] whitespace-nowrap',
+                            'text-[18px] ml-1.5',
                             'max-md:text-[14px]',
                         )}
                     >
@@ -49,12 +49,12 @@ export const Header = () => {
                     </div>
                 </div>
 
-                <div className="flex gap-4 items-center *:cursor-pointer *:font-notokr *:font-[400] *:whitespace-nowrap">
+                <div className="flex gap-4 items-center *:cursor-pointer *:font-[400] *:whitespace-nowrap">
                     {/* div -> button 접근성 최적화
                         button을 div로 구현하려면 role='button' tabIndex onKeyDown 등을 추가로 구현해야 한다.
                         실무적으로도 SEO크롤러나 접근성 검사도구에서 감점 요인이 될 수 있음.
                      */}
-                    <button className="flex gap-1 hover:bg-black/6 rounded-[5px] text-[15px] px-2.5 py-2">
+                    <button className="flex gap-1 font-pretendard hover:bg-black/6 rounded-[5px] text-[18px] px-2.5 py-2 tracking-[-0.5px]">
                         기업 소개서
                         <DownloadIcon size={18} color="#000000" />
                     </button>

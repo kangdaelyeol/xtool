@@ -9,10 +9,10 @@ interface ItemProps {
 }
 
 const navConfig = [
-    { id: 'business', label: '비즈니스와 교육' },
+    { id: 'business', label: '비즈니스 및 교육' },
     { id: 'solution', label: '교육 솔루션' },
     { id: 'system', label: '지원 시스템' },
-    { id: 'contact', label: '문의하기' },
+    { id: 'contact', label: '견적 문의' },
 ]
 
 const Item = ({ label, activeSection, id, onClick }: ItemProps) => {
@@ -21,8 +21,8 @@ const Item = ({ label, activeSection, id, onClick }: ItemProps) => {
         <div
             onClick={onClick}
             className={cn(
-                'flex flex-col items-center cursor-pointer text-[#ffffffb1] *:font-notokr whitespace-nowrap',
-                'text-[12px] md:text-[16px] lg:text-[18px]',
+                'flex flex-col items-center cursor-pointer text-[#ffffffb1] *:font-pretendard font-medium whitespace-nowrap tracking-[-0.5px]',
+                'max-md:text-[12px] md:text-[16px] lg:text-[18px]',
             )}
         >
             <div

@@ -37,7 +37,7 @@ export const Hero = () => {
                 <div className={cn('flex flex-col relative')}>
                     <div
                         className={cn(
-                            'font-[700] font-notokr text-title-black',
+                            'font-[700] font-pretendard text-title-black tracking-[-1px] leading-[160%]',
                             'lg:text-[40px] lg:mt-17',
                             'md:text-[22px] md:mt-13',
                             'max-md:text-[25px] max-md:mt-8',
@@ -48,7 +48,7 @@ export const Hero = () => {
                     </div>
                     <div
                         className={cn(
-                            'text-title-black tracking-wide font-[400]',
+                            'text-title-black font-[400] font-pretendard tracking-[-0.5px]',
                             'lg:text-[20px] lg:mt-5',
                             'md:text-[16px] md:mt-3',
                             'max-md:text-[15px] max-md:mt-3',
@@ -59,7 +59,7 @@ export const Hero = () => {
 
                     <div
                         className={cn(
-                            'flex text-[17px] items-center justify-center bg-btn-dark text-[#ffffff] rounded-[3px] hover:bg-btn-dark/85 py-2 gap-0.5 cursor-pointer',
+                            'flex text-[17px] items-center justify-center bg-btn-dark text-[#ffffff] rounded-[3px] hover:bg-btn-dark/85 py-2 gap-0.5 cursor-pointer font-pretendard',
                             'lg:mt-10 lg:w-[149px] lg:h-[45px]',
                             'md:mt-6 md:w-[140px] md:h-[40px]',
                             'max-md:text-[15px] max-md:mt-4 max-md:w-[125px] max-md:h-[35px]',
