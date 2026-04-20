@@ -232,7 +232,8 @@ export const Contact = () => {
                                 ref={contentRef}
                                 className={cn(
                                     'border border-border-gray p-3 w-full max-h-30 min-h-30 resize-none rounded-[5px] ',
-                                    'text-[16px] mt-2 placeholder:text-[16px] tracking-[-0.5px] placeholder:font-pretendard',
+                                    'md:text-[16px] mt-2 md:placeholder:text-[16px] tracking-[-0.5px] placeholder:font-pretendard',
+                                    'max-md:text-[14px]  max-md:placeholder:text-[14px]',
                                 )}
                                 placeholder="도입 목적, 예상 수량, 필요하신 지원 내용 등을 자유롭게 작성해 주새요"
                             ></textarea>

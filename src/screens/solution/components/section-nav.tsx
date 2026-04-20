@@ -70,7 +70,7 @@ export const SectionNav = () => {
         <div
             className={cn(
                 'sticky bg-black/50 w-full backdrop-blur-sm z-40 *:select-none',
-                'top-13.75 md:top-[70.5px] lg:top-[70.5px]',
+                'max-md:top-[61px] md:top-[75px] lg:top-[75px]',
             )}
         >
             <div
