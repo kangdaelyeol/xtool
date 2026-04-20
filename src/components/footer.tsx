@@ -3,6 +3,7 @@ import { cn } from '@/utils'
 export const Footer = () => {
     return (
         <div className="min-[1500px]:h-106.5 md:max-[1500px]:h-80 relative overflow-hidden">
+            {/* background image */}
             <div className="absolute inset-0 flex justify-center items-center max-md:hidden">
                 <img
                     src="/footer/footer-pc.webp"
@@ -18,7 +19,8 @@ export const Footer = () => {
                 />
             </div>
 
-            <div className="lg:max-[1500px]:max-w-240 min-[1500px]:max-w-320 md:max-lg:max-w-230 mx-auto px-10 max-md:absolute max-md:z-10 max-md:top-7">
+            {/* contents */}
+            <div className="lg:max-[1500px]:max-w-240 min-[1500px]:max-w-320 md:max-lg:max-w-230 mx-auto px-10 max-md:absolute max-md:z-10 max-md:top-7 *:font-pretendard">
                 <div className="flex flex-col *:text-white *:tracking-[-0.6px]">
                     <div
                         className={cn(

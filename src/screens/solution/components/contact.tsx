@@ -20,6 +20,8 @@ interface SelectItemProps {
     selected: boolean
 }
 
+const inputStyle = 'flex-1 font-pretendard text-title-black'
+
 const Input = ({
     className,
     required,
@@ -132,7 +134,7 @@ export const Contact = () => {
                                 required
                                 placeholder="기관명 또는 회사명"
                                 title="기관/기업명"
-                                className="flex-1 font-pretendard text-title-black"
+                                className={inputStyle}
                             />
                             <Input
                                 ref={userNameRef}
@@ -140,7 +142,7 @@ export const Contact = () => {
                                 required
                                 placeholder="직함 및 성함"
                                 title="담당자 성함/직함"
-                                className="flex-1 font-pretendard text-title-black"
+                                className={inputStyle}
                             />
                         </div>
                         {/* Row 2 - 연락처, 이메일*/}
@@ -158,7 +160,7 @@ export const Contact = () => {
                                 required
                                 placeholder="010-0000-0000"
                                 title="연락처"
-                                className="flex-1 font-pretendard text-title-black"
+                                className={inputStyle}
                                 onChange={(e) => {
                                     e.currentTarget.value = formatPhone(
                                         e.currentTarget.value,
@@ -171,7 +173,7 @@ export const Contact = () => {
                                 required
                                 placeholder="example@email.com"
                                 title="이메일 주소"
-                                className="flex-1 font-pretendard text-title-black"
+                                className={inputStyle}
                             />
                         </div>
                         {/* Inquiry type - 문의 유형*/}
@@ -253,7 +255,7 @@ export const Contact = () => {
                             </div>
                             <div
                                 onClick={handlers.privacyTermClick}
-                                className="underline underline-offset-4 select-none cursor-pointer hover:text-gray-600 tracking-[-0.5px] max-md:text-[14px] md:text-[16px] font-pretendard tracking-[-0.5px]"
+                                className="underline underline-offset-4 select-none cursor-pointer hover:text-gray-600 max-md:text-[14px] md:text-[16px] font-pretendard tracking-[-0.5px]"
                             >
                                 자세히보기
                             </div>
