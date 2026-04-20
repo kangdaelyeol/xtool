@@ -61,7 +61,7 @@ const Card = ({ subject, title, description, image }: CardInfo) => {
             </div>
             <div
                 className={cn(
-                    'flex flex-col *:font-notokr',
+                    'flex flex-col *:font-pretendard',
                     'md:pt-5 md:px-5',
                     'max-md:pt-5 max-md:pl-5',
                 )}
@@ -156,7 +156,7 @@ export const TransformEducation = () => {
                 {/* Title */}
                 <div
                     className={cn(
-                        'text-center text-black/90 font-semibold font-notokr break-keep tracking-[-1.2px]',
+                        'text-center text-black/90 font-semibold break-keep tracking-[-1.2px] font-pretendard',
                         'lg:text-[40px] md:text-[40px] max-md:text-[26px]',
                     )}
                 >

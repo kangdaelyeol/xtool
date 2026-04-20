@@ -67,7 +67,7 @@ const SelectItem = ({ label, onClick, selected }: SelectItemProps) => {
             )}
             <div
                 className={cn(
-                    'text-font-gray-deep ml-2 lg:text-[16px] select-none max-md:text-[12px]',
+                    'text-font-gray-deep ml-2 lg:text-[16px] select-none max-md:text-[12px] font-pretendard tracking-[-0.5px]',
                     selected && 'text-black border-black',
                 )}
             >
@@ -90,11 +90,11 @@ export const Contact = () => {
         >
             <div className={cn('w-full mx-auto', 'lg:max-w-280 md:px-5')}>
                 <div className="text-center text-white md:text-[40px] font-semibold tracking-[-1.2px] max-md:text-[25px]">
-                    귀사의 비즈니스에 xTool을 더하세요
+                    귀사의 비즈니스에 xTool을 더해보세요
                 </div>
                 <div
                     className={cn(
-                        'text-center tracking-[-0.6px] text-[#d9d9d9] break-keep',
+                        'text-center tracking-[-0.6px] text-[#d9d9d9] break-keep font-pretendard',
                         'md:text-[20px] md:mt-3',
                         'max-md:mt-2 max-md:text-[12.5px]',
                     )}
@@ -132,7 +132,7 @@ export const Contact = () => {
                                 required
                                 placeholder="기관명 또는 회사명"
                                 title="기관/기업명"
-                                className="flex-1"
+                                className="flex-1 font-pretendard text-title-black"
                             />
                             <Input
                                 ref={userNameRef}
@@ -140,7 +140,7 @@ export const Contact = () => {
                                 required
                                 placeholder="직함 및 성함"
                                 title="담당자 성함/직함"
-                                className="flex-1"
+                                className="flex-1 font-pretendard text-title-black"
                             />
                         </div>
                         {/* Row 2 - 연락처, 이메일*/}
@@ -158,7 +158,7 @@ export const Contact = () => {
                                 required
                                 placeholder="010-0000-0000"
                                 title="연락처"
-                                className="flex-1"
+                                className="flex-1 font-pretendard text-title-black"
                                 onChange={(e) => {
                                     e.currentTarget.value = formatPhone(
                                         e.currentTarget.value,
@@ -171,16 +171,16 @@ export const Contact = () => {
                                 required
                                 placeholder="example@email.com"
                                 title="이메일 주소"
-                                className="flex-1"
+                                className="flex-1 font-pretendard text-title-black"
                             />
                         </div>
                         {/* Inquiry type - 문의 유형*/}
                         <div className="md:mt-8 max-md:mt-3">
-                            <div className="font-semibold md:text-[18px] max-md:text-[18px]">
+                            <div className="font-semibold md:text-[18px] max-md:text-[18px] font-pretendard tracking-[-0.5px]">
                                 문의 유형{' '}
                                 <span className="text-red-600">*</span>
                             </div>
-                            <div className="text-font-gray-deep md:text-[14px] max-md:text-[14px]">
+                            <div className="text-font-gray-deep md:text-[14px] max-md:text-[14px] font-pretendard tracking-[-0.4px]">
                                 중복 선택 가능
                             </div>
                             <div className="flex lg:flex-row md:flex-col max-md:flex-col gap-2 md:mt-2 max-md:mt-1">
@@ -223,14 +223,14 @@ export const Contact = () => {
                         </div>
                         {/* Detail - 상세 내용 */}
                         <div className="md:mt-8 max-md:mt-3">
-                            <div className="font-semibold md:text-[18px] max-md:text-[18px] tracking-[-0.5px]">
+                            <div className="font-semibold md:text-[18px] max-md:text-[18px] tracking-[-0.5px] font-pretendard">
                                 상세 내용
                             </div>
                             <textarea
                                 ref={contentRef}
                                 className={cn(
                                     'border border-border-gray p-3 w-full max-h-30 min-h-30 resize-none rounded-[5px] ',
-                                    'text-[14px] mt-2 placeholder:text-[14px] tracking-[-0.5px]',
+                                    'text-[16px] mt-2 placeholder:text-[16px] tracking-[-0.5px] placeholder:font-pretendard',
                                 )}
                                 placeholder="도입 목적, 예상 수량, 필요하신 지원 내용 등을 자유롭게 작성해 주새요"
                             ></textarea>
@@ -246,14 +246,14 @@ export const Contact = () => {
                                 )}
                             </div>
                             <div
-                                className="font-notokr text-font-gray font-[300] select-none cursor-pointer max-md:text-[14px] md:text-[16px] lg:text-[16px] tracking-[-0.5px]"
+                                className="font-pretendard text-font-gray font-[300] select-none cursor-pointer max-md:text-[14px] md:text-[16px] lg:text-[16px] tracking-[-0.5px]"
                                 onClick={handlers.privacyAgreementClick}
                             >
                                 개인정보 수집 및 이용에 동의합니다.
                             </div>
                             <div
                                 onClick={handlers.privacyTermClick}
-                                className="underline underline-offset-4 select-none cursor-pointer hover:text-gray-600 tracking-[-0.5px] max-md:text-[14px] md:text-[16px]"
+                                className="underline underline-offset-4 select-none cursor-pointer hover:text-gray-600 tracking-[-0.5px] max-md:text-[14px] md:text-[16px] font-pretendard tracking-[-0.5px]"
                             >
                                 자세히보기
                             </div>
@@ -262,7 +262,7 @@ export const Contact = () => {
                         <div
                             onClick={handlers.submitClick}
                             className={cn(
-                                'mt-3 select-none w-fullv font-[700] cursor-pointer bg-black text-white text-center font-notokr rounded-[9px] py-3.5 text-[20px] tracking-[-0.6px]',
+                                'mt-3 select-none w-fullv font-[700] cursor-pointer bg-black text-white text-center font-pretendard rounded-[9px] py-3.5 text-[20px] tracking-[-0.6px]',
                                 'hover:bg-gray-800',
                             )}
                         >

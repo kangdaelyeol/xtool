@@ -16,7 +16,7 @@ const cardConfig = [
     {
         title: '직관적인 인터페이스',
         description:
-            '직관적인 인터페이스로 설계되어 별도의 복잡한 설정 없이 누구나 쉽게 빠르게 적응하고 사용할 수 있습니다.',
+            '직관적인 인터페이스로 설계되어 별도의 복잡한 설정 없이 누구나 쉽게 빠르게 적응하여 사용할 수 있습니다.',
         image: '/tech/tech-2.webp',
     },
     {
@@ -51,13 +51,13 @@ const Card = ({ title, description, image }: CardProps) => {
                     'max-md:mt-3 max-md:gap-1 max-md:pl-4 max-md:pb-5 max-md:pr-5',
                 )}
             >
-                <div className="font-semibold lg:text-[24px] md:text-[19px] max-md:text-[20px] tracking-[-0.72px]">
+                <div className="font-semibold font-pretendard text-title-black lg:text-[24px] md:text-[19px] max-md:text-[20px] tracking-[-0.72px]">
                     {title}
                 </div>
                 <div
                     className={cn(
-                        'text-font-gray break-keep tracking-[-0.54px]',
-                        'lg:text-[17px] lg:leading-7',
+                        'text-font-gray break-keep tracking-[-0.54px] font-pretendard',
+                        'lg:text-[17px] lg:leading-[180%]',
                         'md:text-[15px] md:leading-6',
                         'max-md:text-[14px] leading-5',
                     )}

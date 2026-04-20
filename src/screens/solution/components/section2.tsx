@@ -105,10 +105,15 @@ export const Section2 = () => {
             )}
             id="solution"
         >
-            <div className={cn('w-full mx-auto *:font-notokr', 'lg:max-w-350')}>
+            <div
+                className={cn(
+                    'w-full mx-auto *:font-pretendard',
+                    'lg:max-w-350',
+                )}
+            >
                 <div
                     className={cn(
-                        'text-center font-semibold break-keep tracking-[-1.2px]',
+                        'text-center font-semibold break-keep tracking-[-1.2px] ',
                         'lg:text-[40px] md:text-[40px] text-[26px]',
                     )}
                 >

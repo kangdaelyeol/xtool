@@ -111,7 +111,7 @@ export const Section3 = () => {
     return (
         <div
             className={cn(
-                'w-full border-t border-t-gray-200 *:select-none *:break-keep py-25 max-md:py-10',
+                'w-full border-t border-t-gray-200 *:select-none *:break-keep py-25 max-md:py-10 *:font-pretendard',
                 'lg:scroll-mt-28',
                 'md:scroll-mt-28',
                 'max-md:scroll-mt-22',
@@ -163,8 +163,7 @@ export const Section3 = () => {
                         />
                         <div
                             className={cn(
-                                'text-white font-semibold text-[40px] text-end pr-5 md:mt-6 tracking-[-1.2px]',
-                                'max-md:text-[20px] max-md:mt-1',
+                                'text-white font-semibold text-[40px] text-end pr-5 md:mt-6 tracking-[-1.2px] font-montserrat',
                             )}
                         >
                             PRO
@@ -238,7 +237,7 @@ export const Section3 = () => {
                             />
                             <div
                                 className={cn(
-                                    'text-white font-semibold text-[25px] text-end pr-5 mt-2 tracking-[-1.2px]',
+                                    'text-white font-semibold text-[25px] text-end pr-5 mt-2 tracking-[-1.2px] font-montserrat',
                                 )}
                             >
                                 PRO
@@ -250,7 +249,7 @@ export const Section3 = () => {
                     </div>
                     <div
                         className={cn(
-                            'flex flex-col *:font-notokr',
+                            'flex flex-col *:font-pretendard',
                             'lg:mt-5 lg:gap-5',
                             'md:mt-1 md:gap-2',
                             'max-md:gap-2 max-md:mt-10',
