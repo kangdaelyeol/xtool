@@ -5,9 +5,6 @@ import { BusinessIcon, PresentationIcon, TruckIcon, WrenchIcon } from '../icons'
 
 type Icon = 'business' | 'truck' | 'wrench' | 'presentation'
 
-const subCopy =
-    '기업의 비즈니스 성과와 교육 효과를 높이기 위해 xTool 전담팀이 함께합니다.'
-
 interface Props {
     icon: Icon
     title: string
@@ -177,19 +174,20 @@ export const Section3 = () => {
                     className={cn(
                         'flex flex-col',
                         'md:gap-3',
-                        'max-md:gap-2 max-md:px-5 max-md:w-full',
+                        'max-md:gap-2 max-md:px-4 max-md:w-full',
                     )}
                 >
                     <div
                         className={cn(
-                            'font-semibold text-title-black tracking-[-1.2px] ',
+                            'font-bold text-title-black tracking-[-1.2px] ',
                             'lg:text-[40px] lg:mt-4 lg:leading-[64px]',
                             'md:text-[33px] md:mt-1',
                             'max-md:hidden',
                         )}
                     >
                         도입부터 운영까지 책임지는
-                        <br /> PRO 전문 지원 시스템
+                        <br /> <span className="font-montserrat">PRO</span> 전문
+                        지원 시스템
                     </div>
 
                     <div
@@ -201,15 +199,21 @@ export const Section3 = () => {
                             'max-md:hidden',
                         )}
                     >
-                        {subCopy}
+                        <span>
+                            기업의 비즈니스 성과와 교육 효과를 높이기 위해{' '}
+                            <span className="font-montserrat">xTool</span>{' '}
+                            전담팀이 함께합니다.
+                        </span>
                     </div>
                     {/* responsive - max-md */}
                     <div
                         className={cn(
-                            'font-semibold text-[20px] text-center text-title-black tracking-[-1.2px] hidden max-md:block',
+                            'font-bold text-[25px] text-center text-title-black tracking-[-1.2px] hidden max-md:block',
                         )}
                     >
-                        도입부터 운영까지 책임지는 PRO 전문 지원 시스템
+                        도입부터 운영까지 책임지는 <br />
+                        <span className="font-montserrat">PRO</span> 전문 지원
+                        시스템
                     </div>
                     <div
                         className={cn(
@@ -217,9 +221,14 @@ export const Section3 = () => {
                             'hidden max-md:block',
                         )}
                     >
-                        {subCopy}
+                        기업의 비즈니스 성과와 교육 효과를 높이기 위해
+                        <br />
+                        <span className="font-montserrat">xTool</span> 전담팀이
+                        함께합니다.
                     </div>
-                    <div className={cn('hidden max-md:block relative mt-4')}>
+                    <div
+                        className={cn('hidden max-md:block relative mt-4 px-2')}
+                    >
                         <img
                             src="/support/support-x.webp"
                             alt="support-img"
@@ -227,7 +236,7 @@ export const Section3 = () => {
                         />
                         <div
                             className={cn(
-                                'hidden max-md:block absolute w-40 -bottom-10 -right-3 pl-3 pt-4 pb-2 bg-[#00CE65] rounded-[10px]',
+                                'hidden max-md:block absolute w-40 -bottom-10 -right-1 pl-3 pt-4 pb-2 bg-[#00CE65] rounded-[10px]',
                             )}
                         >
                             <img
@@ -257,7 +266,7 @@ export const Section3 = () => {
                     >
                         {gridItemConfig.map((list, idx) => (
                             <div
-                                className="flex lg:gap-5 md:gap-2 md:max-lg:flex-col max-md:flex-col max-md:gap-3"
+                                className="flex lg:gap-5 md:gap-2 md:max-lg:flex-col max-md:flex-col max-md:gap-3 max-md:px-2"
                                 key={idx}
                             >
                                 {list.map(({ title, description, icon }) => (

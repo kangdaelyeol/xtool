@@ -54,9 +54,14 @@ export const Header = () => {
                         button을 div로 구현하려면 role='button' tabIndex onKeyDown 등을 추가로 구현해야 한다.
                         실무적으로도 SEO크롤러나 접근성 검사도구에서 감점 요인이 될 수 있음.
                      */}
-                    <button className="flex gap-1 font-pretendard hover:bg-black/6 rounded-[5px] text-[18px] px-2.5 py-2 tracking-[-0.5px]">
+                    <button className="flex items-center gap-1 font-pretendard hover:bg-black/6 rounded-[5px] md:text-[18px] max-md:text-[15px] px-2.5 py-2 tracking-[-0.5px]">
                         기업 소개서
-                        <DownloadIcon size={18} color="#000000" />
+                        <div className="max-md:hidden">
+                            <DownloadIcon size={18} color="#000000" />
+                        </div>
+                        <div className="hidden max-md:block">
+                            <DownloadIcon size={16} color="#000000" />
+                        </div>
                     </button>
                 </div>
             </div>

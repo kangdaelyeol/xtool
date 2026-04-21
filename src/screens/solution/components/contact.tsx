@@ -43,7 +43,7 @@ const Input = ({
                 required={required}
                 placeholder={placeholder}
                 className={cn(
-                    'border border-border-gray rounded-[5px] py-2 px-2 tracking-[-0.5px] md:placeholder:text-[16px] text-[16px] max-md:placeholder:text-[12px]',
+                    'border border-border-gray rounded-[5px] py-2 px-2 tracking-[-0.5px] md:placeholder:text-[16px] text-[16px] max-md:placeholder:text-[14px]',
                     'hover:placeholder:text-font-gray hover:border-black',
                     'focus:placeholder:text-font-gray focus:border-black',
                 )}
@@ -69,7 +69,7 @@ const SelectItem = ({ label, onClick, selected }: SelectItemProps) => {
             )}
             <div
                 className={cn(
-                    'text-font-gray-deep ml-2 lg:text-[16px] select-none max-md:text-[12px] font-pretendard tracking-[-0.5px]',
+                    'text-font-gray-deep md:ml-2 max-md:ml-1 lg:text-[16px] select-none max-md:text-[14px] font-pretendard tracking-[-0.5px]',
                     selected && 'text-black border-black',
                 )}
             >
@@ -91,8 +91,9 @@ export const Contact = () => {
             id="contact"
         >
             <div className={cn('w-full mx-auto', 'lg:max-w-280 md:px-5')}>
-                <div className="text-center text-white md:text-[40px] font-semibold tracking-[-1.2px] max-md:text-[25px]">
-                    귀사의 비즈니스에 xTool을 더해보세요
+                <div className="text-center text-white md:text-[40px] font-bold tracking-[-1.2px] max-md:text-[25px]">
+                    귀사의 비즈니스에{' '}
+                    <span className="font-montserrat">xTool</span>을 더해보세요
                 </div>
                 <div
                     className={cn(
@@ -109,7 +110,7 @@ export const Contact = () => {
                     className={cn(
                         'w-full rounded-[15px] mx-auto',
                         'md:mt-10',
-                        'max-md:mt-10 max-md:px-2',
+                        'max-md:mt-10 max-md:px-4',
                     )}
                 >
                     <div
