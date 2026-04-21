@@ -21,7 +21,7 @@ export const Loading = ({
                     />
                 </div>
                 <div className="text-[11px] text-center mt-2 font-semibold font-notokr tracking-wider text-font-gray">
-                    B2B SOLUTIONS
+                    <span className="font-montserrat">B2B SOLUTIONS</span>
                 </div>
                 <div className="mt-3 w-11 h-11 relative mx-auto">
                     <div

@@ -52,7 +52,7 @@ const ListItem = ({
                 'flex justify-between items-center cursor-pointer rounded-[10px] bg-bg-ivory',
                 'lg:px-5 lg:py-5',
                 'md:px-5 md:py-5',
-                'max-md:py-3 max-md:px-5',
+                'max-md:py-3 max-md:px-3',
             )}
             onClick={onClick}
         >
@@ -98,10 +98,10 @@ export const Section2 = () => {
     return (
         <div
             className={cn(
-                'w-full bg-bg-ivory *:select-none md:pt-25 md:pb-15  max-md:pt-10 max-md:pb-15',
+                'w-full bg-bg-ivory *:select-none md:pt-25 md:pb-15 max-md:pt-10 max-md:pb-15',
                 'lg:scroll-mt-28',
                 'md:scroll-mt-28',
-                'max-md:scroll-mt-20',
+                'max-md:scroll-mt-20 max-md:px-4',
             )}
             id="solution"
         >
@@ -113,7 +113,7 @@ export const Section2 = () => {
             >
                 <div
                     className={cn(
-                        'text-center font-semibold break-keep tracking-[-1.2px] ',
+                        'text-center font-bold break-keep tracking-[-1.2px]',
                         'lg:text-[40px] md:text-[40px] text-[26px]',
                     )}
                 >
@@ -133,7 +133,7 @@ export const Section2 = () => {
                     <div
                         className={cn(
                             'flex rounded-[15px] overflow-hidden ',
-                            'lg:w-full max-w-280 mx-auto  lg:flex-row',
+                            'lg:w-full max-w-280 mx-auto lg:flex-row',
                             'md:flex-col md:max-lg:h-auto',
                             'max-md:flex-col max-md:h-auto',
                         )}
@@ -162,7 +162,7 @@ export const Section2 = () => {
                                 'flex flex-col gap-3 flex-1 bg-white',
                                 'lg:px-8 lg:pt-8',
                                 'md:px-8 md:pt-8 md:pb-10',
-                                'max-md:px-2 max-md:pt-3 max-md:pb-7',
+                                'max-md:px-4 max-md:pt-3 max-md:pb-7',
                             )}
                         >
                             {listItemConfig.map(

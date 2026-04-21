@@ -80,14 +80,14 @@ export const Section1 = () => {
         >
             <div
                 className={cn(
-                    'w-full mx-auto *:font-notokr',
+                    'w-full mx-auto *:font-pretendard',
                     'lg:px-3.75 lg:min-w-250 lg:max-w-300',
                     'md:px-2',
                 )}
             >
                 <div
                     className={cn(
-                        'text-center font-semibold break-keep tracking-[-1.2px] text-title-black',
+                        'text-center font-bold break-keep tracking-[-1.2px] text-title-black',
                         'lg:text-[40px]',
                         'md:text-[34px]',
                         'max-md:text-[25px]',
@@ -110,6 +110,7 @@ export const Section1 = () => {
                         'flex flex-col justify-between mx-auto w-full',
                         'md:mt-10 md:flex-row',
                         'lg:flex-row lg:mt-10 ',
+                        'max-md:px-4',
                     )}
                 >
                     {cardConfig.map(({ title, description, image }) => (

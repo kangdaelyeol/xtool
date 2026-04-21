@@ -9,7 +9,7 @@ export const PrivacyTerm = ({
 }) => {
     return (
         <div className="fixed inset-0 flex justify-center items-center bg-black/60 z-100">
-            <div className="relative max-w-100 bg-white *:font-notokr rounded-[20px]">
+            <div className="relative max-w-100 bg-white *:font-pretendard rounded-[20px]">
                 <div
                     onClick={handleHideClick}
                     className="absolute top-5 right-4 w-5.5 h-5.5 rounded-[100px] bg-orange-600 cursor-pointer hover:bg-orange-400"
