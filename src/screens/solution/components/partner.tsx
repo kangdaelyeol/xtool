@@ -7,12 +7,12 @@ const PartnerIcon = ({ idx }: { idx: number }) => {
             <img
                 src={`/partner/${idx}.webp`}
                 className={cn(
-                    'h-6.25 max-md:h-5 object-contain',
-                    idx === 0 && 'h-8.5 max-md:h-7',
-                    idx === 4 && 'h-8.5 max-md:h-7',
-                    idx === 5 && 'h-8 max-md:h-6.5',
-                    idx === 6 && 'h-10 mt-1.5 max-md:h-8 max-md:mt-1',
-                    idx === 7 && 'h-9.5 max-md:h-7.5',
+                    'md:h-6.25 max-md:h-4 object-contain',
+                    idx === 0 && 'md:h-8.5 max-md:h-5',
+                    idx === 3 && 'md:h-8.5 max-md:h-5',
+                    idx === 4 && 'md:h-8 max-md:h-4.5',
+                    idx === 5 && 'md:h-10 mt-1.5 max-md:h-6 max-md:mt-1',
+                    idx === 6 && 'md:h-9.5 max-md:h-6',
                 )}
             />
         </div>
@@ -43,19 +43,19 @@ export const Partner = () => {
         return () => cancelAnimationFrame(rafId)
     }, [])
     const list = [] as number[]
-    for (let i = 0; i < 32; i++) {
-        list.push(i % 8)
+    for (let i = 0; i < 28; i++) {
+        list.push(i % 7)
     }
 
     return (
         <div
             className={cn(
-                'flex bg-education-white h-25 max-md:h-20 overflow-hidden',
+                'flex bg-education-white md:h-25 max-md:h-17 overflow-hidden',
             )}
         >
             <div
                 ref={sliderRef}
-                className="w-full h-full flex gap-15 *:select-none *:pointer-events-none"
+                className="w-full h-full flex md:gap-15 max-md:gap-10 *:select-none *:pointer-events-none"
             >
                 {list.map((idx, i) => (
                     <PartnerIcon idx={idx} key={i} />
