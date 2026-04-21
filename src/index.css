@@ -2,6 +2,19 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
 @import 'tailwindcss';
 
+@utility path-body {
+    stroke-dasharray: 15;
+    stroke-dashoffset: 15;
+}
+@utility path-head-top {
+    stroke-dasharray: 7;
+    stroke-dashoffset: 7;
+}
+@utility path-head-bot {
+    stroke-dasharray: 7;
+    stroke-dashoffset: 7;
+}
+
 @theme {
     /* font */
     --font-mono: 'DM Mono', monospace;
@@ -36,6 +49,11 @@
     --animate-check-draw: check-draw 0.35s ease-out 0.7s both;
     --animate-fade-out-text: fade-out-text 0.3s ease-out both;
     --animate-fade-in-text: fade-in-text 0.5s ease-out 0.7s both;
+    --animate-drawPath-1: drawPath-1 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    --animate-drawPath-2: drawPath-2 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    --animate-drawPath-3: drawPath-3 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    --animate-arrow-body: moveArrow 3s infinite
+        cubic-bezier(0.76, -0.9, 0, 0.96);
 
     @keyframes circle-draw {
         0% {
@@ -72,6 +90,85 @@
         100% {
             opacity: 1;
             display: flex;
+        }
+    }
+    @keyframes drawPath-1 {
+        0% {
+            stroke-dashoffset: 15;
+            opacity: 1;
+        }
+        18% {
+            stroke-dashoffset: 0;
+            opacity: 1;
+        }
+        80% {
+            stroke-dashoffset: 0;
+            opacity: 1;
+        }
+        95% {
+            stroke-dashoffset: 0;
+            opacity: 0;
+        }
+        100% {
+            stroke-dashoffset: 15;
+            opacity: 0;
+        }
+    }
+    @keyframes drawPath-2 {
+        0%,
+        18% {
+            stroke-dashoffset: 7;
+            opacity: 1;
+        }
+        28% {
+            stroke-dashoffset: 0;
+            opacity: 1;
+        }
+        80% {
+            stroke-dashoffset: 0;
+            opacity: 1;
+        }
+        95% {
+            stroke-dashoffset: 0;
+            opacity: 0;
+        }
+        100% {
+            stroke-dashoffset: 7;
+            opacity: 0;
+        }
+    }
+    @keyframes drawPath-3 {
+        0%,
+        28% {
+            stroke-dashoffset: 7;
+            opacity: 1;
+        }
+        38% {
+            stroke-dashoffset: 0;
+            opacity: 1;
+        }
+        80% {
+            stroke-dashoffset: 0;
+            opacity: 1;
+        }
+        95% {
+            stroke-dashoffset: 0;
+            opacity: 0;
+        }
+        100% {
+            stroke-dashoffset: 7;
+            opacity: 0;
+        }
+    }
+    @keyframes moveArrow {
+        0% {
+            transform: translateX(0px);
+        }
+        35% {
+            transform: translateX(0px);
+        }
+        100% {
+            transform: translateX(45px);
         }
     }
 }

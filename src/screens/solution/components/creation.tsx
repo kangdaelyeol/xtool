@@ -1,5 +1,6 @@
 import { cn } from '@/utils'
 import { useEffect, useRef, useState } from 'react'
+import { ArrowRightCreation } from '../icons'
 
 interface creationState {
     label: string
@@ -135,14 +136,19 @@ export const Creation = () => {
                         'font-pretendard font-bold text-center break-keep tracking-[-1.2px]',
                         'lg:text-[40px]',
                         'md:text-[40px]',
-                        'max-md:text-[20px]',
+                        'max-md:text-[25px]',
                     )}
                 >
-                    누구나 쉽게 시작하는{' '}
+                    누구나 쉽게 시작하는 <br className="hidden max-md:block" />
                     <span className="font-montserrat">xTool</span> 소프트웨어 (
                     <span className="font-montserrat">XCS</span>)
                 </div>
+
                 <CreationNav videoIdx={videoIdx} setVideoIdx={setVideoIdx} />
+                <div className="md:hidden flex justify-end mt-1.5 -mb-5 pr-12">
+                    <ArrowRightCreation />
+                </div>
+
                 <div
                     className={cn(
                         'text-center mx-auto mt-7 font-semibold text-font-gray-deep font-[400] break-keep tracking-[-0.6px]',
