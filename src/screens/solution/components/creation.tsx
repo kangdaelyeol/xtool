@@ -20,9 +20,10 @@ const creationConfig = [
             '초보자도 빠르게 적응할 수 있는 직관적인 소프트웨어와 다양한 기능으로 확장 가능한 작업 환경을 제공합니다.',
     },
     {
-        label: 'PC 및 태블릿 사용가능',
+        label: 'PC 및 태블릿 사용 가능',
         src: '/creation/creation-video-2.mov',
-        description: 'PC 및 태블릿 기기에서도 사용 가능 합니다.',
+        description:
+            'Windows와 Mac은 물론, 태블릿에서도 자유롭게 사용할 수 있는 유연한 환경을 제공합니다.',
     },
     {
         label: 'AI 디자인 자동 생성',
@@ -137,7 +138,9 @@ export const Creation = () => {
                         'max-md:text-[20px]',
                     )}
                 >
-                    누구나 쉽게 시작하는 xTool 소프트웨어 (XCS)
+                    누구나 쉽게 시작하는{' '}
+                    <span className="font-montserrat">xTool</span> 소프트웨어 (
+                    <span className="font-montserrat">XCS</span>)
                 </div>
                 <CreationNav videoIdx={videoIdx} setVideoIdx={setVideoIdx} />
                 <div

@@ -86,7 +86,7 @@ const PaginationDot = () => {
         transformEducationHandlers: { goToIdx },
     } = useResizeContext()
     return (
-        <div className="flex gap-2 pl-1 max-md:pl-7 md:pl-6">
+        <div className="flex gap-2">
             {dotActiveList.map((val, idx) =>
                 val ? (
                     <div
@@ -113,7 +113,7 @@ const PaginationButton = () => {
     } = useResizeContext()
 
     return (
-        <div className="flex gap-5">
+        <div className="flex gap-5 md:-mr-6 max-md:mr-1.5">
             <div
                 onClick={goPrev}
                 className={cn(
@@ -144,19 +144,19 @@ export const TransformEducation = () => {
     return (
         <div
             className={cn(
-                'w-full overflow-hidden *:select-none md:py-25 max-md:py-15',
+                'w-full overflow-hidden *:select-none md:py-25 max-md:py-15 max-md:px-4',
             )}
         >
             <div
                 className={cn(
                     'mx-auto overflow-hidden',
-                    'lg:max-w-350 lg:px-5',
+                    'lg:max-w-300 lg:px-5',
                 )}
             >
                 {/* Title */}
                 <div
                     className={cn(
-                        'text-center text-black/90 font-semibold break-keep tracking-[-1.2px] font-pretendard',
+                        'text-center text-black/90 font-bold break-keep tracking-[-1.2px] font-pretendard',
                         'lg:text-[40px] md:text-[40px] max-md:text-[26px]',
                     )}
                 >
@@ -167,7 +167,7 @@ export const TransformEducation = () => {
                     className={cn(
                         'mt-10 w-full flex flex-col relative',
                         'lg:-left-4',
-                        'md:px-2',
+                        'md:max-lg:px-5',
                         'max-md:px-2 max-md:left-1',
                     )}
                 >
@@ -188,9 +188,9 @@ export const TransformEducation = () => {
                 <div
                     className={cn(
                         'flex justify-between w-full items-center relative',
-                        'lg:mt-5 lg:-left-1',
-                        'md:mt-5 md:-left-3',
-                        'max-md:mt-3 max-md:-left-3',
+                        'lg:mt-5 lg:-left-3.5',
+                        'md:mt-5 md:max-lg:-left-2 md:max-lg:px-8',
+                        'max-md:mt-3 max-md:px-2 max-md:left-1',
                     )}
                 >
                     <PaginationDot />
