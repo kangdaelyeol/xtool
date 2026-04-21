@@ -26,10 +26,10 @@ export const Header = () => {
         >
             <div
                 className={cn(
-                    'max-w-300 m-auto w-full flex justify-between items-center py-1.5 px-3 transition-all duration-250',
-                    'lg:px-10 md:px-10',
+                    'max-w-300 m-auto w-full flex justify-between items-center py-1.5 transition-all duration-250',
+                    'lg:px-10 md:px-10 max-md:px-4',
                     scrolled && 'lg:py-1 lg:px-8 md:py-1 md:px-8',
-                    scrolled && 'px-1.5 py-1',
+                    scrolled && 'max-md:px-1.5 max-md:py-1',
                 )}
             >
                 <div className="flex items-center">

@@ -21,7 +21,7 @@ export const Hero = () => {
                     'mx-auto relative z-10 h-full',
                     'lg:max-w-290 lg:px-4',
                     'md:max-w-200 md:px-4',
-                    'max-md:max-w-145 max-md:px-4',
+                    'max-md:max-w-145 max-md:px-6',
                 )}
             >
                 <img
@@ -44,7 +44,10 @@ export const Hero = () => {
                         )}
                     >
                         기업 및 기관 혁신을 위한
-                        <br /> xTool 레이저 솔루션
+                        <br /> <span className="font-montserrat">
+                            xTool
+                        </span>{' '}
+                        레이저 솔루션
                     </div>
                     <div
                         className={cn(
@@ -67,8 +70,12 @@ export const Hero = () => {
                         onClick={handleContactClick}
                     >
                         견적 문의하기
-                        <div className="-mr-1">
-                            <ArrowRightIcon size={22} color="#ffffff" />
+                        <div className="md:-mr-2 max-md:-mr-1 md:ml-2 max-md:ml-1.5">
+                            <ArrowRightIcon
+                                className={'max-md:transform-[scale(0.9)]'}
+                                size={15}
+                                color="#ffffff"
+                            />
                         </div>
                     </div>
                 </div>
