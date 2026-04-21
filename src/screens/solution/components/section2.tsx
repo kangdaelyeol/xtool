@@ -52,7 +52,7 @@ const ListItem = ({
                 'flex justify-between items-center cursor-pointer rounded-[10px] bg-bg-ivory',
                 'lg:px-5 lg:py-5',
                 'md:px-5 md:py-5',
-                'max-md:py-3 max-md:px-3',
+                'max-md:py-3 max-md:px-4',
             )}
             onClick={onClick}
         >
@@ -101,7 +101,7 @@ export const Section2 = () => {
                 'w-full bg-bg-ivory *:select-none md:pt-25 md:pb-15 max-md:pt-10 max-md:pb-15',
                 'lg:scroll-mt-28',
                 'md:scroll-mt-28',
-                'max-md:scroll-mt-20 max-md:px-4',
+                'max-md:scroll-mt-20 max-md:px-6',
             )}
             id="solution"
         >
@@ -129,7 +129,7 @@ export const Section2 = () => {
                     엑스툴의 레이저 솔루션은 비즈니스 환경과 교육 현장에서
                     가치를 증명하고 있습니다.
                 </div>
-                <div className="mt-10 lg:px-5 md:px-5 px-1.5">
+                <div className="mt-10 lg:px-5 md:px-5">
                     <div
                         className={cn(
                             'flex rounded-[15px] overflow-hidden ',
@@ -162,7 +162,7 @@ export const Section2 = () => {
                                 'flex flex-col gap-3 flex-1 bg-white',
                                 'lg:px-8 lg:pt-8',
                                 'md:px-8 md:pt-8 md:pb-10',
-                                'max-md:px-4 max-md:pt-3 max-md:pb-7',
+                                'max-md:px-4 max-md:pt-4 max-md:pb-4',
                             )}
                         >
                             {listItemConfig.map(

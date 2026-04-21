@@ -41,7 +41,7 @@ export const Header = () => {
                     <div
                         className={cn(
                             'font-medium font-montserrat text-[#121212] whitespace-nowrap',
-                            'text-[18px] ml-1.5',
+                            'text-[15.5px] ml-[6px]',
                             'max-md:text-[14px]',
                         )}
                     >

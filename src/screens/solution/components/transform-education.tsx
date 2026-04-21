@@ -63,7 +63,7 @@ const Card = ({ subject, title, description, image }: CardInfo) => {
                 className={cn(
                     'flex flex-col *:font-pretendard',
                     'md:pt-5 md:px-5',
-                    'max-md:pt-5 max-md:pl-5',
+                    'max-md:pt-5 max-md:pl-4',
                 )}
             >
                 <div className="text-black/80 md:text-[15px] max-md:text-[13px]">

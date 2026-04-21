@@ -43,7 +43,7 @@ const Input = ({
                 required={required}
                 placeholder={placeholder}
                 className={cn(
-                    'border border-border-gray rounded-[5px] py-2 px-2 tracking-[-0.5px] md:placeholder:text-[16px] text-[16px] max-md:placeholder:text-[14px]',
+                    'border border-border-gray rounded-[8px] py-2 px-2 tracking-[-0.5px] md:placeholder:text-[16px] text-[16px] max-md:placeholder:text-[14px]',
                     'hover:placeholder:text-font-gray hover:border-black',
                     'focus:placeholder:text-font-gray focus:border-black',
                 )}
@@ -57,7 +57,7 @@ const SelectItem = ({ label, onClick, selected }: SelectItemProps) => {
         <div
             onClick={onClick}
             className={cn(
-                'flex flex-1 items-center border border-border-gray p-3 rounded-[5px] cursor-pointer',
+                'flex flex-1 items-center border border-border-gray p-3 rounded-[8px] cursor-pointer',
                 'hover:border-black',
                 selected && 'bg-[#eeeeee] border-black',
             )}
@@ -110,21 +110,21 @@ export const Contact = () => {
                     className={cn(
                         'w-full rounded-[15px] mx-auto',
                         'md:mt-10',
-                        'max-md:mt-10 max-md:px-4',
+                        'max-md:mt-10 max-md:px-6',
                     )}
                 >
                     <div
                         className={cn(
-                            'bg-white rounded-[10px] bg-white w-full',
+                            'bg-white rounded-[16px] bg-white w-full max-w-200 mx-auto',
                             'md:py-8 md:px-8',
-                            'max-md:py-4 max-md:px-3',
+                            'max-md:p-4',
                         )}
                     >
                         {/* Row 1 - 기관명, 성함*/}
                         <div
                             className={cn(
                                 'flex',
-                                'lg:gap-7 lg:flex-row',
+                                'lg:gap-3 lg:flex-row',
                                 'md:flex-col md:gap-3',
                                 'max-md:flex-col max-md:gap-2',
                             )}
@@ -150,7 +150,7 @@ export const Contact = () => {
                         <div
                             className={cn(
                                 'flex',
-                                'lg:gap-7 lg:mt-5 lg:flex-row',
+                                'lg:gap-3 lg:mt-6 lg:flex-row',
                                 'md:flex-col md:gap-3 md:mt-3',
                                 'max-md:flex-col max-md:mt-2 max-md:gap-2',
                             )}
@@ -186,7 +186,7 @@ export const Contact = () => {
                             <div className="text-font-gray-deep md:text-[14px] max-md:text-[14px] font-pretendard tracking-[-0.4px]">
                                 중복 선택 가능
                             </div>
-                            <div className="flex lg:flex-row md:flex-col max-md:flex-col gap-2 md:mt-2 max-md:mt-1">
+                            <div className="flex lg:flex-row md:flex-col max-md:flex-col gap-3 md:mt-2 max-md:mt-1">
                                 <SelectItem
                                     label="기업 도입 (R&D, 브랜딩, 생산)"
                                     selected={enterprise}
@@ -203,7 +203,7 @@ export const Contact = () => {
                                     }
                                 />
                             </div>
-                            <div className="flex lg:flex-row md:flex-col max-md:flex-col gap-2 mt-2">
+                            <div className="flex lg:flex-row md:flex-col max-md:flex-col gap-3 mt-2">
                                 <SelectItem
                                     label="공공기관 / 메이커스페이스 구축"
                                     selected={publicInstitution}
@@ -232,11 +232,11 @@ export const Contact = () => {
                             <textarea
                                 ref={contentRef}
                                 className={cn(
-                                    'border border-border-gray p-3 w-full max-h-30 min-h-30 resize-none rounded-[5px] ',
+                                    'border border-border-gray p-3 w-full max-h-30 min-h-30 resize-none rounded-[8px] ',
                                     'md:text-[16px] mt-2 md:placeholder:text-[16px] tracking-[-0.5px] placeholder:font-pretendard',
-                                    'max-md:text-[14px]  max-md:placeholder:text-[14px]',
+                                    'max-md:text-[14px] max-md:placeholder:text-[14px] max-md:placeholder:break-keep',
                                 )}
-                                placeholder="도입 목적, 예상 수량, 필요하신 지원 내용 등을 자유롭게 작성해 주새요"
+                                placeholder="도입 목적, 예상 수량, 필요하신 지원 내용 등을 자유롭게 작성해 주세요"
                             ></textarea>
                         </div>
                         {/* 개인정보 수집 동의 */}
@@ -266,7 +266,7 @@ export const Contact = () => {
                         <div
                             onClick={handlers.submitClick}
                             className={cn(
-                                'mt-3 select-none w-fullv font-[700] cursor-pointer bg-black text-white text-center font-pretendard rounded-[9px] py-3.5 text-[20px] tracking-[-0.6px]',
+                                'mt-3 select-none w-fullv font-[700] cursor-pointer bg-black text-white text-center font-pretendard rounded-[8px] py-3.5 text-[20px] tracking-[-0.6px]',
                                 'hover:bg-gray-800',
                             )}
                         >

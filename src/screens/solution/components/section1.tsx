@@ -34,7 +34,7 @@ const Card = ({ title, description, image }: CardProps) => {
                 'bg-education-white rounded-[10px] flex flex-col overflow-hidden md:pb-5',
                 'lg:w-[32%]',
                 'md:w-[32%]',
-                'max-md:w-[95%] max-md:mx-auto max-md:mt-5',
+                'max-md:w-full max-md:mx-auto max-md:mt-5',
             )}
         >
             <div className="max-md:h-90 lg:h-70 md:h-60 flex justify-center items-center">
@@ -110,7 +110,7 @@ export const Section1 = () => {
                         'flex flex-col justify-between mx-auto w-full',
                         'md:mt-10 md:flex-row',
                         'lg:flex-row lg:mt-10 ',
-                        'max-md:px-4',
+                        'max-md:px-6',
                     )}
                 >
                     {cardConfig.map(({ title, description, image }) => (

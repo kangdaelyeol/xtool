@@ -133,7 +133,7 @@ export const Section3 = () => {
                     <div
                         className={cn(
                             'flex justify-center items-center overflow-hidden rounded-[10px] absolute shadow-2xl',
-                            'min-[1200px]:w-125 min-[1200px]:h-132 min-[1200px]:top-10 min-[1200px]:left-3',
+                            'min-[1200px]:w-125 min-[1200px]:h-[530px] min-[1200px]:top-10 min-[1200px]:left-3',
                             'lg:max-[1200px]:w-110 lg:max-[1200px]:h-123 lg:max-[1200px]:top-10 lg:max-[1200px]:left-3',
                             'md:max-lg:w-[90%] md:max-lg:h-110 md:max-lg:top-30',
                         )}
@@ -146,8 +146,8 @@ export const Section3 = () => {
                     </div>
                     <div
                         className={cn(
-                            'rounded-[10px] bg-[#00CE65] flex flex-col absolute shadow-2xl',
-                            'min-[1200px]:w-[254px] min-[1200px]:h-[184px] min-[1200px]:left-75 min-[1200px]:top-110',
+                            'rounded-[6px] bg-[#00CE65] flex flex-col absolute shadow-2xl',
+                            'min-[1200px]:w-[270px] min-[1200px]:h-[184px] min-[1200px]:left-75 min-[1200px]:top-110',
                             'lg:max-[1200px]:w-[230px] lg:max-[1200px]:h-46 lg:max-[1200px]:left-60 lg:max-[1200px]:top-90',
                             'md:max-lg:top-110 md:max-lg:right-7 md:max-lg:w-60 md:max-lg:h-46',
                             'md:pl-5 md:pt-5',
@@ -174,7 +174,7 @@ export const Section3 = () => {
                     className={cn(
                         'flex flex-col',
                         'md:gap-3',
-                        'max-md:gap-2 max-md:px-4 max-md:w-full',
+                        'max-md:gap-2 max-md:px-6 max-md:w-full',
                     )}
                 >
                     <div
@@ -226,9 +226,7 @@ export const Section3 = () => {
                         <span className="font-montserrat">xTool</span> 전담팀이
                         함께합니다.
                     </div>
-                    <div
-                        className={cn('hidden max-md:block relative mt-4 px-2')}
-                    >
+                    <div className={cn('hidden max-md:block relative mt-4')}>
                         <img
                             src="/support/support-x.webp"
                             alt="support-img"
@@ -266,7 +264,7 @@ export const Section3 = () => {
                     >
                         {gridItemConfig.map((list, idx) => (
                             <div
-                                className="flex lg:gap-5 md:gap-2 md:max-lg:flex-col max-md:flex-col max-md:gap-3 max-md:px-2"
+                                className="flex lg:gap-5 md:gap-2 md:max-lg:flex-col max-md:flex-col max-md:gap-3"
                                 key={idx}
                             >
                                 {list.map(({ title, description, icon }) => (
