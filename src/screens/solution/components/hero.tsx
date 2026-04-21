@@ -1,4 +1,4 @@
-import { ArrowRightIcon } from '@/screens/solution/icons'
+import { ArrowRightHero } from '@/screens/solution/icons'
 import { cn } from '@/utils'
 
 export const Hero = () => {
@@ -71,7 +71,7 @@ export const Hero = () => {
                     >
                         견적 문의하기
                         <div className="md:-mr-2 max-md:-mr-1 md:ml-2 max-md:ml-1.5">
-                            <ArrowRightIcon
+                            <ArrowRightHero
                                 className={'max-md:transform-[scale(0.9)]'}
                                 size={15}
                                 color="#ffffff"
