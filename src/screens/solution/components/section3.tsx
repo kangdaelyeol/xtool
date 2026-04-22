@@ -111,7 +111,7 @@ export const Section3 = () => {
                 'w-full border-t border-t-gray-200 *:select-none *:break-keep py-25 max-md:py-10 *:font-pretendard',
                 'lg:scroll-mt-28',
                 'md:scroll-mt-28',
-                'max-md:scroll-mt-22',
+                'max-md:scroll-mt-19',
             )}
             id="system"
         >

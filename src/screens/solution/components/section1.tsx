@@ -74,7 +74,7 @@ export const Section1 = () => {
         <div
             className={cn(
                 'w-full md:py-25 max-md:py-15 *:select-none',
-                'lg:scroll-mt-28 md:scroll-mt-28 max-md:scroll-mt-20',
+                'lg:scroll-mt-28 md:scroll-mt-28 max-md:scroll-mt-15',
             )}
             id="business"
         >
