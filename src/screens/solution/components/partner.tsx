@@ -9,10 +9,9 @@ const PartnerIcon = ({ idx }: { idx: number }) => {
                 className={cn(
                     'md:h-6.25 max-md:h-4 object-contain',
                     idx === 0 && 'md:h-8.5 max-md:h-5',
-                    idx === 3 && 'md:h-8.5 max-md:h-5',
-                    idx === 4 && 'md:h-8 max-md:h-4.5',
-                    idx === 5 && 'md:h-10 mt-1.5 max-md:h-6 max-md:mt-1',
-                    idx === 6 && 'md:h-9.5 max-md:h-6',
+                    idx === 3 && 'md:h-8 max-md:h-4.5',
+                    idx === 4 && 'md:h-10 mt-1.5 max-md:h-6 max-md:mt-1',
+                    idx === 5 && 'md:h-9.5 max-md:h-6',
                 )}
             />
         </div>
@@ -43,8 +42,8 @@ export const Partner = () => {
         return () => cancelAnimationFrame(rafId)
     }, [])
     const list = [] as number[]
-    for (let i = 0; i < 28; i++) {
-        list.push(i % 7)
+    for (let i = 0; i < 24; i++) {
+        list.push(i % 6)
     }
 
     return (
