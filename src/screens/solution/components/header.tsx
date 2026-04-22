@@ -40,11 +40,16 @@ export const Header = () => {
                 )}
             >
                 <div className="flex items-center">
-                    <img
-                        src="/xtool-logo-text.png"
-                        className="lg:h-3 md:h-3 max-md:h-2.5 pointer-events-none object-contain"
-                        alt="logo text"
-                    />
+                    <a
+                        href="https://xtool.co.kr/"
+                        className="hover:opacity-70 transition"
+                    >
+                        <img
+                            src="/xtool-logo-text.png"
+                            className="lg:h-3 md:h-3 max-md:h-2.5 pointer-events-none object-contain"
+                            alt="logo text"
+                        />
+                    </a>
                     <div
                         className={cn(
                             'font-medium font-montserrat text-[#121212] whitespace-nowrap',
