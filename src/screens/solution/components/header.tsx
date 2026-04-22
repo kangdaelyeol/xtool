@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { cn } from '@/utils'
+import { DownloadIcon } from '../icons'
 
 export const Header = () => {
     const [scrolled, setScrolled] = useState(false)
@@ -14,6 +15,13 @@ export const Header = () => {
             window.removeEventListener('scroll', onScroll)
         }
     }, [])
+
+    const handleDounloadClick = () => {
+        const a = document.createElement('a')
+        a.href = '/xtool_doc.pdf'
+        a.download = '엑스툴코리아_기업소개서.pdf'
+        a.click()
+    }
 
     return (
         <div
@@ -40,7 +48,7 @@ export const Header = () => {
                     <div
                         className={cn(
                             'font-medium font-montserrat text-[#121212] whitespace-nowrap',
-                            'text-[15.5px] ml-[6px] md:leading-[30px]',
+                            'text-[15.5px] ml-[6px]',
                             'max-md:text-[14px]',
                         )}
                     >
@@ -53,7 +61,10 @@ export const Header = () => {
                         button을 div로 구현하려면 role='button' tabIndex onKeyDown 등을 추가로 구현해야 한다.
                         실무적으로도 SEO크롤러나 접근성 검사도구에서 감점 요인이 될 수 있음.
                      */}
-                    {/* <button className="flex items-center gap-1 font-pretendard hover:bg-black/6 rounded-[5px] md:text-[18px] max-md:text-[15px] px-2.5 py-2 tracking-[-0.5px]">
+                    <button
+                        onClick={handleDounloadClick}
+                        className="flex items-center gap-1 font-pretendard hover:bg-black/6 rounded-[5px] md:text-[18px] max-md:text-[15px] px-2.5 tracking-[-0.5px]"
+                    >
                         기업 소개서
                         <div className="max-md:hidden">
                             <DownloadIcon size={18} color="#000000" />
@@ -61,7 +72,7 @@ export const Header = () => {
                         <div className="hidden max-md:block">
                             <DownloadIcon size={16} color="#000000" />
                         </div>
-                    </button> */}
+                    </button>
                 </div>
             </div>
         </div>
