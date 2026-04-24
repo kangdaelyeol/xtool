@@ -39,17 +39,15 @@ export const Header = () => {
                     scrolled && 'max-md:px-1.5 max-md:py-1',
                 )}
             >
-                <div className="flex items-center">
-                    <a
-                        href="https://xtool.co.kr/"
-                        className="hover:opacity-70 transition"
-                    >
-                        <img
-                            src="/xtool-logo-text.png"
-                            className="lg:h-3 md:h-3 max-md:h-2.5 pointer-events-none object-contain"
-                            alt="logo text"
-                        />
-                    </a>
+                <a
+                    href="https://xtool.co.kr/"
+                    className="hover:opacity-70 transition flex items-center"
+                >
+                    <img
+                        src="/xtool-logo-text.png"
+                        className="lg:h-3 md:h-3 max-md:h-2.5 pointer-events-none object-contain"
+                        alt="logo text"
+                    />
                     <div
                         className={cn(
                             'font-medium font-montserrat text-[#121212] whitespace-nowrap',
@@ -59,7 +57,7 @@ export const Header = () => {
                     >
                         B2B SOLUTION
                     </div>
-                </div>
+                </a>
 
                 <div className="flex gap-4 items-center *:cursor-pointer *:font-[400] *:whitespace-nowrap leading-[50px]">
                     {/* div -> button 접근성 최적화
