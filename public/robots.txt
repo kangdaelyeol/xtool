@@ -2,27 +2,28 @@
 # robots.txt - Bot Access Control
 # ===================================================
 
-# --- 허용: 주요 글로벌 검색엔진 ---
+# --- 허용: 네이버 ---
+User-agent: Yeti
+Allow: /
+
+# --- 허용: 구글 ---
 User-agent: Googlebot
 Allow: /
 
-User-agent: Bingbot
+User-agent: Googlebot-Image
 Allow: /
 
-User-agent: Slurp
+# --- 허용: 메타 (Facebook) ---
+User-agent: facebookexternalhit
 Allow: /
 
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Yandex
+User-agent: FacebookBot
 Allow: /
 
 # ===================================================
 # 중국 주요 봇 차단
 # ===================================================
 
-# Baidu (바이두)
 User-agent: Baiduspider
 Disallow: /
 
@@ -38,11 +39,9 @@ Disallow: /
 User-agent: Baiduspider-favo
 Disallow: /
 
-# Bytedance / TikTok
 User-agent: Bytespider
 Disallow: /
 
-# Alibaba / UCWeb
 User-agent: UCBot
 Disallow: /
 
@@ -52,11 +51,9 @@ Disallow: /
 User-agent: UCWEB
 Disallow: /
 
-# 360 Search (치수어우)
 User-agent: 360Spider
 Disallow: /
 
-# Sogou (소우거우)
 User-agent: Sogou web spider
 Disallow: /
 
@@ -69,33 +66,27 @@ Disallow: /
 User-agent: SogouWebSpider
 Disallow: /
 
-# MJ12Bot / SEMrush (스크래퍼)
-User-agent: SemrushBot
-Disallow: /
-
-# Tencent
 User-agent: YisouSpider
 Disallow: /
 
-# Qihoo
 User-agent: qihoobot
 Disallow: /
 
-# PetalBot (Huawei)
 User-agent: PetalBot
 Disallow: /
 
-# Youdao (NetEase)
 User-agent: YoudaoBot
 Disallow: /
 
-# Haosou (360.cn)
 User-agent: HaosouSpider
 Disallow: /
 
 # ===================================================
 # 기타 악성/스크래핑 봇 차단
 # ===================================================
+
+User-agent: SemrushBot
+Disallow: /
 
 User-agent: AhrefsBot
 Disallow: /
