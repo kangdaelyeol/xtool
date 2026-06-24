@@ -12,8 +12,10 @@ export const PrivacyTerm = ({
             <div className="relative max-w-100 bg-white *:font-pretendard rounded-[20px]">
                 <div
                     onClick={handleHideClick}
-                    className="absolute top-5 right-4 w-5.5 h-5.5 rounded-[100px] bg-orange-600 cursor-pointer hover:bg-orange-400"
-                />
+                    className="absolute top-4 right-4 text-[25px] w-8 h-8 rounded-[10px] flex justify-center items-center cursor-pointer hover:bg-[#00000015]"
+                >
+                    &times;
+                </div>
                 <div className=" h-[60vh] p-5 overflow-scroll">
                     <div className="text-[20px] font-semibold">
                         개인정보 수집 및 제공

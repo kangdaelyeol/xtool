@@ -75,7 +75,7 @@ export const Footer = () => {
                             'max-md:text-[15px] max-md:mt-0.5',
                         )}
                     >
-                        경기 파주시 가람로116번길 107 운정한강듀클래스 319호
+                        주소 : 경기도 파주시 회동길 325-20
                     </div>
                 </div>
             </div>
