@@ -1,3 +1,116 @@
-User-agent: *
+# ===================================================
+# robots.txt - Bot Access Control
+# ===================================================
+
+# --- 허용: 주요 글로벌 검색엔진 ---
+User-agent: Googlebot
 Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# ===================================================
+# 중국 주요 봇 차단
+# ===================================================
+
+# Baidu (바이두)
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: Baiduspider-image
+Disallow: /
+
+User-agent: Baiduspider-video
+Disallow: /
+
+User-agent: Baiduspider-news
+Disallow: /
+
+User-agent: Baiduspider-favo
+Disallow: /
+
+# Bytedance / TikTok
+User-agent: Bytespider
+Disallow: /
+
+# Alibaba / UCWeb
+User-agent: UCBot
+Disallow: /
+
+User-agent: Ucbot
+Disallow: /
+
+User-agent: UCWEB
+Disallow: /
+
+# 360 Search (치수어우)
+User-agent: 360Spider
+Disallow: /
+
+# Sogou (소우거우)
+User-agent: Sogou web spider
+Disallow: /
+
+User-agent: Sogou inst spider
+Disallow: /
+
+User-agent: Sogou Pic Spider
+Disallow: /
+
+User-agent: SogouWebSpider
+Disallow: /
+
+# MJ12Bot / SEMrush (스크래퍼)
+User-agent: SemrushBot
+Disallow: /
+
+# Tencent
+User-agent: YisouSpider
+Disallow: /
+
+# Qihoo
+User-agent: qihoobot
+Disallow: /
+
+# PetalBot (Huawei)
+User-agent: PetalBot
+Disallow: /
+
+# Youdao (NetEase)
+User-agent: YoudaoBot
+Disallow: /
+
+# Haosou (360.cn)
+User-agent: HaosouSpider
+Disallow: /
+
+# ===================================================
+# 기타 악성/스크래핑 봇 차단
+# ===================================================
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# ===================================================
+# 위에서 명시적으로 허용하지 않은 모든 봇 차단
+# ===================================================
+
+User-agent: *
+Disallow: /
+
 Sitemap: https://biz.xtool.co.kr/sitemap.xml

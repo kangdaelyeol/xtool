@@ -1,0 +1,54 @@
+# ===================================================
+# netlify.toml - Netlify 배포 설정
+# 중국 봇 차단 + Vite React SPA 설정
+# ===================================================
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# ===================================================
+# SPA 라우팅 (React Router 사용 시 필수)
+# ===================================================
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# ===================================================
+# 보안 헤더 설정
+# ===================================================
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # XSS 방어
+    X-XSS-Protection = "1; mode=block"
+    # 클릭재킹 방어
+    X-Frame-Options = "DENY"
+    # MIME 스니핑 방지
+    X-Content-Type-Options = "nosniff"
+    # Referrer 정책
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # robots.txt로 봇 제어 명시
+    X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
+
+# ===================================================
+# robots.txt 캐시 설정 (봇이 자주 읽어가도록)
+# ===================================================
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+    Content-Type = "text/plain; charset=utf-8"
+
+# ===================================================
+# 정적 자산 캐시 최적화
+# ===================================================
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
