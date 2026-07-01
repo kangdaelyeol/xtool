@@ -31,8 +31,8 @@
     X-Content-Type-Options = "nosniff"
     # Referrer 정책
     Referrer-Policy = "strict-origin-when-cross-origin"
-    # robots.txt로 봇 제어 명시
-    X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    
 
 # ===================================================
 # robots.txt 캐시 설정 (봇이 자주 읽어가도록)

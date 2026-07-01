@@ -148,6 +148,7 @@ export const Section2 = () => {
                         >
                             {listItemConfig.map((item, idx) => (
                                 <img
+                                    alt='xtool business solution image'
                                     src={item.image}
                                     key={item.image}
                                     className={cn(

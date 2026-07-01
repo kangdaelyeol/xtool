@@ -5,6 +5,7 @@ const PartnerIcon = ({ idx }: { idx: number }) => {
     return (
         <div className="h-full flex justify-center items-center shrink-0">
             <img
+            alt='xtool partner icon'
                 src={`/partner/${idx}.webp`}
                 className={cn(
                     'md:h-6.25 max-md:h-4 object-contain',

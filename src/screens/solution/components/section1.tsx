@@ -39,6 +39,7 @@ const Card = ({ title, description, image }: CardProps) => {
         >
             <div className="max-md:h-90 lg:h-70 md:h-60 flex justify-center items-center">
                 <img
+                    alt='xtool partnership image'
                     src={image}
                     className="object-cover h-full w-full pointer-events-none"
                 />

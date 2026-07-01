@@ -166,18 +166,21 @@ export const Creation = () => {
                     <img
                         src="/creation/creation-1920.png"
                         className="w-full object-contain pointer-events-none"
+                        alt="xtool creation image"
                     />
                 </div>
                 <div className="absolute top-0 left-0 hidden md:max-lg:block z-20">
                     <img
                         src="/creation/creation-1024.webp"
                         className="w-full object-contain pointer-events-none"
+                        alt="xtool creation image"
                     />
                 </div>
                 <div className="absolute top-0 left-0 w-full hidden max-md:block z-20">
                     <img
                         src="/creation/creation-768.webp"
                         className="w-full object-contain pointer-events-none"
+                        alt="xtool creation image"
                     />
                 </div>
             </div>
