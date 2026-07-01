@@ -16,6 +16,18 @@
   to = "/index.html"
   status = 200
 
+[[redirects]]
+  from = "/wp-login.php"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.git/*"
+  to = "/404"
+  status = 404
+  force = true
+
 # ===================================================
 # 보안 헤더 설정
 # ===================================================
