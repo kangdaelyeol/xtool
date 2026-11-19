@@ -1,0 +1,275 @@
+/* =========================================================
+   예약 페이지 공통 디자인 (xTool 톤: 검정 + 브랜드 초록 포인트)
+   booking.css 다음에 불러옴. 각 페이지 전용 스타일은 페이지별 css
+   ========================================================= */
+
+.xb-page {
+    --b-ink: #121212; /* 제목·주요 버튼 */
+    --b-text: #2b2b2b;
+    --b-sub: #5f6368;
+    --b-muted: #9aa0a6;
+    --b-off: #c9cdd2; /* 지난 날짜·마감 */
+    --b-line: #e6e8eb;
+    --b-soft: #f4f6f7; /* 회색 영역 배경 */
+    --b-accent: #00c767; /* xTool 브랜드 초록 (점·표시용) */
+    --b-accent-ink: #00a456; /* 흰 바탕 위 초록 글자 (대비 확보) */
+    --b-accent-soft: #e7f9ef;
+    --b-star: #f5a524;
+    --b-wrap: 1040px;
+    --b-header: 50px;
+}
+
+.xb2-wrap {
+    max-width: var(--b-wrap);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 섹션 */
+.xb2-sec {
+    padding: 64px 0;
+    background: #fff;
+    scroll-margin-top: var(--b-header); /* 앵커 이동 시 고정 헤더에 가리지 않게 */
+}
+.xb2-sec--soft {
+    background: var(--b-soft);
+}
+.xb2-sec-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+.xb2-sec-head__title {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 34px;
+    letter-spacing: -0.03em;
+    color: var(--b-ink);
+}
+.xb2-sec-head__sub {
+    margin-top: 6px;
+    font-size: 15px;
+    line-height: 22px;
+    color: var(--b-sub);
+}
+
+/* 링크·버튼 */
+.xb2-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--b-accent-ink);
+}
+.xb2-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.xb2-btn-primary,
+.xb2-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 52px;
+    padding: 0 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    transition:
+        background 0.15s,
+        border-color 0.15s;
+}
+.xb2-btn-primary {
+    background: var(--b-ink);
+    color: #fff;
+}
+.xb2-btn-primary:not(:disabled):hover {
+    background: #000;
+}
+.xb2-btn-primary:disabled {
+    background: #d9dcdf;
+    cursor: default;
+}
+.xb2-btn-secondary {
+    border: 1px solid var(--b-line);
+    background: #fff;
+    color: var(--b-ink);
+}
+.xb2-btn-secondary:hover {
+    border-color: #c9cdd2;
+}
+.xb2-copy {
+    margin-left: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--b-accent-ink);
+}
+.xb2-copy:hover {
+    text-decoration: underline;
+}
+
+/* 카드 */
+.xb2-card {
+    border: 1px solid var(--b-line);
+    border-radius: 16px;
+    background: #fff;
+}
+.xb2-card__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.xb2-card__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    color: var(--b-ink);
+}
+
+/* 단계 표시 ① ② ③ */
+.xb2-steps {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--b-muted);
+}
+.xb2-steps li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.xb2-steps li + li::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    margin: 0 14px;
+    background: #d3d7dc;
+}
+.xb2-steps__num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #d3d7dc;
+    border-radius: 50%;
+    background: #fff;
+    font-size: 12px;
+}
+.xb2-steps li.is-done,
+.xb2-steps li.is-current {
+    color: var(--b-ink);
+}
+.xb2-steps li.is-done .xb2-steps__num {
+    border-color: var(--b-ink);
+    color: var(--b-ink);
+}
+.xb2-steps li.is-current .xb2-steps__num {
+    border-color: var(--b-ink);
+    background: var(--b-ink);
+    color: #fff;
+}
+
+/* 항목: 값 목록 (휴무·문의 등) */
+.xb2-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 20px;
+}
+.xb2-facts div {
+    display: flex;
+    gap: 16px;
+}
+.xb2-facts dt {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    gap: 6px;
+    width: 76px;
+    color: var(--b-muted);
+}
+.xb2-facts dd {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-width: 0;
+    color: var(--b-text);
+}
+.xb2-facts dd a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* 별점 */
+
+/* 태그 (#친절해요) */
+
+/* 후기 카드 */
+
+/* ---------------- 태블릿·중간 폭 (768~1040px) ---------------- */
+@media (max-width: 1040px) {
+    .xb2-sec {
+        padding: 56px 0;
+    }
+    .xb2-sec-head__title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+/* ---------------- 모바일 (767px 이하) ---------------- */
+@media (max-width: 767px) {
+    .xb2-wrap {
+        padding: 0 16px;
+    }
+    .xb2-sec {
+        padding: 40px 0;
+    }
+    .xb2-sec-head {
+        margin-bottom: 20px;
+    }
+    .xb2-sec-head__title {
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .xb2-sec-head__sub {
+        font-size: 14px;
+    }
+    .xb2-btn-primary,
+    .xb2-btn-secondary {
+        height: 48px;
+        padding: 0 18px;
+        font-size: 15px;
+    }
+    .xb2-card {
+        border-radius: 14px;
+    }
+    .xb2-card__title {
+        font-size: 17px;
+    }
+    .xb2-facts dt {
+        width: 64px;
+    }
+    /* 단계 표시: 좁은 화면에선 지금 단계 이름만 */
+    .xb2-steps {
+        font-size: 13px;
+    }
+    .xb2-steps li + li::before {
+        width: 16px;
+        margin: 0 8px;
+    }
+    .xb2-steps li:not(.is-current) .xb2-steps__label {
+        display: none;
+    }
+                }

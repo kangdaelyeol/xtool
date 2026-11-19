@@ -1,0 +1,567 @@
+/* =========================================================
+   예약 정보 입력 페이지 (/booking/:itemId/confirm) - PC
+   booking.css → booking-theme.css 다음에 불러옴
+   ========================================================= */
+
+.xb2-form-page {
+    padding: 28px 0 72px;
+    background: var(--b-soft);
+}
+.xb2-flow-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.xb2-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--b-sub);
+}
+.xb2-back:hover {
+    color: var(--b-ink);
+}
+.xb2-flow-title {
+    margin: 20px 0 24px;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 36px;
+    letter-spacing: -0.03em;
+    color: var(--b-ink);
+}
+
+/* 왼쪽 입력 카드들 | 오른쪽 요약 (스크롤을 따라옴) */
+.xb2-form-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 24px;
+    align-items: start;
+}
+.xb2-form-main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.xb2-fcard {
+    padding: 28px;
+}
+.xb2-fcard__sub {
+    margin-top: 2px;
+    font-size: 14px;
+    color: var(--b-muted);
+}
+
+/* 입력칸 */
+.xb2-field {
+    margin-top: 22px;
+}
+.xb2-field__label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+    color: var(--b-ink);
+}
+.xb2-field__req {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--b-accent-ink);
+}
+.xb2-select {
+    position: relative;
+}
+.xb2-select select,
+.xb2-textarea,
+.xb2-input {
+    width: 100%;
+    border: 1px solid var(--b-line);
+    border-radius: 10px;
+    background: #fff;
+    font: inherit;
+    font-size: 15px;
+    color: var(--b-ink);
+    outline: none;
+    transition: border-color 0.15s;
+}
+.xb2-select select {
+    height: 48px;
+    padding: 0 44px 0 14px;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+.xb2-select select.is-placeholder,
+.xb2-textarea::placeholder,
+.xb2-input::placeholder {
+    color: var(--b-muted);
+}
+.xb2-select select option {
+    color: var(--b-ink);
+}
+.xb2-select__icon {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    margin-top: -9px;
+    color: var(--b-sub);
+    pointer-events: none;
+}
+.xb2-textarea {
+    display: block;
+    min-height: 96px;
+    padding: 12px 14px;
+    line-height: 23px;
+    resize: vertical;
+}
+.xb2-textarea--sub {
+    margin-top: 8px;
+}
+.xb2-input {
+    height: 48px;
+    padding: 0 14px;
+}
+.xb2-select select:hover,
+.xb2-textarea:hover,
+.xb2-input:hover {
+    border-color: #c9cdd2;
+}
+.xb2-select select:focus,
+.xb2-textarea:focus,
+.xb2-input:focus {
+    border-color: var(--b-ink);
+}
+
+/* 예약자 */
+.xb2-booker {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 18px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    background: var(--b-soft);
+}
+.xb2-booker__name {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--b-ink);
+}
+.xb2-booker__phone {
+    font-size: 14px;
+    color: var(--b-sub);
+}
+.xb2-booker-edit {
+    margin-top: 4px;
+}
+.xb2-booker-edit__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 14px;
+}
+.xb2-btn-sm {
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+.xb2-person {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+.xb2-person .xb2-field {
+    margin-top: 18px;
+}
+.xb2-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 22px;
+    font-size: 15px;
+    color: var(--b-text);
+    cursor: pointer;
+}
+.xb2-check__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid #c9cdd2;
+    border-radius: 6px;
+    background: #fff;
+    color: transparent;
+    transition:
+        background 0.15s,
+        border-color 0.15s;
+}
+.xb2-check input:checked + .xb2-check__box {
+    border-color: var(--b-ink);
+    background: var(--b-ink);
+    color: #fff;
+}
+.xb2-check input:focus-visible + .xb2-check__box {
+    outline: 2px solid var(--b-accent);
+    outline-offset: 2px;
+}
+.xb2-visitor {
+    margin-top: 4px;
+}
+
+/* 방문 전 확인 */
+.xb2-fnotice {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+}
+.xb2-fnotice li {
+    padding: 16px 18px;
+    border-radius: 12px;
+    background: var(--b-soft);
+}
+.xb2-fnotice h3 {
+    margin-bottom: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--b-ink);
+}
+.xb2-fnotice p {
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--b-sub);
+    white-space: pre-line;
+}
+
+/* 오른쪽 요약 */
+.xb2-aside {
+    position: sticky;
+    top: calc(var(--b-header) + 24px);
+}
+.xb2-sum {
+    padding: 24px;
+}
+.xb2-sum .xb2-card__head {
+    margin-bottom: 14px;
+}
+.xb2-sum__item {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 25px;
+    color: var(--b-ink);
+}
+.xb2-sum__rows {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--b-line);
+}
+.xb2-sum__rows dt {
+    width: 48px;
+}
+.xb2-sum__rows dd {
+    font-weight: 600;
+}
+.xb2-sum__terms {
+    margin-top: 18px;
+    border-top: 1px solid var(--b-line);
+}
+.xb2-toggle {
+    border-bottom: 1px solid var(--b-line);
+}
+.xb2-toggle__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 44px;
+    font-size: 14px;
+    color: var(--b-text);
+    text-align: left;
+}
+.xb2-toggle__head svg {
+    color: var(--b-muted);
+    transition: transform 0.15s;
+}
+.xb2-toggle__head.is-open svg {
+    transform: rotate(180deg);
+}
+.xb2-toggle__body {
+    padding-bottom: 14px;
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--b-sub);
+}
+.xb2-toggle__body .xb2-facts {
+    gap: 4px;
+    font-size: 13px;
+}
+.xb2-toggle__body .xb2-facts dt {
+    width: 96px;
+}
+.xb2-sum__submit {
+    width: 100%;
+    margin-top: 12px;
+}
+.xb2-sum__hint {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--b-muted);
+    text-align: center;
+}
+
+/* 개인정보 동의 줄 */
+.xb2-consent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--b-line);
+}
+.xb2-consent__check {
+    align-items: flex-start;
+    margin-top: 0;
+    font-size: 14px;
+    line-height: 20px;
+}
+.xb2-consent__check .xb2-check__box {
+    flex: none;
+    margin-top: 0;
+}
+.xb2-consent .xb2-link {
+    flex: none;
+    font-size: 13px;
+}
+
+/* ---------------- 개인정보 동의 모달 ---------------- */
+.xb2-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 60; /* 헤더(50)보다 위 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    background: rgba(18, 18, 18, 0.5);
+}
+.xb2-modal__box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 560px;
+    max-height: min(80vh, 760px);
+    overflow: hidden;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+.xb2-modal__head {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 20px 20px 16px 24px;
+    border-bottom: 1px solid var(--b-line);
+}
+.xb2-modal__head h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--b-ink);
+}
+.xb2-modal__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    color: var(--b-sub);
+}
+.xb2-modal__close:hover {
+    background: var(--b-soft);
+    color: var(--b-ink);
+}
+.xb2-modal__body {
+    flex: 1;
+    min-height: 0;
+    padding: 4px 24px 20px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+.xb2-modal__foot {
+    display: grid;
+    flex: none;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 8px;
+    padding: 14px 20px 18px;
+    border-top: 1px solid var(--b-line);
+}
+.xb2-privacy {
+    padding-top: 20px;
+}
+.xb2-privacy + .xb2-privacy {
+    margin-top: 20px;
+    border-top: 1px solid var(--b-line);
+}
+.xb2-privacy__heading {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--b-ink);
+}
+.xb2-privacy__item {
+    margin-top: 14px;
+}
+.xb2-privacy__item h4 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    color: var(--b-text);
+}
+.xb2-privacy__item ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 6px;
+}
+.xb2-privacy__item li {
+    position: relative;
+    padding-left: 12px;
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--b-sub);
+}
+.xb2-privacy__item li::before {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 2px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--b-muted);
+}
+.xb2-privacy__text {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--b-sub);
+}
+
+/* ---------------- 태블릿·중간 폭 (768~1040px): 2단 유지, 요약 카드만 좁게 ---------------- */
+@media (max-width: 1040px) {
+    .xb2-form-grid {
+        grid-template-columns: minmax(0, 1fr) 300px;
+        gap: 18px;
+    }
+    .xb2-fcard {
+        padding: 24px 22px;
+    }
+    .xb2-sum {
+        padding: 22px 20px;
+    }
+}
+@media (max-width: 900px) {
+    .xb2-person {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* 모바일: 1단으로 */
+@media (max-width: 767px) {
+    .xb2-form-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .xb2-aside {
+        position: static;
+    }
+}
+
+/* 모바일 전용 아래 고정 신청 버튼 (PC 에선 숨김) */
+.xb2-mbar {
+    display: none;
+    position: sticky;
+    bottom: 0;
+    z-index: 40;
+    border-top: 1px solid var(--b-line);
+    background: #fff;
+    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.04);
+}
+.xb2-mbar__inner {
+    padding-top: 12px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom)); /* 아이폰 홈 바 영역 */
+}
+.xb2-mbar .xb2-btn-primary {
+    width: 100%;
+}
+
+/* ---------------- 모바일 (767px 이하) ---------------- */
+@media (max-width: 767px) {
+    .xb2-form-page {
+        padding: 16px 0 0; /* 아래 고정 버튼이 푸터 바로 위에서 멈추도록 */
+    }
+    .xb2-flow-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .xb2-flow-title {
+        margin: 14px 0 16px;
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .xb2-form-grid {
+        gap: 14px;
+        padding-bottom: 24px;
+    }
+    .xb2-form-main {
+        gap: 14px;
+    }
+    .xb2-aside {
+        order: -1; /* 무엇을 예약하는지 맨 위에서 보이게 */
+    }
+    .xb2-fcard,
+    .xb2-sum {
+        padding: 20px 16px;
+    }
+    .xb2-field {
+        margin-top: 18px;
+    }
+    .xb2-field__label {
+        font-size: 14px;
+    }
+    .xb2-select select,
+    .xb2-input {
+        height: 46px;
+    }
+    .xb2-sum__submit,
+    .xb2-sum__hint {
+        display: none; /* 모바일은 아래 고정 버튼 사용 */
+    }
+    .xb2-mbar {
+        display: block;
+    }
+    .xb2-modal {
+        align-items: flex-end; /* 모바일은 아래에서 올라오는 형태 */
+        padding: 0;
+    }
+    .xb2-modal__box {
+        max-width: none;
+        max-height: 88vh;
+        border-radius: 18px 18px 0 0;
+    }
+    .xb2-modal__foot {
+        padding-bottom: calc(18px + env(safe-area-inset-bottom));
+    }
+}

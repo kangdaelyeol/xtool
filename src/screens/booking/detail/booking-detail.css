@@ -1,0 +1,707 @@
+/* =========================================================
+   예약하기 페이지 (/booking/:itemId) - PC
+   booking.css → booking-theme.css(색·카드·버튼·단계·후기 카드) 다음에 불러옴
+   이 파일은 예약하기 페이지에서만 쓰는 스타일
+   ========================================================= */
+
+/* ---------------- 상단: 사진 | 체험 정보 ---------------- */
+.xb2-hero {
+    padding: 32px 0 40px;
+}
+.xb2-hero__grid {
+    display: grid;
+    grid-template-columns: 520px minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+}
+.xb2-carousel {
+    position: relative;
+    height: 340px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #eef0f2;
+}
+.xb2-carousel__track {
+    display: flex;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+.xb2-carousel__track::-webkit-scrollbar {
+    display: none;
+}
+.xb2-carousel__slide {
+    flex: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scroll-snap-align: start;
+}
+.xb2-carousel__slide.xb-img-empty {
+    background: #e9ecef;
+}
+.xb2-carousel__slide.xb-img-empty:nth-child(even) {
+    background: #e1e5e9;
+}
+.xb2-carousel__arrow {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-top: -18px;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--b-ink);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    transition: opacity 0.15s;
+}
+.xb2-carousel__arrow.is-prev {
+    left: 14px;
+}
+.xb2-carousel__arrow.is-next {
+    right: 14px;
+}
+.xb2-carousel__arrow:disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+.xb2-carousel__count {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: rgba(18, 18, 18, 0.6);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    color: #fff;
+}
+
+.xb2-hero__info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding-top: 4px;
+}
+.xb2-hero__title {
+    margin-top: 12px;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 36px;
+    letter-spacing: -0.03em;
+    color: var(--b-ink);
+}
+.xb2-desc {
+    margin-top: 18px;
+}
+.xb2-desc__text {
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--b-sub);
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.xb2-desc__text.is-open {
+    display: block;
+}
+.xb2-desc .xb2-link {
+    margin-top: 4px;
+}
+.xb2-hero__info .xb2-facts {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--b-line);
+}
+
+.xb2-others {
+    position: relative;
+    margin-top: 24px;
+}
+.xb2-others__btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 46px;
+    padding: 0 16px;
+    border: 1px solid var(--b-line);
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--b-ink);
+    transition: border-color 0.15s;
+}
+.xb2-others__btn:hover {
+    border-color: #c9cdd2;
+}
+.xb2-others__btn svg {
+    color: var(--b-sub);
+    transition: transform 0.15s;
+}
+.xb2-others__btn.is-open svg {
+    transform: rotate(180deg);
+}
+.xb2-others__menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    z-index: 45; /* 탭(40)·하단 줄(40)보다 위, 헤더(50)보다 아래 */
+    padding: 6px;
+    border: 1px solid var(--b-line);
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.xb2-others__menu a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--b-text);
+}
+.xb2-others__menu a:hover {
+    background: var(--b-soft);
+}
+.xb2-others__menu a.is-current {
+    font-weight: 700;
+    color: var(--b-ink);
+}
+.xb2-others__menu a.is-current svg {
+    color: var(--b-accent-ink);
+}
+
+/* ---------------- 탭 (밑줄형, 스크롤하면 헤더 밑에 붙음) ---------------- */
+.xb2-tabs {
+    position: sticky;
+    top: 50px; /* 헤더 높이 */
+    z-index: 40;
+    border-bottom: 1px solid var(--b-line);
+    background: #fff;
+}
+.xb2-tabs__inner {
+    display: flex;
+    gap: 32px;
+}
+.xb2-tabs__btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 56px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--b-muted);
+    transition: color 0.15s;
+}
+.xb2-tabs__btn:hover {
+    color: var(--b-ink);
+}
+.xb2-tabs__btn.is-active {
+    font-weight: 700;
+    color: var(--b-ink);
+}
+.xb2-tabs__btn.is-active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    background: var(--b-ink);
+}
+
+/* ---------------- 예약하기: 단계 + [달력 | 시간] + 안내 ---------------- */
+.xb2-book,
+.xb2-panel {
+    padding: 32px 0 56px;
+    background: var(--b-soft);
+}
+.xb2-book .xb2-steps {
+    margin-bottom: 24px;
+}
+.xb2-book__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+/* 달력 */
+.xb2-cal {
+    padding: 24px 24px 20px;
+}
+.xb2-cal__nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.xb2-cal__nav strong {
+    min-width: 96px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--b-ink);
+    text-align: center;
+}
+.xb2-cal__nav button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--b-line);
+    border-radius: 50%;
+    color: var(--b-ink);
+}
+.xb2-cal__nav button:disabled {
+    color: var(--b-off);
+    cursor: default;
+}
+.xb2-cal__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 4px;
+}
+.xb2-cal__weekday {
+    padding-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--b-muted);
+    text-align: center;
+}
+.xb2-cal__weekday.is-sun {
+    color: #e0727a;
+}
+.xb2-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 2px 0;
+}
+.xb2-day:disabled {
+    cursor: default;
+}
+.xb2-day__num {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--b-ink);
+    transition: background 0.15s;
+}
+.xb2-day__tag {
+    min-height: 13px;
+    font-size: 10px;
+    line-height: 13px;
+    color: var(--b-off);
+}
+.xb2-day.is-open:hover .xb2-day__num {
+    background: var(--b-soft);
+}
+.xb2-day.is-past .xb2-day__num,
+.xb2-day.is-soldout .xb2-day__num,
+.xb2-day.is-holiday .xb2-day__num {
+    font-weight: 400;
+    color: var(--b-off);
+}
+.xb2-day.is-soldout .xb2-day__num {
+    text-decoration: line-through;
+}
+/* 오늘: 숫자 아래 초록 점 */
+.xb2-day.is-today .xb2-day__num::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    margin-left: -2px;
+    border-radius: 50%;
+    background: var(--b-accent);
+}
+.xb2-day.is-today .xb2-day__tag {
+    font-weight: 600;
+    color: var(--b-accent-ink);
+}
+.xb2-day.is-selected .xb2-day__num,
+.xb2-day.is-selected:hover .xb2-day__num {
+    background: var(--b-ink);
+    color: #fff;
+}
+.xb2-day.is-selected.is-today .xb2-day__num::after {
+    background: #fff;
+}
+.xb2-legend {
+    display: flex;
+    gap: 16px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--b-line);
+    font-size: 12px;
+    color: var(--b-muted);
+}
+.xb2-legend li {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.xb2-legend i {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.xb2-legend i.is-selected {
+    background: var(--b-ink);
+}
+.xb2-legend i.is-today {
+    background: var(--b-accent);
+}
+.xb2-legend i.is-off {
+    background: var(--b-off);
+}
+
+/* 시간 */
+.xb2-times {
+    padding: 24px;
+}
+.xb2-times__date {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--b-accent-ink);
+}
+.xb2-times__groups {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.xb2-times__label {
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--b-muted);
+}
+.xb2-times__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+.xb2-chip {
+    height: 44px;
+    border: 1px solid var(--b-line);
+    border-radius: 22px;
+    background: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--b-ink);
+    transition:
+        border-color 0.15s,
+        background 0.15s;
+}
+.xb2-chip:not(:disabled):hover {
+    border-color: var(--b-ink);
+}
+.xb2-chip:disabled {
+    border-color: transparent;
+    background: var(--b-soft);
+    font-weight: 400;
+    color: var(--b-off);
+    text-decoration: line-through;
+    cursor: default;
+}
+.xb2-chip.is-selected,
+.xb2-chip.is-selected:hover {
+    border-color: var(--b-ink);
+    background: var(--b-ink);
+    color: #fff;
+}
+.xb2-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 260px;
+    border-radius: 12px;
+    background: var(--b-soft);
+    text-align: center;
+}
+.xb2-empty strong {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--b-ink);
+}
+.xb2-empty span {
+    font-size: 14px;
+    color: var(--b-sub);
+}
+/* 방문 전 확인해 주세요 */
+.xb2-notice {
+    margin-top: 40px;
+}
+.xb2-notice__title {
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    color: var(--b-ink);
+}
+.xb2-notice__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+.xb2-notice__card {
+    padding: 24px;
+}
+.xb2-notice__card h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    color: var(--b-ink);
+}
+.xb2-notice__card p {
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--b-sub);
+    white-space: pre-line;
+}
+.xb2-notice__card p + p {
+    margin-top: 4px;
+}
+
+/* ---------------- 하단: 고른 일정 + 다음 단계 (화면 아래에 붙어 있다가 푸터 위에서 멈춤) ---------------- */
+.xb2-bar {
+    position: sticky;
+    bottom: 0;
+    z-index: 40;
+    border-top: 1px solid var(--b-line);
+    background: #fff;
+    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.04);
+}
+.xb2-bar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+.xb2-bar__summary {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+.xb2-bar__label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--b-muted);
+}
+.xb2-bar__summary strong {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--b-ink);
+}
+.xb2-bar__hint {
+    font-size: 16px;
+    color: var(--b-sub);
+}
+.xb2-bar .xb2-btn-primary {
+    width: 200px;
+}
+
+/* ---------------- 체험 안내 · 후기 탭 ---------------- */
+.xb2-info {
+    padding: 28px;
+}
+.xb2-info__facts {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--b-line);
+}
+.xb2-info__text {
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 26px;
+    color: var(--b-text);
+    white-space: pre-line;
+}
+/* ---------------- 태블릿·중간 폭 (768~1040px): 2단 유지, 크기만 줄임 ---------------- */
+@media (max-width: 1040px) {
+    .xb2-hero__grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 28px;
+    }
+    .xb2-carousel {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+    .xb2-hero__title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .xb2-book__grid,
+    .xb2-notice__grid {
+        gap: 14px;
+    }
+    .xb2-cal {
+        padding: 20px 16px 16px;
+    }
+    .xb2-times {
+        padding: 20px 18px;
+    }
+    .xb2-day__num {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+}
+
+/* 모바일: 1단으로 */
+@media (max-width: 767px) {
+    .xb2-hero__grid,
+    .xb2-book__grid,
+    .xb2-notice__grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* ---------------- 모바일 (767px 이하) ---------------- */
+@media (max-width: 767px) {
+    .xb2-hero {
+        padding: 0 0 28px;
+    }
+    .xb2-hero__grid {
+        gap: 20px;
+    }
+    /* 사진은 화면 끝까지 (좌우 여백 16px 을 밖으로 빼냄) */
+    .xb2-carousel {
+        height: auto;
+        margin: 0 -16px;
+        border-radius: 0;
+        aspect-ratio: 4 / 3;
+    }
+    .xb2-carousel__arrow {
+        display: none; /* 손가락으로 넘김 */
+    }
+    .xb2-hero__title {
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .xb2-desc {
+        margin-top: 14px;
+    }
+    .xb2-desc__text {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .xb2-others {
+        margin-top: 20px;
+    }
+    .xb2-others__btn {
+        height: 44px;
+        font-size: 14px;
+    }
+    .xb2-tabs__inner {
+        gap: 0;
+    }
+    .xb2-tabs__btn {
+        flex: 1;
+        justify-content: center;
+        height: 48px;
+        font-size: 15px;
+    }
+    .xb2-book,
+    .xb2-panel {
+        padding: 20px 0 32px;
+    }
+    .xb2-book .xb2-steps {
+        margin-bottom: 16px;
+    }
+    .xb2-book__grid {
+        gap: 14px;
+    }
+    .xb2-cal {
+        padding: 18px 14px 16px;
+    }
+    .xb2-cal__nav strong {
+        min-width: 84px;
+        font-size: 14px;
+    }
+    .xb2-cal__nav button {
+        width: 30px;
+        height: 30px;
+    }
+    .xb2-day__num {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+    .xb2-day.is-today .xb2-day__num::after {
+        bottom: 4px;
+    }
+    .xb2-legend {
+        gap: 12px;
+        font-size: 11px;
+    }
+    .xb2-times {
+        padding: 18px 16px;
+    }
+    .xb2-chip {
+        height: 42px;
+        font-size: 14px;
+    }
+    .xb2-empty {
+        min-height: 160px;
+    }
+    .xb2-notice {
+        margin-top: 28px;
+    }
+    .xb2-notice__title {
+        margin-bottom: 12px;
+        font-size: 18px;
+    }
+    .xb2-notice__grid {
+        gap: 12px;
+    }
+    .xb2-notice__card {
+        padding: 18px;
+    }
+    .xb2-bar__inner {
+        gap: 12px;
+        padding-top: 12px;
+        padding-bottom: calc(12px + env(safe-area-inset-bottom)); /* 아이폰 홈 바 영역 */
+    }
+    .xb2-bar__label {
+        font-size: 11px;
+    }
+    .xb2-bar__summary strong {
+        font-size: 15px;
+    }
+    .xb2-bar__hint {
+        font-size: 14px;
+    }
+    .xb2-bar .xb2-btn-primary {
+        width: auto;
+        min-width: 120px;
+        height: 48px;
+    }
+    .xb2-info {
+        padding: 20px;
+    }
+    }

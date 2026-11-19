@@ -1,0 +1,101 @@
+/* =========================================================
+   예약 완료 페이지 (/booking/:itemId/complete)
+   booking.css → booking-theme.css 다음에 불러옴
+   ========================================================= */
+
+.xb2-done-page {
+    padding: 32px 0 72px;
+    background: var(--b-soft);
+}
+.xb2-done {
+    max-width: 720px;
+}
+.xb2-done__head {
+    margin: 28px 0 24px;
+}
+.xb2-done__head h1 {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 36px;
+    letter-spacing: -0.03em;
+    color: var(--b-ink);
+}
+.xb2-done__head p {
+    margin-top: 8px;
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--b-sub);
+}
+.xb2-done__card {
+    padding: 24px 28px;
+}
+.xb2-done__card + .xb2-done__card {
+    margin-top: 14px;
+}
+.xb2-done__no {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--b-line);
+    font-size: 14px;
+    color: var(--b-muted);
+}
+.xb2-done__no strong {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: var(--b-ink);
+}
+.xb2-done__rows {
+    margin-top: 16px;
+}
+.xb2-done__rows dt {
+    width: 56px;
+}
+.xb2-done__rows dd {
+    font-weight: 600;
+}
+.xb2-done__card .xb2-card__title + .xb2-done__rows {
+    margin-top: 14px;
+}
+.xb2-done__note {
+    margin-top: 18px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: var(--b-soft);
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--b-sub);
+    white-space: pre-line;
+}
+.xb2-done__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+@media (max-width: 767px) {
+    .xb2-done-page {
+        padding: 20px 0 48px;
+    }
+    .xb2-done__head {
+        margin: 20px 0 18px;
+    }
+    .xb2-done__head h1 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .xb2-done__head p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .xb2-done__card {
+        padding: 20px 18px;
+    }
+    .xb2-done__no strong {
+        font-size: 16px;
+    }
+}
