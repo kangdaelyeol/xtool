@@ -4,9 +4,10 @@ import {
     bookingNotices,
     extraFields,
     REQUEST_DIRECT,
+    privacyDocs,
     requestOptions,
-    sellerInfo,
     type BookingItem,
+    type PrivacyId,
 } from '../data'
 import { formatKoreanDate, formatSlot } from '../schedule'
 import { isValidPhone, maskPhone } from '../utils'
@@ -70,20 +71,6 @@ const PersonInputs = ({ idPrefix, value, onChange }: { idPrefix: string; value: 
         </Field>
     </div>
 )
-
-// 펼치고 접는 줄 (약관·판매자 정보)
-const Toggle = ({ title, children }: { title: string; children: ReactNode }) => {
-    const [open, setOpen] = useState(false)
-    return (
-        <div className="xb2-toggle">
-            <button type="button" className={'xb2-toggle__head' + (open ? ' is-open' : '')} aria-expanded={open} onClick={() => setOpen((v) => !v)}>
-                {title}
-                <ChevronDownIcon size={16} />
-            </button>
-            {open && <div className="xb2-toggle__body">{children}</div>}
-        </div>
-    )
-}
 
 // ---------------- 추가 정보 ----------------
 export const ExtraFieldsCard = ({
@@ -233,14 +220,15 @@ export const SummaryAside = ({
     item: BookingItem
     date: Date
     time: string
-    agreed: boolean
-    onAgreedChange: (v: boolean) => void
-    onOpenPrivacy: () => void
+    agreed: Record<PrivacyId, boolean>
+    onAgreedChange: (next: Record<PrivacyId, boolean>) => void
+    onOpenPrivacy: (id: PrivacyId) => void
     canSubmit: boolean
     onSubmit: () => void
     onChangeSchedule: () => void
 }) => {
     const slot = formatSlot(time)
+    const allAgreed = privacyDocs.every((d) => agreed[d.id])
     return (
         <aside className="xb2-aside">
             <div className="xb2-card xb2-sum">
@@ -268,34 +256,43 @@ export const SummaryAside = ({
                     </div>
                 </dl>
 
+                {/* 개인정보 동의 (둘 다 필수): 체크하거나, '보기' 모달에서 '동의하고 닫기' */}
                 <div className="xb2-sum__terms">
-                    {/* 개인정보 동의 (필수): 체크 또는 모달에서 '동의하고 닫기' */}
-                    <div className="xb2-consent">
-                        <label className="xb2-check xb2-consent__check">
-                            <input type="checkbox" className="xb-sr-only" checked={agreed} onChange={(e) => onAgreedChange(e.target.checked)} />
-                            <span className="xb2-check__box" aria-hidden="true">
-                                <CheckIcon size={13} />
-                            </span>
-                            <span>
-                                개인정보 수집·이용 및 제공 동의 <span className="xb2-field__req">필수</span>
-                            </span>
-                        </label>
-                        <button type="button" className="xb2-link" onClick={onOpenPrivacy}>
-                            보기
-                        </button>
+                    <label className="xb2-check xb2-consent-all">
+                        <input
+                            type="checkbox"
+                            className="xb-sr-only"
+                            checked={allAgreed}
+                            onChange={(e) => onAgreedChange({ collect: e.target.checked, provide: e.target.checked })}
+                        />
+                        <span className="xb2-check__box" aria-hidden="true">
+                            <CheckIcon size={13} />
+                        </span>
+                        <span>필수 항목 전체 동의</span>
+                    </label>
+                    <div className="xb2-consents">
+                        {privacyDocs.map((doc) => (
+                            <div className="xb2-consent" key={doc.id}>
+                                <label className="xb2-check xb2-consent__check">
+                                    <input
+                                        type="checkbox"
+                                        className="xb-sr-only"
+                                        checked={agreed[doc.id]}
+                                        onChange={(e) => onAgreedChange({ ...agreed, [doc.id]: e.target.checked })}
+                                    />
+                                    <span className="xb2-check__box" aria-hidden="true">
+                                        <CheckIcon size={13} />
+                                    </span>
+                                    <span>
+                                        {doc.title} <span className="xb2-field__req">필수</span>
+                                    </span>
+                                </label>
+                                <button type="button" className="xb2-link" aria-label={`${doc.title} 내용 보기`} onClick={() => onOpenPrivacy(doc.id)}>
+                                    보기
+                                </button>
+                            </div>
+                        ))}
                     </div>
-                    <Toggle title="판매자 정보">
-                        <dl className="xb2-facts">
-                            {sellerInfo
-                                .filter((s) => s.value)
-                                .map((s) => (
-                                    <div key={s.label}>
-                                        <dt>{s.label}</dt>
-                                        <dd>{s.value}</dd>
-                                    </div>
-                                ))}
-                        </dl>
-                    </Toggle>
                 </div>
 
                 <button type="button" className="xb2-btn-primary xb2-sum__submit" disabled={!canSubmit} onClick={onSubmit}>

@@ -3,7 +3,15 @@ import '../booking-theme.css'
 import './booking-confirm.css'
 import { useEffect, useState } from 'react'
 import { Navigate, useNavigate, useParams, useSearchParams } from 'react-router-dom'
-import { bookingItems, extraFields, REQUEST_DIRECT, sampleBooker, type BookingItem } from '../data'
+import {
+    bookingItems,
+    extraFields,
+    privacyDocs,
+    REQUEST_DIRECT,
+    sampleBooker,
+    type BookingItem,
+    type PrivacyId,
+} from '../data'
 import {
     getDayStatus,
     isBookable,
@@ -54,11 +62,12 @@ const BookingConfirm = ({ item, date, time }: { item: BookingItem; date: Date; t
     const [requestText, setRequestText] = useState('')
     const [visitorDiffers, setVisitorDiffers] = useState(false)
     const [visitor, setVisitor] = useState<Person>({ name: '', phone: '' })
-    const [agreed, setAgreed] = useState(false)
-    const [privacyOpen, setPrivacyOpen] = useState(false)
+    const [agreed, setAgreed] = useState<Record<PrivacyId, boolean>>({ collect: false, provide: false })
+    const [privacyOpen, setPrivacyOpen] = useState<PrivacyId | null>(null)
 
     const requiredFilled = extraFields.every((f) => !f.required || (values[f.id] ?? '').trim() !== '')
-    const canSubmit = requiredFilled && booker.name !== '' && isValidPhone(booker.phone) && agreed
+    const allAgreed = privacyDocs.every((d) => agreed[d.id])
+    const canSubmit = requiredFilled && booker.name !== '' && isValidPhone(booker.phone) && allAgreed
 
     // 날짜·시간 다시 고르기: 고른 값을 그대로 들고 예약하기 페이지로
     const goBack = () => navigate(`/booking/${item.id}?date=${toKey(date)}&time=${time}`)
@@ -121,7 +130,7 @@ const BookingConfirm = ({ item, date, time }: { item: BookingItem; date: Date; t
                             time={time}
                             agreed={agreed}
                             onAgreedChange={setAgreed}
-                            onOpenPrivacy={() => setPrivacyOpen(true)}
+                            onOpenPrivacy={setPrivacyOpen}
                             canSubmit={canSubmit}
                             onSubmit={submit}
                             onChangeSchedule={goBack}
@@ -140,11 +149,11 @@ const BookingConfirm = ({ item, date, time }: { item: BookingItem; date: Date; t
             </main>
             <BookingFooter />
             <PrivacyModal
-                open={privacyOpen}
-                onClose={() => setPrivacyOpen(false)}
-                onAgree={() => {
-                    setAgreed(true)
-                    setPrivacyOpen(false)
+                doc={privacyDocs.find((d) => d.id === privacyOpen) ?? null}
+                onClose={() => setPrivacyOpen(null)}
+                onAgree={(id) => {
+                    setAgreed((prev) => ({ ...prev, [id]: true }))
+                    setPrivacyOpen(null)
                 }}
             />
         </div>

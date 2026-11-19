@@ -276,39 +276,6 @@
     margin-top: 18px;
     border-top: 1px solid var(--b-line);
 }
-.xb2-toggle {
-    border-bottom: 1px solid var(--b-line);
-}
-.xb2-toggle__head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 44px;
-    font-size: 14px;
-    color: var(--b-text);
-    text-align: left;
-}
-.xb2-toggle__head svg {
-    color: var(--b-muted);
-    transition: transform 0.15s;
-}
-.xb2-toggle__head.is-open svg {
-    transform: rotate(180deg);
-}
-.xb2-toggle__body {
-    padding-bottom: 14px;
-    font-size: 13px;
-    line-height: 20px;
-    color: var(--b-sub);
-}
-.xb2-toggle__body .xb2-facts {
-    gap: 4px;
-    font-size: 13px;
-}
-.xb2-toggle__body .xb2-facts dt {
-    width: 96px;
-}
 .xb2-sum__submit {
     width: 100%;
     margin-top: 12px;
@@ -320,22 +287,38 @@
     text-align: center;
 }
 
-/* 개인정보 동의 줄 */
+/* 개인정보 동의: 전체 동의 + 항목별(수집·이용 / 제3자 제공) */
+.xb2-consent-all {
+    display: flex;
+    margin-top: 0;
+    padding: 14px 0 12px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+}
+.xb2-consents {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 0 14px;
+    border-top: 1px solid var(--b-line);
+    border-bottom: 1px solid var(--b-line);
+}
 .xb2-consent {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--b-line);
 }
 .xb2-consent__check {
     align-items: flex-start;
     margin-top: 0;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 20px;
+    color: var(--b-sub);
 }
-.xb2-consent__check .xb2-check__box {
+.xb2-consent__check .xb2-check__box,
+.xb2-consent-all .xb2-check__box {
     flex: none;
     margin-top: 0;
 }
@@ -423,7 +406,10 @@
 .xb2-privacy__item {
     margin-top: 14px;
 }
-.xb2-privacy__item h4 {
+.xb2-privacy__item:first-child {
+    margin-top: 0;
+}
+.xb2-privacy__item h3 {
     font-size: 14px;
     font-weight: 700;
     line-height: 21px;

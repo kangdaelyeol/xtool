@@ -1,19 +1,20 @@
 import { useEffect, useRef } from 'react'
-import { privacyConsent } from '../data'
+import type { PrivacyDoc, PrivacyId } from '../data'
 import { CloseIcon } from '../components/icons'
 
-// 개인정보 수집·이용 및 제공 동의 모달
+// 개인정보 동의 모달 (수집·이용 / 제3자 제공 중 연 항목 하나를 보여줌)
 // - 닫기: ✕ 버튼, 바깥(어두운 배경) 클릭, Esc 키
 // - 열려 있는 동안 뒤 페이지 스크롤 막음, 닫으면 원래 버튼으로 포커스 복귀
 export const PrivacyModal = ({
-    open,
+    doc,
     onClose,
     onAgree,
 }: {
-    open: boolean
+    doc: PrivacyDoc | null
     onClose: () => void
-    onAgree: () => void
+    onAgree: (id: PrivacyId) => void
 }) => {
+    const open = doc !== null
     const closeRef = useRef<HTMLButtonElement>(null)
     const onCloseRef = useRef(onClose)
     useEffect(() => {
@@ -37,7 +38,7 @@ export const PrivacyModal = ({
         }
     }, [open])
 
-    if (!open) return null
+    if (!doc) return null
 
     return (
         <div
@@ -48,34 +49,36 @@ export const PrivacyModal = ({
         >
             <div className="xb2-modal__box" role="dialog" aria-modal="true" aria-labelledby="xb2-privacy-title">
                 <div className="xb2-modal__head">
-                    <h2 id="xb2-privacy-title">{privacyConsent.title}</h2>
+                    <h2 id="xb2-privacy-title">{doc.title}</h2>
                     <button ref={closeRef} type="button" className="xb2-modal__close" aria-label="닫기" onClick={onClose}>
                         <CloseIcon size={20} />
                     </button>
                 </div>
                 <div className="xb2-modal__body">
-                    {privacyConsent.sections.map((sec) => (
-                        <section className="xb2-privacy" key={sec.heading}>
-                            <h3 className="xb2-privacy__heading">{sec.heading}</h3>
-                            {sec.items?.map((it, i) => (
-                                <div className="xb2-privacy__item" key={it.title + i}>
-                                    <h4>{it.title}</h4>
-                                    <ul>
-                                        {it.list.map((li) => (
-                                            <li key={li}>{li}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))}
-                            {sec.text && <p className="xb2-privacy__text">{sec.text}</p>}
+                    <section className="xb2-privacy">
+                        {doc.items.map((it) => (
+                            <div className="xb2-privacy__item" key={it.title}>
+                                <h3>{it.title}</h3>
+                                <ul>
+                                    {it.list.map((li) => (
+                                        <li key={li}>{li}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </section>
+                    {doc.note && (
+                        <section className="xb2-privacy">
+                            <h3 className="xb2-privacy__heading">{doc.note.heading}</h3>
+                            <p className="xb2-privacy__text">{doc.note.text}</p>
                         </section>
-                    ))}
+                    )}
                 </div>
                 <div className="xb2-modal__foot">
                     <button type="button" className="xb2-btn-secondary" onClick={onClose}>
                         닫기
                     </button>
-                    <button type="button" className="xb2-btn-primary" onClick={onAgree}>
+                    <button type="button" className="xb2-btn-primary" onClick={() => onAgree(doc.id)}>
                         동의하고 닫기
                     </button>
                 </div>

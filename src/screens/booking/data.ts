@@ -142,7 +142,7 @@ export const placePhotos = {
 }
 
 // ---------------- 예약 정보 입력 페이지 (/booking/:itemId/confirm) ----------------
-// ※ 선택지·약관·판매자 정보는 임시 값 → 실제 내용으로 교체 필요
+// ※ 추가 정보 선택지는 임시 값 → 실제 내용으로 교체 필요
 
 export type FormField = {
     id: string
@@ -204,52 +204,72 @@ export const requestOptions = ['요청사항 없음', '주차할 예정이에요
 // 테스트용 예약자 (로그인 연동 전까지 임시. 실제 개인정보 아님)
 export const sampleBooker = { name: '홍길동', phone: '01012345678' }
 
-export const sellerInfo = [
-    { label: '상호', value: place.name },
-    { label: '대표자', value: '' }, // TODO 입력
-    { label: '사업자등록번호', value: '' }, // TODO 입력
-    { label: '주소', value: place.address },
-    { label: '연락처', value: place.phone },
+// 개인정보 동의 (입력 페이지에서 항목별 '보기' → 모달로 보여줌)
+// - 개인정보보호법상 '수집·이용'과 '제3자 제공'은 각각 따로 동의를 받아야 해서 두 개로 나눔
+// - 보유 기간·제공받는 자는 실제 운영에 맞게 확인 필요 (오픈 전 법무 검토 권장)
+export type PrivacyId = 'collect' | 'provide'
+export type PrivacyDoc = {
+    id: PrivacyId
+    title: string
+    items: { title: string; list: string[] }[]
+    note?: { heading: string; text: string }
+}
+
+const PRIVACY_RETENTION = '체험일로부터 1년간 보관 후 지체 없이 파기 (관계 법령에 따라 보관이 필요한 경우 해당 기간까지 보관)'
+const PRIVACY_RESERVATION = '예약 내용(체험 프로그램, 방문 날짜·시간, 관심 장비, 재료, 샘플 유무)'
+
+export const privacyDocs: PrivacyDoc[] = [
+    {
+        id: 'collect',
+        title: '개인정보 수집·이용 동의',
+        items: [
+            {
+                title: '1. 수집·이용 목적',
+                list: [
+                    '방문 체험(제품 테스트·구매 상담) 예약 접수 및 진행',
+                    '예약 확인·변경·취소 등 안내 연락 (문자·전화)',
+                    '중복·허위 예약 방지 및 예약 시스템 안정성 확보',
+                ],
+            },
+            {
+                title: '2. 수집 항목',
+                list: [
+                    `필수: 예약자 이름, 휴대폰 번호, ${PRIVACY_RESERVATION}, 접속 IP 주소`,
+                    '선택(입력하신 경우): 요청사항, 방문하실 분의 이름·휴대폰 번호 (예약자와 다른 경우)',
+                ],
+            },
+            { title: '3. 보유 및 이용 기간', list: [PRIVACY_RETENTION] },
+            {
+                title: '4. 동의를 거부할 권리 및 거부 시 불이익',
+                list: ['개인정보 수집·이용에 동의하지 않으실 수 있으며, 동의하지 않으시면 방문 체험 예약을 하실 수 없습니다.'],
+            },
+        ],
+        note: {
+            heading: '접속 IP 수집 안내',
+            text: '중복 예약이나 악의적인 허위 예약을 막기 위해 예약하시는 분의 접속 IP 주소를 수집합니다. 고객님의 소중한 예약 기회를 보호하고 안전한 서비스를 제공하기 위한 조치이니 양해 부탁드립니다.',
+        },
+    },
+    {
+        id: 'provide',
+        title: '개인정보 제3자 제공 동의',
+        items: [
+            { title: '1. 제공받는 자', list: ['엑스툴 대한민국 공식 파트너 (주)시안 인터내셔널'] },
+            {
+                title: '2. 제공받는 자의 이용 목적',
+                list: ['방문 체험(제품 테스트·구매 상담) 진행', '예약 확인·변경·취소 등 안내 연락 (문자·전화)'],
+            },
+            {
+                title: '3. 제공 항목',
+                list: [
+                    `예약자 이름, 휴대폰 번호, ${PRIVACY_RESERVATION}`,
+                    '요청사항, 방문하실 분의 이름·휴대폰 번호 (입력하신 경우)',
+                ],
+            },
+            { title: '4. 제공받는 자의 보유 및 이용 기간', list: [PRIVACY_RETENTION] },
+            {
+                title: '5. 동의를 거부할 권리 및 거부 시 불이익',
+                list: ['개인정보 제3자 제공에 동의하지 않으실 수 있으며, 동의하지 않으시면 방문 체험 예약을 하실 수 없습니다.'],
+            },
+        ],
+    },
 ]
-
-// 개인정보 수집·이용 및 제공 동의 (입력 페이지에서 모달로 보여줌) - 받은 양식 문구 그대로
-export type PrivacySection = {
-    heading: string
-    items?: { title: string; list: string[] }[]
-    text?: string
-}
-
-const PRIVACY_PURPOSE = ['제품 구매 상담 예약 및 상담 진행', '비정상적 접근 및 중복 신청 방지', '상담 시스템 운영 안정성 확보']
-const PRIVACY_ITEMS = ['성함', '전화번호', '접속 IP주소']
-const PRIVACY_REFUSAL =
-    '개인정보 수집 및 제공에 대해 동의할 권리가 있으며, 거부하시면 상담 서비스가 제한됩니다. 이 점 참고하시어, 작성 부탁드립니다.'
-const PRIVACY_REFUSAL_TITLE = '4. 동의를 거부할 권리가 있다는 사실 및 동의 거부에 따른 불이익이 있는 경우에는 그 불이익의 내용'
-
-export const privacyConsent: { title: string; sections: PrivacySection[] } = {
-    title: '개인정보 수집 및 제공 동의',
-    sections: [
-        {
-            heading: '개인정보 수집 및 제공',
-            items: [
-                { title: '1. 개인정보의 수집ㆍ이용 목적', list: PRIVACY_PURPOSE },
-                { title: '2. 수집하려는 개인정보의 항목', list: PRIVACY_ITEMS },
-                { title: '3. 개인정보의 보유 및 이용 기간', list: ['2028년 6월 30일까지'] },
-                { title: PRIVACY_REFUSAL_TITLE, list: [PRIVACY_REFUSAL] },
-            ],
-        },
-        {
-            heading: '개인정보 제공 동의 시 필수 고지사항',
-            items: [
-                { title: '1. 개인정보를 제공받는 자', list: ['엑스툴 대한민국 공식 파트너 (주)시안 인터내셔널'] },
-                { title: '2. 개인정보를 제공받는 자의 개인정보 이용 목적', list: PRIVACY_PURPOSE },
-                { title: '2. 수집하려는 개인정보의 항목', list: PRIVACY_ITEMS },
-                { title: '3. 개인정보의 보유 및 이용 기간', list: ['2027년 6월 30일까지'] },
-                { title: PRIVACY_REFUSAL_TITLE, list: [PRIVACY_REFUSAL] },
-            ],
-        },
-        {
-            heading: '개인정보 동의 IP 수집 추가 내용',
-            text: '중복 신청이나 악의적인 허위 상담 등록을 방지하기 위해 상담신청 고객님의 IP 주소를 수집하게 되었습니다. 고객님의 소중한 상담 기회를 보호하고 안전한 서비스를 제공하기 위한 조치이오니 양해 부탁드립니다.',
-        },
-    ],
-}
